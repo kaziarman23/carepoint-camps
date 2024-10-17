@@ -81,7 +81,7 @@ const Header = () => {
           <button onClick={handleLogout}>Logout</button>
         ) : (
           <Link to="/register">
-            <button className="btn border-none bg-blue-800 text-white hover:bg-blue-700 hover:text-black uppercase">
+            <button className="btn border-none bg-blue-800 text-white hover:bg-blue-700 hover:text-black uppercase rounded-xl">
               Join us
             </button>
           </Link>

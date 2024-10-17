@@ -47,7 +47,7 @@ const Hero = () => {
   return (
     <div className="w-full h-screen bg-gradient-to-r from-[#373B44] to-[#4286f4] text-white">
       <div className="w-4/5 h-full mx-auto flex justify-center items-center">
-        <div className="w-1/2 space-y-4">
+        <div className="w-1/2 space-y-4 mr-4">
           <h1 className="text-4xl text-left ">
             CarePoint Camps: Simplifying Medical Camp Management
           </h1>
