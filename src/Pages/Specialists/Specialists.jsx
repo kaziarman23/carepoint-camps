@@ -1,16 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaFacebook, FaInstagram, FaSquareTwitter } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import UseAxios from "../../CustomHooks/UseAxios";
 
 const Specialists = () => {
-  const [data, setData] = useState([]);
+  const [specialistData, setSpecialistData] = useState([]);
 
-  useEffect(() => {
-    fetch("/specialists.json")
-      .then((res) => res.json())
-      .then((datas) => setData(datas))
-      .catch((error) => console.log(error));
-  }, []);
+  // hooks
+  const axiosPublic = UseAxios();
+  axiosPublic.get("/specialists").then((res) => setSpecialistData(res.data));
 
   const handleClick = () => {
     Swal.fire({
@@ -39,7 +37,7 @@ const Specialists = () => {
           </p>
         </div>
         <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-          {data.map((doc) => (
+          {specialistData.map((doc) => (
             <div
               key={doc.id}
               className="items-center rounded-lg shadow sm:flex bg-gray-800 border-gray-700"

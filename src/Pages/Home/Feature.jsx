@@ -1,22 +1,27 @@
 import { Link } from "react-router-dom";
 import UseCamps from "../../CustomHooks/UseCamps";
 
-const AvailableCamps = () => {
+const Feature = () => {
+  // hooks
   const [camp] = UseCamps();
+
+  const featureCamps = camp.filter((camps) => camps.participant_count > 110);
+  console.log(featureCamps);
 
   return (
     <div className="w-4/5 h-full mx-auto">
-      <h1 className="text-center text-2xl p-3">Available Medical Camps</h1>
+      <h1 className="text-center text-2xl p-3">Popular Camps at Carepoint</h1>
       <p className="p-2">
-        Explore our upcoming medical camps tailored to various health needs,
-        from general wellness check-ups to specialized care for children, women,
-        and senior citizens. Each camp offers free screenings, consultations,
-        and expert advice provided by qualified healthcare professionals. Find a
-        camp near you and take a proactive step towards better health for
-        yourself and your loved ones.
+        Popular Camps at Carepoint Discover the most popular health camps at
+        Carepoint Camps, where we provide expert-led medical services and
+        wellness programs tailored to diverse health needs. From comprehensive
+        screenings to specialized care for various conditions, our camps offer
+        accessible healthcare solutions for individuals and families. Join us at
+        these top-rated camps to enhance your well-being and stay proactive
+        about your health!
       </p>
       <div className="grid gap-4 my-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {camp.map((camp) => (
+        {featureCamps.map((camp) => (
           <div key={camp._id} className="card w-80">
             <figure>
               <img
@@ -44,4 +49,4 @@ const AvailableCamps = () => {
   );
 };
 
-export default AvailableCamps;
+export default Feature;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,22 +9,14 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
-// import UseAxios from "../../CusmotHooks/UseAxios";
+import UseAxios from "../../CustomHooks/UseAxios";
 
 const Reviews = () => {
   const [reviewData, setReviewData] = useState([]);
-
-  // const axiosPublic = UseAxios();
-  // axiosPublic.get("/reviews").then((res) => setReviewData(res.data));
-
-  useEffect(() => {
-    fetch("/reviews.json")
-      .then((res) => res.json())
-      .then((data) => setReviewData(data))
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  
+  // hooks
+  const axiosPublic = UseAxios();
+  axiosPublic.get("/reviews").then((res) => setReviewData(res.data));
 
   return (
     <div>

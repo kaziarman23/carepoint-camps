@@ -78,7 +78,33 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <button onClick={handleLogout}>Logout</button>
+          <div
+            className="z-50 hidden my-4 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600"
+            id="user-dropdown"
+          >
+            <div className="px-4 py-3">
+              <span className="block text-sm text-white">{user.name}</span>
+              <span className="block text-sm truncate text-gray-400">
+                {user.email}
+              </span>
+            </div>
+            <ul className="py-2" aria-labelledby="user-menu-button">
+              <li>
+                <Link className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">
+                  Dashboard
+                </Link>
+              </li>
+
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
         ) : (
           <Link to="/register">
             <button className="btn border-none bg-blue-800 text-white hover:bg-blue-700 hover:text-black uppercase rounded-xl">

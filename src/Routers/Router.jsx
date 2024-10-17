@@ -5,6 +5,7 @@ import AvailableCamps from "../Pages/AvailableCamps/AvailableCamps";
 import Register from "../Pages/Authtication/Register/Register";
 import Login from "../Pages/Authtication/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
+import CampDetails from "../Pages/CampDetails/CampDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/availableCamps",
         element: <AvailableCamps />,
+      },
+      {
+        path: "/campDetails/:id",
+        element: <CampDetails />,
       },
       {
         path: "/register",

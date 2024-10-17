@@ -1,4 +1,4 @@
-import Feature from "../Feature/Feature";
+import Feature from "./Feature";
 import Specialists from "../Specialists/Specialists";
 import Hero from "./Hero";
 import History from "./History";
@@ -9,8 +9,12 @@ const Home = () => {
     <div className="space-y-4">
       <Hero />
       <History />
-      {/* <Feature /> */}
+      <hr className="w-4/5 mx-auto" />
+      <Feature />
+      <hr className="w-4/5 mx-auto" />
       <Specialists />
+      <hr className="w-4/5 mx-auto" />
+
       <Reviews />
     </div>
   );
