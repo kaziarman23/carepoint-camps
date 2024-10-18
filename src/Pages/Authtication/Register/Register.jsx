@@ -33,6 +33,7 @@ const Register = () => {
           name: data.name,
           email: data.email,
           photo: data.photo,
+          userRole: "user",
         };
         axiosPublic
           .post("/users", userInfo)
@@ -67,18 +68,19 @@ const Register = () => {
 
   // Register with Google
   const handleGoogleRegister = () => {
+    reset();
     googleAuthintication().then((data) => {
       const userInfo = {
         name: data.user?.displayName,
         email: data.user?.email,
         photo: data.user?.photoURL,
+        userRole: "user",
       };
       axiosPublic
         .post("/users", userInfo)
         .then((res) => {
           if (res.data.insertedId) {
-            // showing alert and navigating the user to home page
-            reset();
+            // navigating the user to home page
             navigate("/");
 
             const Toast = Swal.mixin({
@@ -104,11 +106,13 @@ const Register = () => {
 
   // Register with Github
   const handleGithubRegister = () => {
+    reset();
     githubAuthintication().then((data) => {
       const userInfo = {
         name: data.user?.displayName,
         email: data.user?.email,
         photo: data.user?.photoURL,
+        userRole: "user",
       };
       axiosPublic
         .post("/users", userInfo)
@@ -116,7 +120,6 @@ const Register = () => {
           console.log(res);
           if (res.data.insertedId) {
             // showing alert and navigating the user to home page
-            reset();
             navigate("/");
 
             const Toast = Swal.mixin({
@@ -268,13 +271,13 @@ const Register = () => {
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handleGoogleRegister}
-              className="btn hover:text-white hover:bg-black"
+              className="btn hover:text-white hover:bg-black rounded-xl"
             >
               <FcGoogle className="w-6 h-6" /> Google
             </button>
             <button
               onClick={handleGithubRegister}
-              className="btn hover:text-white hover:bg-black"
+              className="btn hover:text-white hover:bg-black rounded-xl"
             >
               <VscGithubInverted className="w-6 h-6" />
               Github

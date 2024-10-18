@@ -6,7 +6,6 @@ const Feature = () => {
   const [camp] = UseCamps();
 
   const featureCamps = camp.filter((camps) => camps.participant_count > 110);
-  console.log(featureCamps);
 
   return (
     <div className="w-4/5 h-full mx-auto">

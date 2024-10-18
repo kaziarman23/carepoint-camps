@@ -14,6 +14,7 @@ import {
   Keyboard,
   Autoplay,
 } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const imageArray = [
@@ -59,10 +60,16 @@ const Hero = () => {
             we take care of the logistics.
           </p>
           <div className="flex items-center gap-5">
-            <button className="px-6 py-3 bg-blue-700 rounded-xl">Login</button>
-            <button className="px-6 py-3 bg-orange-700 rounded-xl">
-              Available Camps
-            </button>
+            <Link to="/login">
+              <button className="px-6 py-3 bg-blue-700 rounded-xl">
+                Login
+              </button>
+            </Link>
+            <Link to="/availableCamps">
+              <button className="px-6 py-3 bg-orange-700 rounded-xl">
+                Available Camps
+              </button>
+            </Link>
           </div>
         </div>
         {/* carousel content */}

@@ -33,10 +33,13 @@ const Header = () => {
   const navlinks = (
     <>
       <NavLink to="/">
-        <li className="p-2 font-bold text-white text-sm">Home</li>
+        <li className="p-2 font-bold text-white text-xl">Home</li>
       </NavLink>
       <NavLink to="/availableCamps">
-        <li className="p-2 font-bold text-white text-sm">Available Camps</li>
+        <li className="p-2 font-bold text-white text-xl">Available Camps</li>
+      </NavLink>
+      <NavLink to="/Dashboard">
+        <li className="p-2 font-bold text-white text-xl">DashBoard</li>
       </NavLink>
     </>
   );
@@ -78,32 +81,22 @@ const Header = () => {
       </div>
       <div className="navbar-end">
         {user ? (
-          <div
-            className="z-50 hidden my-4 text-base list-none divide-y rounded-lg shadow bg-gray-700 divide-gray-600"
-            id="user-dropdown"
-          >
-            <div className="px-4 py-3">
-              <span className="block text-sm text-white">{user.name}</span>
-              <span className="block text-sm truncate text-gray-400">
-                {user.email}
-              </span>
-            </div>
-            <ul className="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <Link className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white">
-                  Dashboard
-                </Link>
-              </li>
-
-              <li>
-                <button
-                  onClick={handleLogout}
-                  className="block px-4 py-2 text-sm hover:bg-gray-600 text-gray-200 hover:text-white"
-                >
-                  Logout
-                </button>
-              </li>
-            </ul>
+          <div className="flex items-center gap-3">
+            <img
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : "https://i.pinimg.com/enabled/564x/9e/83/75/9e837528f01cf3f42119c5aeeed1b336.jpg"
+              }
+              alt="user profile"
+              className="w-8 h-8 object-cover rounded-full"
+            />
+            <button
+              onClick={handleLogout}
+              className="btn rounded-xl bg-purple-700 hover:bg-red-700"
+            >
+              Logout
+            </button>
           </div>
         ) : (
           <Link to="/register">

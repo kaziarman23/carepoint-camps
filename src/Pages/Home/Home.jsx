@@ -8,7 +8,8 @@ const Home = () => {
   return (
     <div className="space-y-4">
       <Hero />
-      <History />
+      <History />  
+      {/* have to do bento box for upcoming camps*/}
       <hr className="w-4/5 mx-auto" />
       <Feature />
       <hr className="w-4/5 mx-auto" />

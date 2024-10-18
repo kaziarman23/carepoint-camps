@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import UseAxios from "../../CustomHooks/UseAxios";
 import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../CustomHooks/UseCamps";
 import Swal from "sweetalert2";
+import ParticipantRegistration from "./ParticipantRegistration";
 
 const CampDetails = () => {
   // context api
@@ -12,6 +13,7 @@ const CampDetails = () => {
   // states
   const axiosPublic = UseAxios();
   const navigate = useNavigate();
+  const [modelOpen, setModelOpen] = useState(false);
 
   // hooks
   const [camp, refetch] = UseCamps();
@@ -22,58 +24,60 @@ const CampDetails = () => {
   // finding the food details
   const selectedCamp = camp.find((camp) => camp._id === id);
 
-  const handleJoinCamp = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You want to join this camp",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, do it.",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        const reqInfo = {
-          image: selectedCamp.image,
-          name: selectedCamp.name,
-          leadBy: selectedCamp.leadBy,
-          role: selectedCamp.role,
-          location: selectedCamp.location,
-          date: selectedCamp.date,
-          price: selectedCamp.price,
-          participant_count: selectedCamp.participant_count,
-          description: selectedCamp.description,
-          requesterName: user.displayName,
-          requesterEmail: user.email,
-          requesterPhoto: user.photoURL,
-        };
+  const handleJoinCamp = (participantReq) => {
+    const participantInfo = {
+      campId: selectedCamp._id,
+      image: selectedCamp.image,
+      name: selectedCamp.name,
+      leadBy: selectedCamp.leadBy,
+      role: selectedCamp.role,
+      location: selectedCamp.location,
+      date: selectedCamp.date,
+      price: selectedCamp.price,
+      participant_count: selectedCamp.participant_count + 1,
+      description: selectedCamp.description,
+      userName: user.displayName,
+      userEmail: user.email,
+      userPhoto: user.photoURL,
+      age: participantReq.age,
+      phone: participantReq.phone,
+      gender: participantReq.gender,
+      emergencyContact: participantReq.emergencyContact,
+    };
+    console.log(participantInfo);
 
-        // sending req to server
-        axiosPublic
-          .post(`/requests/${selectedCamp._id}`, reqInfo)
-          .then((res) => {
-            if (res.data.insertedId) {
-              // refetching the data and sending user to home
-              refetch();
-              navigate("/availableCamps");
+    // sending req to server
+    axiosPublic.post("/participants", participantInfo).then((res) => {
+      if (res.data.partticipantResult.insertedId) {
+        // refetching the data and sending user to home
+        refetch();
+        navigate("/availableCamps");
 
-              // showing alert
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Your request accepted",
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            }
-          })
-          .catch((error) => console.log(error));
+        // showing alert
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your request accepted",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     });
   };
+
   const handleBackBtn = () => {
     navigate(-1);
   };
+
+  if (!selectedCamp || !user) {
+    return (
+      <div className="w-full h-full my-10 flex flex-col justify-center items-center">
+        <p className="w-96 h-full loading loading-infinity loading-xl"></p>
+        <h1 className="text-4xl">Loading Data...</h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-4/5 h-full mx-auto flex justify-center items-center bg-black p-4">
       <div className="w-full max-w-4xl gap-2 bg-slate-950 flex flex-col justify-center items-center text-white p-5 rounded-xl">
@@ -131,13 +135,23 @@ const CampDetails = () => {
           </button>
 
           <button
-            onClick={handleJoinCamp}
+            onClick={() => setModelOpen(true)}
             className="bg-blue-800 px-6 py-3 rounded-xl hover:bg-green-800"
           >
             Join Camp
           </button>
         </div>
       </div>
+      {/* model content */}
+      {modelOpen && (
+        <ParticipantRegistration
+          isOpen={modelOpen}
+          onClose={() => setModelOpen(false)}
+          camp={selectedCamp}
+          user={user}
+          handleJoinCamp={handleJoinCamp}
+        />
+      )}
     </div>
   );
 };

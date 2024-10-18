@@ -4,6 +4,15 @@ import UseCamps from "../../CustomHooks/UseCamps";
 const AvailableCamps = () => {
   const [camp] = UseCamps();
 
+  
+  if (!camp) {
+    return (
+      <div className="w-full h-full my-10 flex flex-col justify-center items-center">
+        <p className="w-96 h-full loading loading-infinity loading-xl"></p>
+        <h1 className="text-4xl">Loading Data...</h1>
+      </div>
+    );
+  }
   return (
     <div className="w-4/5 h-full mx-auto">
       <h1 className="text-center text-2xl p-3">Available Medical Camps</h1>
