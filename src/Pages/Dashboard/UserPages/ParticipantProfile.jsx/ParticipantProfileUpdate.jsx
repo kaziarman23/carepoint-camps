@@ -1,13 +1,20 @@
 import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router";
+import UseParticipant from "../../../../CustomHooks/UseParticipant";
+import UseAxios from "../../../../CustomHooks/UseAxios";
+import Swal from "sweetalert2";
 
-const ParticipantRegistration = ({
-  isOpen,
-  onClose,
-  camp,
-  user,
-  handleJoinCamp,
-}) => {
-  //  useForm hook
+const ParticipantProfileUpdate = () => {
+  // state
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const axiosPublic = UseAxios();
+
+  const [participant, refetch] = UseParticipant();
+
+  const updatedDoc = participant.find((participant) => participant._id === id);
+
+  // useForm hook
   const {
     register,
     handleSubmit,
@@ -17,57 +24,46 @@ const ParticipantRegistration = ({
 
   // handle Submit
   const onSubmit = (data) => {
-    handleJoinCamp(data);
     reset();
-    onClose();
+    console.log("updated data", data);
+    axiosPublic.patch(`/participants/${id}`, data).then((res) => {
+      console.log(res.data);
+      if (res.data.modifiedCount > 0) {
+        navigate("/dashboard/ParticipantProfile");
+        refetch();
+
+        Swal.fire({
+          title: "Success!",
+          text: "Data Updated Successfully",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+      }
+    });
   };
 
-  // checking the model is open or not
-  if (!isOpen) return null;
+  const handleCancel = () => {
+    reset();
+    navigate(-1);
+  };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className=" bg-slate-900 p-6 rounded-lg w-4/5 h-auto mx-auto ">
-        <h2 className="text-2xl font-bold p-3 text-center">Join Camp</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid grid-cols-2 gap-5">
-            {/* Read-only fields */}
-            <div>
-              <label className="font-bold">Camp Name: </label>
-              <p>{camp.name}</p>
-            </div>
-            <div>
-              <label className="font-bold">Camp Fees: </label>
-              <p>{camp.price}</p>
-            </div>
-            <div>
-              <label className="font-bold">Location: </label>
-              <p>{camp.location}</p>
-            </div>
-            <div>
-              <label className="font-bold">Healthcare Professional: </label>
-              <p>{camp.leadBy}</p>
-            </div>
-            <div>
-              <label className="font-bold">Participant Name: </label>
-              <p>{user?.displayName ? user.displayName : "testName"}</p>
-            </div>
-            <div>
-              <label className="font-bold">Participant Email: </label>
-              <p>{user?.email ? user.email : "testEmail"}</p>
-            </div>
-            {/* <div>
-              <label className="font-bold">Participant Email: </label>
-              <p>{user?.email ? user.email : "testEmail"}</p>
-            </div> */}
+    <div className="w-full h-full bg-white flex justify-center items-center">
+      <div className="w-4/5 h-80 bg-orange-500 rounded-xl">
+        <h1 className="text-2xl p-2 text-center text-white font-bold">
+          Update Participant Information
+        </h1>
 
-            {/* Input fields for participant to fill */}
+        {/* update content table */}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid gap-5 grid-cols-1 md:grid-cols-2 p-4 text-white">
             <div className="space-y-2">
               <label className="font-bold">Age</label>
               <input
                 type="number"
                 {...register("age", { required: true, max: 60, min: 13 })}
                 className="border p-2 w-full text-black rounded-xl"
+                defaultValue={updatedDoc.age}
               />
               {errors.age?.type === "required" && (
                 <p className="text-red-500">This fild is required</p>
@@ -94,6 +90,7 @@ const ParticipantRegistration = ({
                   minLength: 6,
                 })}
                 className="border p-2 w-full text-black rounded-xl"
+                defaultValue={updatedDoc.phone}
               />
               {errors.phone?.type === "required" && (
                 <p className="text-red-500">This fild is required</p>
@@ -135,6 +132,7 @@ const ParticipantRegistration = ({
                   minLength: 6,
                 })}
                 className="border p-2 w-full text-black rounded-xl"
+                defaultValue={updatedDoc.emergencyContact}
               />
               {errors.emergencyContact?.type === "required" && (
                 <p className="text-red-500">This fild is required</p>
@@ -151,19 +149,16 @@ const ParticipantRegistration = ({
               )}
             </div>
           </div>
-
-          {/* Action buttons */}
-          <div className="flex justify-end mt-4">
+          <div className="flex p-4 gap-4 justify-end items-start">
             <button
-              onClick={onClose} // Close the modal
-              type="button"
-              className="px-6 py-3 bg-black border-white text-white rounded-xl mr-2 hover:bg-red-800 hover:border-red-800"
+              onClick={handleCancel}
+              className="btn border hover:bg-red-800 rounded-xl"
             >
               Cancel
             </button>
             <button
-              type="submit" // Submit the form
-              className="px-6 py-3 bg-blue-800  text-white rounded-xl mr-2 hover:bg-green-800 "
+              type="submit"
+              className="btn bg-blue-800 hover:bg-green-800 hover:text-black rounded-xl"
             >
               Submit
             </button>
@@ -174,4 +169,4 @@ const ParticipantRegistration = ({
   );
 };
 
-export default ParticipantRegistration;
+export default ParticipantProfileUpdate;

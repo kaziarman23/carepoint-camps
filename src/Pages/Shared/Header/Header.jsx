@@ -38,7 +38,7 @@ const Header = () => {
       <NavLink to="/availableCamps">
         <li className="p-2 font-bold text-white text-xl">Available Camps</li>
       </NavLink>
-      <NavLink to="/Dashboard">
+      <NavLink to="/dashboard/ParticipantProfile">
         <li className="p-2 font-bold text-white text-xl">DashBoard</li>
       </NavLink>
     </>
