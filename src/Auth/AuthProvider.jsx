@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateEmail,
   updateProfile,
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -31,11 +32,15 @@ const AuthProvider = ({ children }) => {
   };
 
   // update user
-  const updateUser = (name, photo) => {
+  const updateUser = (name, photo, email) => {
     setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
+    }).then(() => {
+      if (email) {
+        return updateEmail(auth.currentUser, email);
+      }
     });
   };
 

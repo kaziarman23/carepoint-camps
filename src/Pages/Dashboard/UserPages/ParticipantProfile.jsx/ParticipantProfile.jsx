@@ -25,8 +25,8 @@ const ParticipantProfile = () => {
   }
 
   return (
-    <div className="w-full min-h-full  bg-white">
-      <div className="p-4 mx-auto bg-orange-500 ">
+    <div className="w-full  min-h-screen">
+      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-orange-600">
         <h1 className="p-3 text-2xl text-center font-bold text-white">
           Participant Profile
         </h1>

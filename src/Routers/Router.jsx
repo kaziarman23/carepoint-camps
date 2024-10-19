@@ -12,6 +12,11 @@ import UserAnalytics from "../Pages/Dashboard/UserPages/UserAnalytics/UserAnalyt
 import ParticipantProfile from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantProfile";
 import UserPaymentHistory from "../Pages/Dashboard/UserPages/UserPaymentHistory/UserPaymentHistory";
 import ParticipantProfileUpdate from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantProfileUpdate";
+import OrganizerProfile from "../Pages/Dashboard/AdminPages/OrganizerProfile/OrganizerProfile";
+import AddACamp from "../Pages/Dashboard/AdminPages/AddACamp/AddACamp";
+import ManageCamps from "../Pages/Dashboard/AdminPages/ManageCamps/ManageCamps";
+import ManageRegisteredCamps from "../Pages/Dashboard/AdminPages/ManageRegisteredCamps/ManageRegisteredCamps";
+import OrganizerProfileUpdate from "../Pages/Dashboard/AdminPages/OrganizerProfile/OrganizerProfileUpdate";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +72,28 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/userPaymentHistory",
         element: <UserPaymentHistory />,
+      },
+
+      // Admin route
+      {
+        path: "/dashboard/organizerProfile",
+        element: <OrganizerProfile />,
+      },
+      {
+        path: "/dashboard/organizerProfileUpdate",
+        element: <OrganizerProfileUpdate />,
+      },
+      {
+        path: "/dashboard/addACamp",
+        element: <AddACamp />,
+      },
+      {
+        path: "/dashboard/manageCamps",
+        element: <ManageCamps />,
+      },
+      {
+        path: "/dashboard/manageRegisteredCamps",
+        element: <ManageRegisteredCamps />,
       },
     ],
   },
