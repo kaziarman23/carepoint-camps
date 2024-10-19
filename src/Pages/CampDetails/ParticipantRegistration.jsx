@@ -7,6 +7,7 @@ const ParticipantRegistration = ({
   user,
   handleJoinCamp,
 }) => {
+  
   //  useForm hook
   const {
     register,
