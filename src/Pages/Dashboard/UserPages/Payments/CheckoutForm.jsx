@@ -81,7 +81,7 @@ const CheckoutForm = ({ price, campName, id }) => {
           date: moment().format("lll"),
           transectionId: paymentIntent.id,
         };
-        axiosPublic.post(`/payment`, paymentInfo).then((res) => {
+        axiosPublic.post(`/payments`, paymentInfo).then((res) => {
           console.log("sending payment data to the server", res.data);
 
           // updating  paymentStatus
