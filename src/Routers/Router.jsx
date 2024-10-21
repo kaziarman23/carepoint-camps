@@ -18,6 +18,7 @@ import ManageCamps from "../Pages/Dashboard/AdminPages/ManageCamps/ManageCamps";
 import ManageRegisteredCamps from "../Pages/Dashboard/AdminPages/ManageRegisteredCamps/ManageRegisteredCamps";
 import OrganizerProfileUpdate from "../Pages/Dashboard/AdminPages/OrganizerProfile/OrganizerProfileUpdate";
 import UpdateManageCamps from "../Pages/Dashboard/AdminPages/ManageCamps/UpdateManageCamps";
+import Payment from "../Pages/Dashboard/UserPages/Payments/Payment";
 
 const router = createBrowserRouter([
   {
@@ -55,10 +56,6 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "/dashboard/userRequiestedCamps",
-        element: <UserRequiestedCamps />,
-      },
-      {
         path: "/dashboard/userAnalytics",
         element: <UserAnalytics />,
       },
@@ -69,6 +66,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/participantProfileUpdate/:id",
         element: <ParticipantProfileUpdate />,
+      },
+      {
+        path: "/dashboard/userRequiestedCamps",
+        element: <UserRequiestedCamps />,
+      },
+      {
+        path: "/dashboard/payment/:id",
+        element: <Payment />,
       },
       {
         path: "/dashboard/userPaymentHistory",

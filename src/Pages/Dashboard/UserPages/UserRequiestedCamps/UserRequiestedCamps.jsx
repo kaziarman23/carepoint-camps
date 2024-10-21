@@ -3,6 +3,7 @@ import { AuthContext } from "../../../../Auth/AuthProvider";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
+import { Link } from "react-router-dom";
 
 const UserRequiestedCamps = () => {
   // context api
@@ -12,7 +13,7 @@ const UserRequiestedCamps = () => {
   const [participant, refetch] = UseParticipant();
   const axiosPublic = UseAxios();
 
-  const participantProfile = participant.filter(
+  const participantRequiests = participant.filter(
     (participant) => participant.userEmail === user.email
   );
 
@@ -67,7 +68,7 @@ const UserRequiestedCamps = () => {
           <table className="table">
             {/* head */}
             <thead>
-              <tr className="text-white">
+              <tr className="text-white uppercase">
                 <th>SL</th>
                 <th>Camp Name</th>
                 <th>Camp Price</th>
@@ -78,19 +79,33 @@ const UserRequiestedCamps = () => {
               </tr>
             </thead>
             <tbody>
-              {participantProfile.map((participant, index) => (
+              {participantRequiests.map((participant, index) => (
                 <tr key={participant._id}>
                   <th>{index + 1}</th>
                   <th>{participant.name}</th>
                   <td>{participant.price}</td>
                   <td>{participant.userName}</td>
                   <td>
-                    <button className="px-6 py-3 bg-purple-600 text-black rounded-xl hover:bg-purple-700 hover:text-white">
-                      Pay
-                    </button>
+                    {participant.paymentStatus === "pay" ? (
+                      <>
+                        <Link to={`/dashboard/payment/${participant._id}`}>
+                          <button className="px-6 py-3 bg-purple-600 text-black rounded-xl hover:bg-purple-700 hover:text-white">
+                            Pay
+                          </button>
+                        </Link>
+                      </>
+                    ) : (
+                      <h1 className="text-2xl font-bold uppercase">Paid</h1>
+                    )}
                   </td>
                   <td>
-                    <button className="">Pending</button>
+                    {participant.confirmationStatus === "pending" ? (
+                      <h1 className="text-2xl">Pending</h1>
+                    ) : (
+                      <h1 className="text-2xl font-bold uppercase">
+                        Confirmed
+                      </h1>
+                    )}
                   </td>
                   <td>
                     <button

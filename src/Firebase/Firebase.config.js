@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyAeHlzu45cSvXYlxnWmFdr9EQPDL97bIjU",
-  authDomain: "carepoint-camps.firebaseapp.com",
-  projectId: "carepoint-camps",
-  storageBucket: "carepoint-camps.appspot.com",
-  messagingSenderId: "749039357243",
-  appId: "1:749039357243:web:449591b4adc6dfd10abb1e",
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase

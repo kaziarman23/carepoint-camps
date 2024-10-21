@@ -43,6 +43,8 @@ const CampDetails = () => {
       phone: participantReq.phone,
       gender: participantReq.gender,
       emergencyContact: participantReq.emergencyContact,
+      paymentStatus: "pay",
+      confirmationStatus:"pending"
     };
     console.log(participantInfo);
 

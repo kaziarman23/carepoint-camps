@@ -8,7 +8,7 @@ const Dashboard = () => {
       <div className="w-64 min-h-screen bg-orange-500 text-black">
         <h1 className="text-2xl text-center p-2">CarePoint Camps</h1>
         <ul className="menu">
-          {isAdmin ? (
+          {!isAdmin ? (
             <>
               <li className="">
                 <NavLink

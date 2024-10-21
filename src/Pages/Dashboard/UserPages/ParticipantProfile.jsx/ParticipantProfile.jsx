@@ -39,7 +39,7 @@ const ParticipantProfile = () => {
                 <th>SL</th>
                 <th>Camp Name</th>
                 <th>Location</th>
-                <th>Participant Name</th>
+                <th>Name</th>
                 <th>Age</th>
                 <th>Phone</th>
                 <th>Gender</th>
