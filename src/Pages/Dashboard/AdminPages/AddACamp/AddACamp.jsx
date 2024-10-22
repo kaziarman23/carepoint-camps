@@ -79,7 +79,7 @@ const AddACamp = () => {
                 <span className="label-text">Date</span>
               </div>
               <input
-                type="text"
+                type="date"
                 placeholder="Date"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
                 {...register("date", { required: true })}
@@ -118,6 +118,20 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
+                <span className="label-text">Profession Name</span>
+              </div>
+              <input
+                type="text"
+                placeholder="Profession Name"
+                className="input input-bordered w-full bg-white text-black rounded-xl"
+                {...register("role", { required: true })}
+              />{" "}
+              {errors.Profession?.type === "required" && (
+                <p role="alert">This fild is required</p>
+              )}
+            </label>
+            <label className="form-control w-full">
+              <div className="label">
                 <span className="label-text">Participant count</span>
               </div>
               <input
@@ -128,7 +142,7 @@ const AddACamp = () => {
                 {...register("participant_count")}
               />
             </label>
-            <label className="form-control w-full col-span-2">
+            <label className="form-control w-full">
               <div className="label">
                 <span className="label-text">Camp Image URL</span>
               </div>

@@ -13,7 +13,6 @@ const UserPaymentHistory = () => {
   const filteredpaymentData = payment.filter(
     (payment) => payment.email === user.email
   );
-  console.log(filteredpaymentData);
 
   return (
     <div className="w-full min-h-screen">

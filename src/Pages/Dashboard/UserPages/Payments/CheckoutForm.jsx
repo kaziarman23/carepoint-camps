@@ -89,10 +89,11 @@ const CheckoutForm = ({ price, campName, id }) => {
             paymentStatus: "Paid",
           };
           axiosPublic
-            .put(`/participants/${id}`, updatedStatus)
+            .put(`/participants/payment/${id}`, updatedStatus)
             .then((res) => {
               console.log(res.data);
               if (res.data.modifiedCount > 0) {
+                
                 // navigating the user and showing alert
                 navigate("/dashboard/userPaymentHistory");
                 Swal.fire({

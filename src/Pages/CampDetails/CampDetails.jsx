@@ -34,7 +34,7 @@ const CampDetails = () => {
       location: selectedCamp.location,
       date: selectedCamp.date,
       price: selectedCamp.price,
-      participant_count: selectedCamp.participant_count + 1,
+      participant_count: Number(selectedCamp.participant_count) + 1,
       description: selectedCamp.description,
       userName: user.displayName,
       userEmail: user.email,
@@ -44,7 +44,7 @@ const CampDetails = () => {
       gender: participantReq.gender,
       emergencyContact: participantReq.emergencyContact,
       paymentStatus: "pay",
-      confirmationStatus:"pending"
+      confirmationStatus: "pending",
     };
     console.log(participantInfo);
 

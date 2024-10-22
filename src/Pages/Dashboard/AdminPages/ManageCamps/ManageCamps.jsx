@@ -71,7 +71,13 @@ const ManageCamps = () => {
               {filterCamps.map((camp, index) => (
                 <tr key={camp._id}>
                   <th>{index + 1}</th>
-                  <th>{camp.image}</th>
+                  <th>
+                    <img
+                      src={camp.image}
+                      alt={camp.name}
+                      className="object-cover h-14 rounded-xl"
+                    />
+                  </th>
                   <th>{camp.name}</th>
                   <th>{camp.leadBy}</th>
                   <th>{camp.price}</th>

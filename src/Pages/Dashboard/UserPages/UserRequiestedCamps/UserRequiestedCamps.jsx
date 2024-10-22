@@ -108,12 +108,21 @@ const UserRequiestedCamps = () => {
                     )}
                   </td>
                   <td>
-                    <button
-                      onClick={() => handleDelete(participant._id)}
-                      className="px-6 py-3 bg-red-600 text-black rounded-xl hover:bg-red-700"
-                    >
-                      Cancel
-                    </button>
+                    {participant.paymentStatus === "pay" ? (
+                      <button
+                        onClick={() => handleDelete(participant._id)}
+                        className="px-6 py-3 bg-red-600 text-black rounded-xl hover:bg-red-700"
+                      >
+                        Cancel
+                      </button>
+                    ) : (
+                      <button
+                        disabled
+                        className="px-6 py-3 bg-red-900 text-black rounded-xl"
+                      >
+                        Cancel
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}
