@@ -144,18 +144,16 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-gray-950 flex justify-center items-center">
-      <div className="w-96 h-auto bg-black p-5 rounded-xl">
+    <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-96 h-auto bg-[#d8e3e9] p-5 rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
-          <h1 className="text-white text-center font-bold text-2xl">
-            Register Now
-          </h1>
+          <h1 className="text-center font-bold text-2xl">Register Now</h1>
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
               id="name"
               name="name"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=""
               {...register("name", { required: true })}
             />
@@ -177,7 +175,7 @@ const Register = () => {
               type="text"
               id="photoURL"
               name="photo"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=" "
               {...register("photo")}
             />
@@ -193,7 +191,7 @@ const Register = () => {
               type="email"
               name="email"
               id="floating_email"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
               placeholder=" "
               {...register("email", { required: true })}
             />
@@ -215,7 +213,7 @@ const Register = () => {
               type="password"
               name="password"
               id="floating_password"
-              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=" "
               {...register("password", {
                 required: true,
@@ -261,13 +259,13 @@ const Register = () => {
           >
             Register
           </button>
-          <p className="text-white my-3">
+          <p className="my-3">
             Already have an account? Please{" "}
             <Link to="/login">
               <span className="hover:underline hover:text-blue-500">Login</span>
             </Link>
           </p>
-          <p className="text-white my-3">or Register With</p>
+          <p className="my-3">or Register With</p>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handleGoogleRegister}

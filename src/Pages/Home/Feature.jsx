@@ -1,48 +1,45 @@
-import { Link } from "react-router-dom";
-import UseCamps from "../../CustomHooks/UseCamps";
-
 const Feature = () => {
-  // hooks
-  const [camp] = UseCamps();
-
-  const featureCamps = camp.filter((camps) => camps.participant_count > 110);
-
   return (
     <div className="w-4/5 h-full mx-auto">
-      <h1 className="text-center text-2xl p-3">Popular Camps at Carepoint</h1>
-      <p className="p-2">
-        Popular Camps at Carepoint Discover the most popular health camps at
-        Carepoint Camps, where we provide expert-led medical services and
-        wellness programs tailored to diverse health needs. From comprehensive
-        screenings to specialized care for various conditions, our camps offer
-        accessible healthcare solutions for individuals and families. Join us at
-        these top-rated camps to enhance your well-being and stay proactive
-        about your health!
-      </p>
-      <div className="grid gap-4 my-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {featureCamps.map((camp) => (
-          <div key={camp._id} className="card w-80">
-            <figure>
-              <img
-                src={camp.image}
-                alt={camp.name}
-                className="object-cover w-full h-52 rounded-t-xl"
-              />
-            </figure>
-            <div className="card-body rounded-b-xl bg-slate-900">
-              <h2 className="card-title">{camp.name}</h2>
-              <p>{camp.location}</p>
-              <p>{camp.date}</p>
-              <div className="card-actions justify-end">
-                <Link to={`/campDetails/${camp._id}`}>
-                  <button className="bg-blue-800 px-6 py-3 rounded-xl hover:bg-green-800">
-                    More Details
-                  </button>
-                </Link>
-              </div>
-            </div>
+      <div className="flex justify-center items-start gap-3">
+        <div className="w-1/2 h-full">
+          <img
+            src="/featureImage.png"
+            alt="feature image"
+            className="w-full h-full"
+          />
+        </div>
+        <div className="w-1/2 h-full">
+          <h1 className="font-bold text-2xl">
+            Key Services from Carepoint Camps:{" "}
+          </h1>
+          <div className="p-2 space-y-2">
+            <h1 className="font-bold">1. Comprehensive Heart Screenings</h1>
+            <p>
+              Our camp offers thorough heart health screenings, including blood
+              pressure checks, cholesterol tests, and electrocardiograms (ECGs)
+              to detect potential heart issues early and provide immediate care.
+            </p>
           </div>
-        ))}
+          <div className="p-2 space-y-2">
+            <h1 className="font-bold">2. Expert Cardiology Consultations</h1>
+            <p>
+              Led by a team of highly qualified cardiologists, we offer
+              one-on-one consultations where patients receive personalized
+              medical advice and treatment plans to manage heart conditions
+              effectively.
+            </p>
+          </div>
+          <div className="p-2 space-y-2">
+            <h1 className="font-bold">3. Free Life-Saving Heart Surgeries</h1>
+            <p>
+              For patients in need, we provide free heart surgeries, focusing on
+              treating congenital heart defects and other critical conditions.
+              Our skilled surgeons are committed to delivering the best outcomes
+              for all patients.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

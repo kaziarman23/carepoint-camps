@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../CustomHooks/UseCamps";
 import Swal from "sweetalert2";
 import ParticipantRegistration from "./ParticipantRegistration";
+import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
 
 const CampDetails = () => {
   // context api
@@ -81,8 +82,8 @@ const CampDetails = () => {
   }
 
   return (
-    <div className="w-4/5 h-full mx-auto flex justify-center items-center bg-black p-4">
-      <div className="w-full max-w-4xl gap-2 bg-slate-950 flex flex-col justify-center items-center text-white p-5 rounded-xl">
+    <div className="w-4/5 h-full mx-auto flex justify-center items-center p-4">
+      <div className="w-full max-w-4xl gap-2 flex flex-col justify-center items-center bg-[#F5F5F5] p-5 rounded-xl">
         <h1 className="font-bold text-2xl p-2">Camp Details</h1>
         {/* Camp details */}
         <div className="w-full flex flex-col md:flex-row justify-center items-center md:space-x-5">
@@ -93,7 +94,7 @@ const CampDetails = () => {
               className="object-cover w-full h-72 md:h-96 rounded-xl"
             />
           </div>
-          <div className="w-full md:w-1/2 text-left space-y-3 text-white">
+          <div className="w-full md:w-1/2 text-left space-y-3">
             <h1 className="text-lg md:text-xl">
               <span className="font-bold">Camp Name: </span>
               {selectedCamp.name}
@@ -129,19 +130,13 @@ const CampDetails = () => {
           </div>
         </div>
         <div className="w-full gap-5 p-4 flex flex-col md:flex-row justify-end items-center">
-          <button
-            onClick={handleBackBtn}
-            className="bg-black border px-6 py-3 rounded-xl hover:bg-red-800 hover:text-black hover:border-black"
-          >
+          <UseMoreDetailsBtn isCancel={true} onClick={handleBackBtn}>
             Back
-          </button>
+          </UseMoreDetailsBtn>
 
-          <button
-            onClick={() => setModelOpen(true)}
-            className="bg-blue-800 px-6 py-3 rounded-xl hover:bg-green-800"
-          >
+          <UseMoreDetailsBtn onClick={() => setModelOpen(true)}>
             Join Camp
-          </button>
+          </UseMoreDetailsBtn>
         </div>
       </div>
       {/* model content */}

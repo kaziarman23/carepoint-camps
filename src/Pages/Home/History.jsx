@@ -1,111 +1,86 @@
 const History = () => {
   return (
-    <div className="w-4/5 h-full mx-auto ">
-      <h1 className="text-2xl text-center font-bold p-3">
-        Some Success stories of our camps
-      </h1>
-      <div className="grid gap-5 grid-cols-2 my-5">
-        {/* row 1 */}
-        <div className="">
-          <img
-            src="https://i.pinimg.com/564x/d0/f8/af/d0f8af609850134890eac5e0c1e91c8d.jpg"
-            alt="success story"
-            className="object-cover rounded-xl"
-          />
-        </div>
-        <div>
-          <div className="ml-5 mt-10 space-y-3">
-            <h1>
-              <span className="font-bold">Camp Name: </span>Healthy Hearts Camp
-            </h1>
-            <h1>
-              <span className="font-bold">Location: </span>Rio Verde, Brazil
-            </h1>
-            <p>
-              <span className="font-bold">Date: </span>May 15-18, 2023
-            </p>
-            <p>
-              <span className="font-bold">Impactful Moment: </span> A
+    <div className="w-full h-full bg-[#e9ecf1]">
+      <div className="w-4/5 h-full mx-auto">
+        <h1 className="text-2xl text-center p-3">
+          Some Success stories of <span className="font-bold">our Camps</span>
+        </h1>
+        <div className="grid gap-2 grid-cols-4 p-10">
+          <div className="w-60 h-52">
+            <img
+              src="https://i.pinimg.com/564x/26/73/22/267322d358302802150da6bf0171694f.jpg"
+              alt="Hearts Camp"
+              className="object-cover rounded-xl w-full h-full"
+            />
+          </div>
+          <div className="w-60 h-52 bg-[#fefffe] p-2 rounded-xl">
+            <div className="flex items-center">
+              <img src="/dropper.png" alt="dropper png" className="w-8 h-8" />
+              <h1 className="text-center font-bold p-2">Vision for All</h1>
+            </div>
+            <p className="">
               65-year-old patient with severe chest pain was diagnosed with a
               heart condition and received life-saving treatment in time.
             </p>
-
-            <p>
-              <span className="font-bold">Achievements/Outcomes: </span> 50
-              heart surgeries, 300+ patients screened for heart diseases
-            </p>
-            <h5>
-              <span className="font-bold">Patients Treated: </span>400+
-            </h5>
           </div>
-        </div>
-        {/* row 2 */}
-
-        <div>
-          <div className="space-y-3 mt-10">
-            <h1>
-              <span className="font-bold">Camp Name: </span>Vision for All Camp
-            </h1>
-            <h1>
-              <span className="font-bold">Location: </span>Nairobi, Kenya
-            </h1>
-            <p>
-              <span className="font-bold">Date: </span>Aug 1-5, 2023
-            </p>
-            <p>
-              <span className="font-bold">Impactful Moment: </span> An elderly
-              man regained his eyesight after a successful cataract surgery,
-              allowing him to reunite with his family.
-            </p>
-
-            <p>
-              <span className="font-bold">Achievements/Outcomes: </span> 80
-              cataract surgeries, 500+ eye screenings
-            </p>
-            <h5>
-              <span className="font-bold">Patients Treated: </span>300+
-            </h5>
+          <div className="w-60 h-52">
+            <img
+              src="https://i.pinimg.com/736x/95/98/e3/9598e3e1a6fc8b90b18394975ed7823a.jpg"
+              alt="Woman Camp"
+              className="object-cover rounded-xl w-full h-full"
+            />
           </div>
-        </div>
-        <div className="">
-          <img
-            src="https://i.pinimg.com/564x/70/b0/c9/70b0c9929d00e5560aa6012896ceb2d4.jpg"
-            alt="success story"
-            className="object-cover rounded-xl"
-          />
-        </div>
-        {/* row 3 */}
-        <div className="">
-          <img
-            src="https://i.pinimg.com/564x/77/08/b7/7708b7564124f048fcf455b569790ccd.jpg"
-            alt="success story"
-            className="object-cover rounded-xl"
-          />
-        </div>
-        <div>
-          <div className="ml-5 mt-10 space-y-3">
-            <h1>
-              <span className="font-bold">Camp Name: </span>Women’s Health Camp
-            </h1>
-            <h1>
-              <span className="font-bold">Location: </span>Lima, Peru
-            </h1>
-            <p>
-              <span className="font-bold">Date: </span>Sep 20-24, 2023
+          <div className="w-60 h-52 bg-[#fefffe] p-2 rounded-xl">
+            <div className="flex items-center">
+              <img
+                src="/stethoscope.png"
+                alt="dropper png"
+                className="w-8 h-8"
+              />
+              <h1 className="text-center font-bold p-2">Spine Care Camp</h1>
+            </div>
+            <p className="">
+              Conducted successful spinal surgeries on 15 patients suffering
+              from severe spinal deformities, enabling them to walk pain-free.
             </p>
-            <p>
-              <span className="font-bold">Impactful Moment: </span> A pregnant
-              woman received prenatal care, identifying and managing gestational
-              diabetes for a healthier delivery.
+          </div>
+          <div className="w-60 h-52 bg-[#fefffe] p-2 rounded-xl">
+            <div className="flex items-center">
+              <img
+                src="/heart-rate.png"
+                alt="heart-rate image"
+                className="w-8 h-8"
+              />
+              <h1 className="text-center font-bold p-2">Heart Health Camp</h1>
+            </div>
+            <p className="">
+              Performed life-saving heart surgeries on 20 children born with
+              congenital heart defects, giving them a new lease on life.
             </p>
-
-            <p>
-              <span className="font-bold">Achievements/Outcomes: </span> 200
-              women received OB/GYN consultations, 50 prenatal diagnoses.
+          </div>
+          <div className="w-60 h-52">
+            <img
+              src="https://i.pinimg.com/564x/3f/29/3b/3f293b8e57d11f4a077958fca0f7daa9.jpg"
+              alt="eye Camp"
+              className="object-cover rounded-xl w-full h-full"
+            />
+          </div>
+          <div className="w-60 h-52 bg-[#fefffe] p-2 rounded-xl">
+            <div className="flex items-center">
+              <img src="/safety.png" alt="safety image" className="w-8 h-8" />
+              <h1 className="text-center font-bold p-2">Woman Camp</h1>
+            </div>
+            <p className="">
+              A pregnant woman received prenatal care, identifying and managing
+              gestational diabetes for a healthier delivery.
             </p>
-            <h5>
-              <span className="font-bold">Patients Treated: </span>320+
-            </h5>
+          </div>
+          <div className="w-60 h-52">
+            <img
+              src="https://i.pinimg.com/736x/22/3e/8b/223e8be34f3ad0c83e72596825d84bce.jpg"
+              alt="eye Camp"
+              className="object-cover rounded-xl w-full h-full"
+            />
           </div>
         </div>
       </div>

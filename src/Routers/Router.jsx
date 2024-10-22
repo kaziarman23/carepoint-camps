@@ -19,6 +19,7 @@ import ManageRegisteredCamps from "../Pages/Dashboard/AdminPages/ManageRegistere
 import OrganizerProfileUpdate from "../Pages/Dashboard/AdminPages/OrganizerProfile/OrganizerProfileUpdate";
 import UpdateManageCamps from "../Pages/Dashboard/AdminPages/ManageCamps/UpdateManageCamps";
 import Payment from "../Pages/Dashboard/UserPages/Payments/Payment";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/campDetails/:id",
-        element: <CampDetails />,
+        element: (
+          <PrivateRoute>
+            <CampDetails />,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/register",

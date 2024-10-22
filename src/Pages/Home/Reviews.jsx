@@ -13,7 +13,7 @@ import UseAxios from "../../CustomHooks/UseAxios";
 
 const Reviews = () => {
   const [reviewData, setReviewData] = useState([]);
-  
+
   // hooks
   const axiosPublic = UseAxios();
   axiosPublic.get("/reviews").then((res) => setReviewData(res.data));
@@ -44,24 +44,22 @@ const Reviews = () => {
                     src={review.img}
                     alt={review.name}
                   />
-                  <div className="font-medium text-white">
+                  <div className="font-medium">
                     <p className="text-sm sm:text-base">
                       {review.name}
                       <time
                         dateTime={review.joinTime}
-                        className="block text-xs sm:text-sm text-gray-400"
+                        className="block text-xs sm:text-sm"
                       >
                         {review.joinTime}
                       </time>
                     </p>
                   </div>
                 </div>
-                <footer className="mb-3 sm:mb-5 text-xs sm:text-sm text-gray-400">
+                <footer className="mb-3 sm:mb-5 text-xs sm:text-sm">
                   <p>{review.reviewLocation}</p>
                 </footer>
-                <p className="mb-2 text-xs sm:text-base text-gray-400">
-                  {review.comment}
-                </p>
+                <p className="mb-2 text-xs sm:text-base">{review.comment}</p>
               </article>
             </SwiperSlide>
           ))}

@@ -105,19 +105,17 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-gray-950 flex justify-center items-center">
-      <div className="w-96 h-auto bg-black p-5 rounded-xl">
+    <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-96 h-auto bg-[#d8e3e9] p-5 rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
-          <h1 className="text-white text-center font-bold text-2xl">
-            Please Login
-          </h1>
+          <h1 className="text-center font-bold text-2xl">Please Login</h1>
 
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="email"
               id="floating_email"
               name="email"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
               placeholder=" "
               {...register("email", { required: true })}
             />
@@ -139,7 +137,7 @@ const Login = () => {
               type="password"
               name="password"
               id="floating_password"
-              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none text-white border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=" "
               {...register("password", {
                 required: true,
@@ -185,7 +183,7 @@ const Login = () => {
           >
             Login
           </button>
-          <p className="text-white my-3">
+          <p className="my-3">
             Did&#39;t have an account? Please{" "}
             <Link to="/register">
               <span className="hover:underline hover:text-blue-500">
@@ -193,7 +191,7 @@ const Login = () => {
               </span>
             </Link>
           </p>
-          <p className="text-white my-3">or Login With</p>
+          <p className="my-3">or Login With</p>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handleGoogleLogin}

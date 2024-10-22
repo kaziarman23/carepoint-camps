@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
 
 const ParticipantRegistration = ({
   isOpen,
@@ -7,7 +8,6 @@ const ParticipantRegistration = ({
   user,
   handleJoinCamp,
 }) => {
-  
   //  useForm hook
   const {
     register,
@@ -27,8 +27,8 @@ const ParticipantRegistration = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-      <div className=" bg-slate-900 p-6 rounded-lg w-4/5 h-auto mx-auto ">
+    <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-[#F5F5F5] p-6 rounded-lg w-4/5 h-auto mx-auto ">
         <h2 className="text-2xl font-bold p-3 text-center">Join Camp</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-5">
@@ -154,20 +154,15 @@ const ParticipantRegistration = ({
           </div>
 
           {/* Action buttons */}
-          <div className="flex justify-end mt-4">
-            <button
+          <div className="flex justify-end mt-4 gap-4">
+            <UseMoreDetailsBtn
               onClick={onClose} // Close the modal
               type="button"
-              className="px-6 py-3 bg-black border-white text-white rounded-xl mr-2 hover:bg-red-800 hover:border-red-800"
+              isCancel={true}
             >
               Cancel
-            </button>
-            <button
-              type="submit" // Submit the form
-              className="px-6 py-3 bg-blue-800  text-white rounded-xl mr-2 hover:bg-green-800 "
-            >
-              Submit
-            </button>
+            </UseMoreDetailsBtn>
+            <UseMoreDetailsBtn type="submit">Submit</UseMoreDetailsBtn>
           </div>
         </form>
       </div>

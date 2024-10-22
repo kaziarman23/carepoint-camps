@@ -1,21 +1,22 @@
 import Feature from "./Feature";
 import Specialists from "../Specialists/Specialists";
-import Hero from "./Hero";
 import History from "./History";
 import Reviews from "./Reviews";
+import Hero from "./Hero";
+import Service from "./Service";
+import Slogan from "./Slogan";
+import Popular from "./Popular";
 
 const Home = () => {
   return (
     <div className="space-y-4">
       <Hero />
-      <History />  
-      {/* have to do bento box for upcoming camps*/}
-      <hr className="w-4/5 mx-auto" />
+      <Service />
+      <History />
+      <Slogan />
       <Feature />
-      <hr className="w-4/5 mx-auto" />
+      <Popular />
       <Specialists />
-      <hr className="w-4/5 mx-auto" />
-
       <Reviews />
     </div>
   );
