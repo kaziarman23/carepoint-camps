@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
+import UseAxios from "../CustomHooks/UseAxios.jsx";
 
 // creating context
 export const AuthContext = createContext();
@@ -19,6 +20,7 @@ const AuthProvider = ({ children }) => {
   // states
   const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
+  const axiosPublic = UseAxios();
 
   // google provider
   const googleProvider = new GoogleAuthProvider();
@@ -73,13 +75,26 @@ const AuthProvider = ({ children }) => {
     const onSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log(currentUser);
-      setLoading(false);
+      if (currentUser) {
+        const userInfo = {
+          email: currentUser.email,
+        };
+        axiosPublic.post("/jwt", userInfo).then((res) => {
+          if (res.data.token) {
+            localStorage.setItem("access-token", res.data.token);
+          }
+        });
+        setLoading(false);
+      } else {
+        localStorage.removeItem("access-token");
+        setLoading(true);
+      }
     });
 
     return () => {
       return onSubscribe();
     };
-  }, []);
+  }, [axiosPublic]);
 
   const authInfo = {
     user,

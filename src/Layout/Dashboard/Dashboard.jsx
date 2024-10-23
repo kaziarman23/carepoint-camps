@@ -1,7 +1,8 @@
 import { NavLink, Outlet } from "react-router-dom";
+import UseAdmin from "../../CustomHooks/UseAdmin";
 
 const Dashboard = () => {
-  const isAdmin = true;
+  const [isAdmin] = UseAdmin();
 
   return (
     <div className="flex">
