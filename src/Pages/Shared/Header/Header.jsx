@@ -74,8 +74,16 @@ const Header = () => {
           </ul>
         </div>
         <button title="Home Page" className="flex items-center gap-2">
-          <img src="/logo.png" alt="header img" className="w-8 h-8" />
-          <span className="text-2xl text-white">Carepoint Camps</span>
+          {/* <img src="/logo.png" alt="header img" className="w-8 h-8" /> */}
+          <img
+            src="/logo.png"
+            alt="header img"
+            className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
+          />
+          {/* <span className="text-2xl text-white">Carepoint Camps</span> */}
+          <span className="text-sm text-white sm:text-base md:text-2xl">
+            Carepoint Camps
+          </span>
         </button>
       </div>
       <div className="navbar-center hidden lg:flex">

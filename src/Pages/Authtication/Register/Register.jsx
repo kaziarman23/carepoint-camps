@@ -144,10 +144,11 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <div className="w-96 h-auto bg-[#d8e3e9] p-5 rounded-xl">
+    <div className="w-full h-full my-10 flex justify-center items-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md h-auto bg-[#d8e3e9] p-5 rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
-          <h1 className="text-center font-bold text-2xl">Register Now</h1>
+          <h1 className="text-center font-bold text-2xl mb-6">Register Now</h1>
+
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
@@ -157,19 +158,17 @@ const Register = () => {
               placeholder=""
               {...register("name", { required: true })}
             />
-
-            {/* handling name error  */}
             {errors.name?.type === "required" && (
               <p className="text-red-500">name is required</p>
             )}
-
             <label
               htmlFor="name"
-              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4  peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Name
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
@@ -183,37 +182,36 @@ const Register = () => {
               htmlFor="photoURL"
               className="peer-focus:font-medium absolute text-sm  text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
-              Photo url
+              Photo URL
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="email"
               name="email"
               id="floating_email"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=" "
               {...register("email", { required: true })}
             />
-
-            {/* handling email error  */}
             {errors.email?.type === "required" && (
               <p className="text-red-500">email is required</p>
             )}
-
             <label
               htmlFor="floating_email"
-              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto  peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
             >
               Email address
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="password"
               name="password"
               id="floating_password"
-              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none  border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
               placeholder=" "
               {...register("password", {
                 required: true,
@@ -227,25 +225,22 @@ const Register = () => {
                 },
               })}
             />
-
-            {/* handling password error  */}
             {errors.password?.type === "required" && (
-              <p className="text-red-500">password required</p>
+              <p className="text-red-500">password is required</p>
             )}
             {errors.password?.type === "minLength" && (
               <p className="text-red-500">
-                password have to bigger then 7 characters
+                Password must be longer than 7 characters
               </p>
             )}
             {errors.password?.type === "maxLength" && (
               <p className="text-red-500">
-                password have to lower then 90 characters
+                Password must be shorter than 90 characters
               </p>
             )}
             {errors.password?.type === "pattern" && (
               <p className="text-red-500">{errors.password.message}</p>
             )}
-
             <label
               htmlFor="floating_password"
               className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -253,32 +248,34 @@ const Register = () => {
               Password
             </label>
           </div>
+
           <button
             type="submit"
-            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm  sm:w-auto lg:w-full px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
+            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm sm:w-auto lg:w-full px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
           >
             Register
           </button>
+
           <p className="my-3">
             Already have an account? Please{" "}
             <Link to="/login">
               <span className="hover:underline hover:text-blue-500">Login</span>
             </Link>
           </p>
-          <p className="my-3">or Register With</p>
+
+          <p className="my-3 text-center">or Register With</p>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handleGoogleRegister}
-              className="btn hover:text-white hover:bg-black rounded-xl"
+              className="btn hover:text-white hover:bg-black rounded-xl flex items-center gap-2"
             >
               <FcGoogle className="w-6 h-6" /> Google
             </button>
             <button
               onClick={handleGithubRegister}
-              className="btn hover:text-white hover:bg-black rounded-xl"
+              className="btn hover:text-white hover:bg-black rounded-xl flex items-center gap-2"
             >
-              <VscGithubInverted className="w-6 h-6" />
-              Github
+              <VscGithubInverted className="w-6 h-6" /> Github
             </button>
           </div>
         </form>

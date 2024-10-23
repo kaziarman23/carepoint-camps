@@ -1,18 +1,23 @@
 const Feature = () => {
   return (
     <div className="w-4/5 h-full mx-auto">
-      <div className="flex justify-center items-start gap-3">
-        <div className="w-1/2 h-full">
+      <div className="flex flex-col lg:flex-row justify-center items-start gap-6 lg:gap-3">
+        {/* Image Section */}
+        <div className="w-full h-72 sm:h-full lg:w-1/2">
           <img
             src="/featureImage.png"
             alt="feature image"
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-1/2 h-full">
-          <h1 className="font-bold text-2xl">
+
+        {/* Text Section */}
+        <div className="w-full lg:w-1/2 h-full space-y-5">
+          <h1 className="font-bold text-2xl lg:text-3xl">
             Key Services from Carepoint Camps:{" "}
           </h1>
+
+          {/* Service 1 */}
           <div className="p-2 space-y-2">
             <h1 className="font-bold">1. Comprehensive Heart Screenings</h1>
             <p>
@@ -21,6 +26,8 @@ const Feature = () => {
               to detect potential heart issues early and provide immediate care.
             </p>
           </div>
+
+          {/* Service 2 */}
           <div className="p-2 space-y-2">
             <h1 className="font-bold">2. Expert Cardiology Consultations</h1>
             <p>
@@ -30,6 +37,8 @@ const Feature = () => {
               effectively.
             </p>
           </div>
+
+          {/* Service 3 */}
           <div className="p-2 space-y-2">
             <h1 className="font-bold">3. Free Life-Saving Heart Surgeries</h1>
             <p>

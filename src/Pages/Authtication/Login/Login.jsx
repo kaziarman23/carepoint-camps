@@ -105,10 +105,10 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <div className="w-96 h-auto bg-[#d8e3e9] p-5 rounded-xl">
+    <div className="w-full h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md h-auto bg-[#d8e3e9] p-5 rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
-          <h1 className="text-center font-bold text-2xl">Please Login</h1>
+          <h1 className="text-center font-bold text-2xl mb-6">Please Login</h1>
 
           <div className="relative z-0 w-full mb-5 group">
             <input
@@ -119,12 +119,10 @@ const Login = () => {
               placeholder=" "
               {...register("email", { required: true })}
             />
-
-            {/* handling email error  */}
+            {/* handling email error */}
             {errors.email?.type === "required" && (
               <p className="text-red-500">email is required</p>
             )}
-
             <label
               htmlFor="floating_email"
               className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto  peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -132,6 +130,7 @@ const Login = () => {
               Email address
             </label>
           </div>
+
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="password"
@@ -151,25 +150,23 @@ const Login = () => {
                 },
               })}
             />
-
-            {/* handling password error  */}
+            {/* handling password error */}
             {errors.password?.type === "required" && (
               <p className="text-red-500">password required</p>
             )}
             {errors.password?.type === "minLength" && (
               <p className="text-red-500">
-                password have to bigger then 7 characters
+                password must be at least 7 characters long
               </p>
             )}
             {errors.password?.type === "maxLength" && (
               <p className="text-red-500">
-                password have to lower then 90 characters
+                password must be less than 90 characters long
               </p>
             )}
             {errors.password?.type === "pattern" && (
               <p className="text-red-500">{errors.password.message}</p>
             )}
-
             <label
               htmlFor="floating_password"
               className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
@@ -177,31 +174,34 @@ const Login = () => {
               Password
             </label>
           </div>
+
           <button
             type="submit"
-            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm  sm:w-auto lg:w-full px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
+            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
           >
             Login
           </button>
-          <p className="my-3">
-            Did&#39;t have an account? Please{" "}
+
+          <p className="my-3 text-center">
+            Didn&#39;t have an account? Please{" "}
             <Link to="/register">
               <span className="hover:underline hover:text-blue-500">
                 Register
               </span>
             </Link>
           </p>
-          <p className="my-3">or Login With</p>
+
+          <p className="my-3 text-center">or Login With</p>
           <div className="flex justify-center items-center gap-5">
             <button
               onClick={handleGoogleLogin}
-              className="btn hover:text-white hover:bg-black"
+              className="btn hover:text-white hover:bg-black flex items-center gap-2"
             >
               <FcGoogle className="w-6 h-6" /> Google
             </button>
             <button
               onClick={handleGithubLogin}
-              className="btn hover:text-white hover:bg-black"
+              className="btn hover:text-white hover:bg-black flex items-center gap-2"
             >
               <VscGithubInverted className="w-6 h-6" />
               Github
