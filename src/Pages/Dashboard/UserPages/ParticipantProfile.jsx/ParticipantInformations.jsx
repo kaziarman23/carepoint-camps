@@ -3,7 +3,7 @@ import { AuthContext } from "../../../../Auth/AuthProvider";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import { Link } from "react-router-dom";
 
-const ParticipantProfile = () => {
+const ParticipantInformations = () => {
   // context api
   const { user } = useContext(AuthContext);
 
@@ -28,7 +28,7 @@ const ParticipantProfile = () => {
     <div className="w-full  min-h-screen">
       <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-orange-600">
         <h1 className="p-3 text-2xl text-center font-bold text-white">
-          Participant Profile
+          Participant Informations
         </h1>
         {/* table content */}
         <div className="overflow-x-auto my-5">
@@ -77,4 +77,4 @@ const ParticipantProfile = () => {
   );
 };
 
-export default ParticipantProfile;
+export default ParticipantInformations;

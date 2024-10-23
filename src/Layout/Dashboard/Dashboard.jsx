@@ -36,6 +36,11 @@ const Dashboard = () => {
                   Manage Registered Camps
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/dashboard/AllUsers" className="rounded-xl">
+                  All Users
+                </NavLink>
+              </li>
             </>
           ) : (
             <>
@@ -46,10 +51,10 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboard/ParticipantProfile"
+                  to="/dashboard/ParticipantInformations"
                   className="rounded-xl"
                 >
-                  Participant Profile
+                  Participant Informations
                 </NavLink>
               </li>
               <li>

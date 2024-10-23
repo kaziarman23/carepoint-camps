@@ -9,7 +9,6 @@ import CampDetails from "../Pages/CampDetails/CampDetails";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserRequiestedCamps from "../Pages/Dashboard/UserPages/UserRequiestedCamps/UserRequiestedCamps";
 import UserAnalytics from "../Pages/Dashboard/UserPages/UserAnalytics/UserAnalytics";
-import ParticipantProfile from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantProfile";
 import UserPaymentHistory from "../Pages/Dashboard/UserPages/UserPaymentHistory/UserPaymentHistory";
 import ParticipantProfileUpdate from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantProfileUpdate";
 import OrganizerProfile from "../Pages/Dashboard/AdminPages/OrganizerProfile/OrganizerProfile";
@@ -20,6 +19,8 @@ import OrganizerProfileUpdate from "../Pages/Dashboard/AdminPages/OrganizerProfi
 import UpdateManageCamps from "../Pages/Dashboard/AdminPages/ManageCamps/UpdateManageCamps";
 import Payment from "../Pages/Dashboard/UserPages/Payments/Payment";
 import PrivateRoute from "./PrivateRoute";
+import ParticipantInformations from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantInformations";
+import AllUsers from "../Pages/Dashboard/AdminPages/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -65,8 +66,8 @@ const router = createBrowserRouter([
         element: <UserAnalytics />,
       },
       {
-        path: "/dashboard/ParticipantProfile",
-        element: <ParticipantProfile />,
+        path: "/dashboard/ParticipantInformations",
+        element: <ParticipantInformations />,
       },
       {
         path: "/dashboard/participantProfileUpdate/:id",
@@ -109,6 +110,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/manageRegisteredCamps",
         element: <ManageRegisteredCamps />,
+      },
+      {
+        path: "/dashboard/AllUsers",
+        element: <AllUsers />,
       },
     ],
   },

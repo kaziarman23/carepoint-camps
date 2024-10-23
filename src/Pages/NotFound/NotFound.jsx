@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import Marquee from "react-fast-marquee";
 
 const NotFound = () => {
   return (
@@ -11,15 +13,16 @@ const NotFound = () => {
           <p className="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white">
             Something&#39;s missing.
           </p>
-          <p className="mb-4 text-lg text-white">
-            Sorry, we can&#39;t find that page. You&#39;ll find lots to explore
-            on the home page.{" "}
-          </p>
-          <Link
-            to="/"
-            className="inline-flex text-white bg-red-800 hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-primary-900 my-4"
-          >
-            Back to Homepage
+          <Marquee pauseOnHover="true" speed="80">
+            <p className="my-10 text-4xl text-white">
+              Sorry, we can&#39;t find that page. You&#39;ll find lots to
+              explore on the home page.   
+            </p>
+          </Marquee>
+          <Link to="/">
+            <UseMoreDetailsBtn isCancel={true}>
+              Back to Homepage
+            </UseMoreDetailsBtn>
           </Link>
         </div>
       </div>

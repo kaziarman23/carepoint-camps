@@ -1,5 +1,5 @@
 import Feature from "./Feature";
-import Specialists from "../Specialists/Specialists";
+import Specialists from "./Specialists";
 import History from "./History";
 import Reviews from "./Reviews";
 import Hero from "./Hero";
