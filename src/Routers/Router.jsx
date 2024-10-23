@@ -118,6 +118,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/dashboard/AllUsers",
+        element: (
+          <AdminRoute>
+            <AllUsers />,
+          </AdminRoute>
+        ),
+      },
+      {
         path: "/dashboard/addACamp",
         element: (
           <AdminRoute>
@@ -146,14 +154,6 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <ManageRegisteredCamps />,
-          </AdminRoute>
-        ),
-      },
-      {
-        path: "/dashboard/AllUsers",
-        element: (
-          <AdminRoute>
-            <AllUsers />,
           </AdminRoute>
         ),
       },

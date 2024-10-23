@@ -70,46 +70,58 @@ const UserRequiestedCamps = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-[#6f5cc4] w-4/5 min-h-full mx-auto my-10 rounded-xl">
-        <h1 className="text-center text-2xl font-bold p-2">Requiested Camps</h1>
+      <div className="bg-[#6f5cc4] w-full md:w-4/5 min-h-full mx-auto my-10 rounded-xl">
+        <h1 className="text-center text-2xl font-bold p-4 text-white">
+          Requested Camps
+        </h1>
         {/* table content */}
-        <div className="w-full overflow-x-auto my-5">
-          <table className="table">
+        <div className="overflow-x-auto my-5">
+          <table className="min-w-full divide-y divide-gray-200">
             {/* head */}
             <thead>
               <tr className="text-white uppercase">
-                <th>SL</th>
-                <th>Camp Name</th>
-                <th>Camp Price</th>
-                <th>Participant Name</th>
-                <th>Payment Status</th>
-                <th>Confirmation status</th>
-                <th>Action</th>
+                <th className="px-4 py-2 text-left text-sm font-medium">SL</th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Camp Name
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Camp Price
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Participant Name
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Payment Status
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Confirmation Status
+                </th>
+                <th className="px-4 py-2 text-left text-sm font-medium">
+                  Action
+                </th>
               </tr>
             </thead>
             <tbody>
               {participantRequiests.map((participant, index) => (
                 <tr key={participant._id} className="text-white">
-                  <th>{index + 1}</th>
-                  <th>{participant.name}</th>
-                  <td>{participant.price}</td>
-                  <td>{participant.userName}</td>
-                  <td>
+                  <td className="px-4 py-2">{index + 1}</td>
+                  <td className="px-4 py-2">{participant.name}</td>
+                  <td className="px-4 py-2">{participant.price}</td>
+                  <td className="px-4 py-2">{participant.userName}</td>
+                  <td className="px-4 py-2">
                     {participant.paymentStatus === "pay" ? (
-                      <>
-                        <Link to={`/dashboard/payment/${participant._id}`}>
-                          <UseMoreDetailsBtn isSubmit={true}>
-                            Pay
-                          </UseMoreDetailsBtn>
-                        </Link>
-                      </>
+                      <Link to={`/dashboard/payment/${participant._id}`}>
+                        <UseMoreDetailsBtn isSubmit={true}>
+                          Pay
+                        </UseMoreDetailsBtn>
+                      </Link>
                     ) : (
                       <UseMoreDetailsBtn disabled={true}>
                         Paid
                       </UseMoreDetailsBtn>
                     )}
                   </td>
-                  <td>
+                  <td className="px-4 py-2">
                     {participant.confirmationStatus === "pending" ? (
                       <button className="bg-yellow-400 p-2 rounded-xl uppercase text-white shadow-[0_0_20px_5px_rgba(255,255,0,0.815)]">
                         Pending
@@ -120,7 +132,7 @@ const UserRequiestedCamps = () => {
                       </button>
                     )}
                   </td>
-                  <td>
+                  <td className="px-4 py-2">
                     {participant.paymentStatus === "pay" ? (
                       <UseMoreDetailsBtn
                         onClick={() => handleDelete(participant._id)}
@@ -139,7 +151,6 @@ const UserRequiestedCamps = () => {
             </tbody>
           </table>
         </div>
-        <div></div>
       </div>
     </div>
   );

@@ -8,22 +8,25 @@ const OrganizerProfile = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 h-full mx-auto p-4 my-10 rounded-xl bg-[#6f5cc4]">
-        <h1 className="text-4xl p-3 font-bold text-center">
+      <div className="w-full md:w-4/5 mx-auto p-4 my-10 md:rounded-xl bg-[#6f5cc4]">
+        <h1 className="text-4xl p-3 font-bold text-center text-white">
           Organizer Profile
-        </h1> 
-        <div className="w-full flex justify-center items-center my-10">
-          <div className="w-1/2 flex justify-center items-center">
+        </h1>
+        <div className="flex flex-col lg:flex-row justify-center items-center my-10">
+          <div className="w-full md:w-2/3 flex justify-center mb-5 md:mb-0 lg:w-1/2">
             <img
               src={user.photoURL}
               alt="Organizer Profile"
-              className="h-60 rounded-full"
+              className="h-60 w-60 rounded-full object-cover"
             />
           </div>
-          <div className="w-1 h-40 bg-blue-500"></div>
-          <div className="w-1/2 text-left p-5">
-            <h1 className="text-2xl font-bold">Name: {user.displayName}</h1>
-            <h1 className="text-2xl font-bold">Email: {user.email}</h1>
+          <div className="w-full lg:w-1/2 text-left p-5">
+            <h1 className="text-2xl font-bold text-white">
+              Name: {user.displayName}
+            </h1>
+            <h1 className="text-2xl font-bold text-white">
+              Email: {user.email}
+            </h1>
           </div>
         </div>
         <div className="flex justify-end items-center mt-5">

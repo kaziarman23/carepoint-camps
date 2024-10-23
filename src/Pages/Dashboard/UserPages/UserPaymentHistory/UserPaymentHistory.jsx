@@ -26,33 +26,45 @@ const UserPaymentHistory = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full mx-auto bg-[#6f5cc4] my-10 rounded-xl p-4">
+      <div className="w-full md:w-4/5 min-h-full mx-auto bg-[#6f5cc4] my-10 md:rounded-xl p-4">
         <h1 className="text-2xl text-center p-4 font-bold text-white">
           Payment History
         </h1>
         {/* table content */}
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="min-w-full table-auto">
             {/* head */}
             <thead>
               <tr className="text-white uppercase">
-                <th>SL:</th>
-                <th>Camp Name</th>
-                <th>Fees</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Transection Id</th>
+                <th className="px-2 py-1 text-left">SL</th>
+                <th className="px-2 py-1 text-left">Camp Name</th>
+                <th className="px-2 py-1 text-left">Fees</th>
+                <th className="px-2 py-1 text-left">Email</th>
+                <th className="px-2 py-1 text-left">Date</th>
+                <th className="px-2 py-1 text-left">Transaction Id</th>
               </tr>
             </thead>
             <tbody>
               {filteredpaymentData.map((payment, index) => (
                 <tr key={index} className="text-white">
-                  <th>{index + 1}</th>
-                  <td>{payment.campName}</td>
-                  <td>{payment.price}</td>
-                  <td>{payment.email}</td>
-                  <td>{payment.date}</td>
-                  <td>{payment.transectionId}</td>
+                  <td className="border-t border-white px-2 py-1">
+                    {index + 1}
+                  </td>
+                  <td className="border-t border-white px-2 py-1">
+                    {payment.campName}
+                  </td>
+                  <td className="border-t border-white px-2 py-1">
+                    {payment.price}
+                  </td>
+                  <td className="border-t border-white px-2 py-1">
+                    {payment.email}
+                  </td>
+                  <td className="border-t border-white px-2 py-1">
+                    {payment.date}
+                  </td>
+                  <td className="border-t border-white px-2 py-1">
+                    {payment.transectionId}
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -49,9 +49,9 @@ const ParticipantProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="w-4/5 h-80 bg-[#6f5cc4] rounded-xl">
-        <h1 className="text-2xl p-2 text-center text-white font-bold">
+    <div className="w-full min-h-screen flex justify-center items-center p-4">
+      <div className="w-full max-w-4xl bg-[#6f5cc4] rounded-xl p-6">
+        <h1 className="text-2xl p-3 text-center font-bold text-white">
           Update Participant Information
         </h1>
 
@@ -67,16 +67,16 @@ const ParticipantProfileUpdate = () => {
                 defaultValue={updatedDoc.age}
               />
               {errors.age?.type === "required" && (
-                <p className="text-red-500">This fild is required</p>
+                <p className="text-red-500">This field is required</p>
               )}
               {errors.age?.type === "max" && (
                 <p className="text-red-500">
-                  Participant age must be lower then 60
+                  Participant age must be lower than 60
                 </p>
               )}
               {errors.age?.type === "min" && (
                 <p className="text-red-500">
-                  Participant age must be older then 13
+                  Participant age must be older than 13
                 </p>
               )}
             </div>
@@ -94,16 +94,16 @@ const ParticipantProfileUpdate = () => {
                 defaultValue={updatedDoc.phone}
               />
               {errors.phone?.type === "required" && (
-                <p className="text-red-500">This fild is required</p>
+                <p className="text-red-500">This field is required</p>
               )}
               {errors.phone?.type === "maxLength" && (
                 <p className="text-red-500">
-                  Phone number must be lower then 12 characters
+                  Phone number must be less than 12 characters
                 </p>
               )}
               {errors.phone?.type === "minLength" && (
                 <p className="text-red-500">
-                  Phone number must be upper then 6 characters
+                  Phone number must be greater than 6 characters
                 </p>
               )}
             </div>
@@ -136,16 +136,16 @@ const ParticipantProfileUpdate = () => {
                 defaultValue={updatedDoc.emergencyContact}
               />
               {errors.emergencyContact?.type === "required" && (
-                <p className="text-red-500">This fild is required</p>
+                <p className="text-red-500">This field is required</p>
               )}
               {errors.emergencyContact?.type === "maxLength" && (
                 <p className="text-red-500">
-                  Phone number must be lower then 12 characters
+                  Phone number must be less than 12 characters
                 </p>
               )}
               {errors.emergencyContact?.type === "minLength" && (
                 <p className="text-red-500">
-                  Phone number must be upper then 6 characters
+                  Phone number must be greater than 6 characters
                 </p>
               )}
             </div>

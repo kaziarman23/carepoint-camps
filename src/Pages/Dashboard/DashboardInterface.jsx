@@ -5,14 +5,14 @@ const DashboardInterface = () => {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="w-4/5 h-80 mx-auto rounded-xl bg-[#5d4aaf]  flex flex-col justify-center items-center p-4">
-        <h1 className="text-4xl font-bold">Dashboard</h1>
+      <div className="w-full md:w-4/5 h-80 mx-auto rounded-xl bg-[#5d4aaf] flex flex-col justify-center items-center p-4">
+        <h1 className="text-4xl font-bold text-white">Dashboard</h1>
 
         {/* content based on userRole */}
         {isAdmin ? (
           <div className="admin-section mt-4 space-y-3 text-white">
             <h2 className="text-xl">Welcome, Admin!</h2>
-            <p className="">
+            <p className="text-sm md:text-base">
               At Carepoint Camps, you&#39;re at the heart of making a real
               impact. As an admin, you have the tools to oversee the
               organization and management of medical camps that bring essential
@@ -26,7 +26,7 @@ const DashboardInterface = () => {
         ) : (
           <div className="user-section mt-4 space-y-3 text-white">
             <h2 className="text-xl">Welcome to Carepoint Camps!</h2>
-            <p className="">
+            <p className="text-sm md:text-base">
               We’re glad to have you here. At Carepoint Camps, you have the
               opportunity to make a difference by participating in medical camps
               designed to bring care to those who need it most. Through your

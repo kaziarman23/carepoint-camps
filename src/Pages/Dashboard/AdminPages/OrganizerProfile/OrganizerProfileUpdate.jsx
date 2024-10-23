@@ -65,14 +65,14 @@ const OrganizerProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-4/5 h-96 mx-auto p-4 my-10 rounded-xl bg-[#6f5cc4]">
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <div className="w-full md:w-4/5 h-auto mx-auto p-4 my-10 md:rounded-xl bg-[#6f5cc4]">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1 className="text-2xl p-3 font-bold text-center">
+          <h1 className="text-2xl p-3 font-bold text-center text-white">
             Updating Organizer Profile
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label className="form-control w-full col-span-2">
+            <label className="form-control w-full md:col-span-2">
               <div className="label">
                 <span className="label-text text-white">Photo URL</span>
               </div>
@@ -83,10 +83,12 @@ const OrganizerProfileUpdate = () => {
                 {...register("photo", { required: true })}
               />
               {errors.photo?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
-            <label className="form-control w-full">
+            <label className="form-control w-full ">
               <div className="label">
                 <span className="label-text text-white">Name</span>
               </div>
@@ -97,7 +99,9 @@ const OrganizerProfileUpdate = () => {
                 {...register("name", { required: true })}
               />
               {errors.name?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
             <label className="form-control w-full">
@@ -111,7 +115,9 @@ const OrganizerProfileUpdate = () => {
                 {...register("email", { required: true })}
               />
               {errors.email?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
           </div>
@@ -119,7 +125,9 @@ const OrganizerProfileUpdate = () => {
             <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
               Cancel
             </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit" isUpdate={true}>Submit</UseMoreDetailsBtn>
+            <UseMoreDetailsBtn type="submit" isUpdate={true}>
+              Submit
+            </UseMoreDetailsBtn>
           </div>
         </form>
       </div>

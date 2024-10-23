@@ -36,40 +36,40 @@ const ParticipantInformations = () => {
   }
 
   return (
-    <div className="w-full  min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-[#6f5cc4]">
+    <div className="w-full min-h-screen">
+      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-[#6f5cc4] p-4">
         <h1 className="p-3 text-2xl text-center font-bold text-white">
-          Participant Informations
+          Participant Information
         </h1>
         {/* table content */}
         <div className="overflow-x-auto my-5">
-          <table className="table">
+          <table className="table-auto min-w-full text-left text-sm text-white">
             {/* head */}
-            <thead>
-              <tr className="text-white">
-                <th>SL</th>
-                <th>Camp Name</th>
-                <th>Location</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Phone</th>
-                <th>Gender</th>
-                <th>Emergency Contact</th>
-                <th>Action</th>
+            <thead className="bg-[#4a3a8c] text-white">
+              <tr>
+                <th className="p-2">SL</th>
+                <th className="p-2">Camp Name</th>
+                <th className="p-2">Location</th>
+                <th className="p-2">Name</th>
+                <th className="p-2">Age</th>
+                <th className="p-2">Phone</th>
+                <th className="p-2">Gender</th>
+                <th className="p-2">Emergency Contact</th>
+                <th className="p-2">Action</th>
               </tr>
             </thead>
             <tbody>
               {participantProfile.map((participant, index) => (
-                <tr key={participant._id} className="text-white">
-                  <th>{index + 1}</th>
-                  <th>{participant.name}</th>
-                  <td>{participant.location}</td>
-                  <td>{participant.userName}</td>
-                  <td>{participant.age}</td>
-                  <td>{participant.phone}</td>
-                  <td>{participant.gender}</td>
-                  <td>{participant.emergencyContact}</td>
-                  <td>
+                <tr key={participant._id} className="border-b border-gray-700">
+                  <td className="p-2">{index + 1}</td>
+                  <td className="p-2">{participant.name}</td>
+                  <td className="p-2">{participant.location}</td>
+                  <td className="p-2">{participant.userName}</td>
+                  <td className="p-2">{participant.age}</td>
+                  <td className="p-2">{participant.phone}</td>
+                  <td className="p-2">{participant.gender}</td>
+                  <td className="p-2">{participant.emergencyContact}</td>
+                  <td className="p-2">
                     <Link
                       to={`/dashboard/participantProfileUpdate/${participant._id}`}
                     >

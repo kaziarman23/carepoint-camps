@@ -43,10 +43,17 @@ const AddACamp = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-[#6f5cc4] w-4/5 min-h-full mx-auto my-10 rounded-xl">
-        <h1 className="text-center font-bold p-3 text-2xl">Add a Camp</h1>
+      <div className="bg-[#6f5cc4] w-full md:w-4/5 min-h-full mx-auto my-10 md:rounded-xl p-4">
+        {/* Responsive heading */}
+        <h1 className="text-center font-bold p-3 text-xl md:text-2xl text-white">
+          Add a Camp
+        </h1>
+
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid gap-3 grid-cols-1 md:grid-cols-2 p-4">
+          {/* Responsive grid layout */}
+          {/* <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 p-2 md:p-4"> */}
+          <div className="w-full flex justify-center items-center flex-col p-2 md:p-4">
+            {/* Camp Name */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Camp Name</span>
@@ -58,9 +65,13 @@ const AddACamp = () => {
                 {...register("name", { required: true })}
               />
               {errors.name?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Camp Fees */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Camp Fees</span>
@@ -72,41 +83,52 @@ const AddACamp = () => {
                 {...register("price", { required: true })}
               />
               {errors.price?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Date */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Date</span>
               </div>
               <input
                 type="date"
-                placeholder="Date"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
                 {...register("date", { required: true })}
-              />{" "}
+              />
               {errors.date?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Location */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">location</span>
+                <span className="label-text text-white">Location</span>
               </div>
               <input
                 type="text"
-                placeholder="location"
-                {...register("location", { required: true })}
+                placeholder="Location"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
-              />{" "}
+                {...register("location", { required: true })}
+              />
               {errors.location?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Healthcare Professional */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">
-                  Healthcare Professional Name
+                  Healthcare Professional
                 </span>
               </div>
               <input
@@ -114,11 +136,15 @@ const AddACamp = () => {
                 placeholder="Healthcare Professional Name"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
                 {...register("leadBy", { required: true })}
-              />{" "}
+              />
               {errors.leadBy?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Profession Name */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Profession Name</span>
@@ -128,23 +154,29 @@ const AddACamp = () => {
                 placeholder="Profession Name"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
                 {...register("role", { required: true })}
-              />{" "}
-              {errors.Profession?.type === "required" && (
-                <p role="alert">This fild is required</p>
+              />
+              {errors.role?.type === "required" && (
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
+
+            {/* Participant Count */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Participant count</span>
+                <span className="label-text text-white">Participant Count</span>
               </div>
               <input
                 type="number"
-                placeholder="Participant count"
+                placeholder="Participant Count"
                 className="input input-bordered w-full bg-white text-black rounded-xl"
                 defaultValue={0}
                 {...register("participant_count")}
               />
             </label>
+
+            {/* Camp Image */}
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Camp Image URL</span>
@@ -152,28 +184,36 @@ const AddACamp = () => {
               <input
                 type="text"
                 placeholder="Camp Image"
-                {...register("image", { required: true })}
                 className="input input-bordered w-full bg-white text-black rounded-xl"
+                {...register("image", { required: true })}
               />
               {errors.image?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
-            <label className="form-control col-span-2">
+
+            {/* Camp Description */}
+            <label className="form-control w-full col-span-2">
               <div className="label">
                 <span className="label-text text-white">Camp Description</span>
               </div>
               <textarea
                 className="textarea textarea-bordered h-24 bg-white text-black rounded-xl"
                 {...register("description", { required: true })}
-              ></textarea>{" "}
+              ></textarea>
               {errors.description?.type === "required" && (
-                <p role="alert">This fild is required</p>
+                <p role="alert" className="text-red-500">
+                  This field is required
+                </p>
               )}
             </label>
           </div>
-          <div className="flex justify-end p-4">
-            <UseMoreDetailsBtn isSubmit={true}>
+
+          {/* Submit Button */}
+          <div className="flex justify-end p-2 md:p-4">
+            <UseMoreDetailsBtn isSubmit={true} type="submit">
               Submit
             </UseMoreDetailsBtn>
           </div>

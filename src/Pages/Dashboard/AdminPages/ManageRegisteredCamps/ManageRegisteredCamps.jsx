@@ -39,43 +39,53 @@ const ManageRegisteredCamps = () => {
     });
   };
 
-  // if (Participant.length === 0) {
-  //   return (
-  //     <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-  //       <h1 className="text-6xl text-center text-purple-600 font-bold">
-  //         Participants not found!
-  //       </h1>
-  //     </div>
-  //   );
-  // }
+  if (Participant.length === 0) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+        <h1 className="text-6xl text-center text-purple-600 font-bold">
+          Participants not found!
+        </h1>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full mx-auto my-10 bg-[#6f5cc4] p-4 rounded-xl">
-        <h1 className="text-center font-bold p-3 text-2xl">
+      <div className="w-11/12 md:w-4/5 min-h-full mx-auto my-10 bg-[#6f5cc4] p-4 rounded-xl">
+        <h1 className="text-center font-bold p-3 text-2xl text-white">
           Manage Registered Camps
         </h1>
         {/* table content */}
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="min-w-full table-auto">
             <thead>
               <tr className="text-white">
-                <th>SL:</th>
-                <th>Participant Name</th>
-                <th>Camp Name</th>
-                <th>Camp Fees</th>
-                <th>Payment Status</th>
-                <th>Confirm Status</th>
+                <th className="px-2 py-3 text-left text-sm font-medium">SL:</th>
+                <th className="px-2 py-3 text-left text-sm font-medium">
+                  Participant Name
+                </th>
+                <th className="px-2 py-3 text-left text-sm font-medium">
+                  Camp Name
+                </th>
+                <th className="px-2 py-3 text-left text-sm font-medium">
+                  Camp Fees
+                </th>
+                <th className="px-2 py-3 text-left text-sm font-medium">
+                  Payment Status
+                </th>
+                <th className="px-2 py-3 text-left text-sm font-medium">
+                  Confirm Status
+                </th>
               </tr>
             </thead>
             <tbody>
               {Participant.map((person, index) => (
                 <tr key={person._id} className="text-white">
-                  <th>{index + 1}</th>
-                  <th>{person.userName}</th>
-                  <th>{person.name}</th>
-                  <th>{person.price}</th>
-                  <th>
+                  <td className="px-2 py-4">{index + 1}</td>
+                  <td className="px-2 py-4">{person.userName}</td>
+                  <td className="px-2 py-4">{person.name}</td>
+                  <td className="px-2 py-4">{person.price}</td>
+                  <td className="px-2 py-4">
                     {person.paymentStatus === "pay" ? (
                       <h1 className="bg-red-600 text-center rounded-xl p-2 font-bold">
                         Unpaid
@@ -85,8 +95,8 @@ const ManageRegisteredCamps = () => {
                         Paid
                       </h1>
                     )}
-                  </th>
-                  <th>
+                  </td>
+                  <td className="px-2 py-4">
                     {person.confirmationStatus === "pending" ? (
                       <UseMoreDetailsBtn
                         isUpdate={true}
@@ -99,7 +109,7 @@ const ManageRegisteredCamps = () => {
                         {person.confirmationStatus}
                       </UseMoreDetailsBtn>
                     )}
-                  </th>
+                  </td>
                 </tr>
               ))}
             </tbody>

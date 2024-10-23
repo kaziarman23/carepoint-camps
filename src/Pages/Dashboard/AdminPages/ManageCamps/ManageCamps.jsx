@@ -62,55 +62,57 @@ const ManageCamps = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto bg-[#6f5cc4] my-10 p-4 rounded-xl">
-        <h1 className="text-2xl p-3 font-bold text-center">Manage Camps</h1>
+      <div className="w-11/12 min-h-full mx-auto bg-[#6f5cc4] my-10 p-4 rounded-xl">
+        <h1 className="text-2xl p-3 font-bold text-white text-center">Manage Camps</h1>
         {/* table content */}
         <div className="overflow-x-auto">
-          <table className="table">
+          <table className="table min-w-full">
             {/* head */}
             <thead>
               <tr className="text-white">
-                <th>SL:</th>
-                <th>Camp Image</th>
-                <th>Name</th>
-                <th>Professional Name</th>
-                <th>Fees</th>
-                <th>Location</th>
-                <th>Date</th>
-                <th>Participant</th>
-                <th>Action</th>
+                <th className="text-sm md:text-base">SL:</th>
+                <th className="text-sm md:text-base">Camp Image</th>
+                <th className="text-sm md:text-base">Name</th>
+                <th className="text-sm md:text-base">Professional Name</th>
+                <th className="text-sm md:text-base">Fees</th>
+                <th className="text-sm md:text-base">Location</th>
+                <th className="text-sm md:text-base">Date</th>
+                <th className="text-sm md:text-base">Participants</th>
+                <th className="text-sm md:text-base">Action</th>
               </tr>
             </thead>
             <tbody>
               {filterCamps.map((camp, index) => (
-                <tr key={camp._id}>
-                  <th>{index + 1}</th>
-                  <th>
+                <tr key={camp._id} className="text-white">
+                  <td className="text-sm md:text-base">{index + 1}</td>
+                  <td>
                     <img
                       src={camp.image}
                       alt={camp.name}
                       className="object-cover h-14 rounded-xl"
                     />
-                  </th>
-                  <th>{camp.name}</th>
-                  <th>{camp.leadBy}</th>
-                  <th>{camp.price}</th>
-                  <th>{camp.location}</th>
-                  <th>{camp.date}</th>
-                  <th>{camp.participant_count}</th>
-                  <th className="flex items-center gap-2">
+                  </td>
+                  <td className="text-sm md:text-base">{camp.name}</td>
+                  <td className="text-sm md:text-base">{camp.leadBy}</td>
+                  <td className="text-sm md:text-base">{camp.price}</td>
+                  <td className="text-sm md:text-base">{camp.location}</td>
+                  <td className="text-sm md:text-base">{camp.date}</td>
+                  <td className="text-sm md:text-base">
+                    {camp.participant_count}
+                  </td>
+                  <td className="flex items-center gap-2">
                     <Link to={`/dashboard/updateManageCamps/${camp._id}`}>
-                      <button className="btn rounded-xl bg-yellow-400 text-black hover:bg-yellow-500 hover:text-white">
+                      <UseMoreDetailsBtn isUpdate={true}>
                         Update
-                      </button>
+                      </UseMoreDetailsBtn>
                     </Link>
-                    <button
+                    <UseMoreDetailsBtn
                       onClick={() => handleDelete(camp._id)}
-                      className="btn rounded-xl bg-red-700 hover:bg-red-700 hover:text-black"
+                      isCancel={true}
                     >
                       Delete
-                    </button>
-                  </th>
+                    </UseMoreDetailsBtn>
+                  </td>
                 </tr>
               ))}
             </tbody>

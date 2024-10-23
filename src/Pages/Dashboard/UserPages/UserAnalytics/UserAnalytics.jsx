@@ -1,11 +1,4 @@
-import {
-  PieChart,
-  Pie,
-  Sector,
-  Cell,
-  ResponsiveContainer,
-  Legend,
-} from "recharts";
+import { PieChart, Pie, Cell, Legend } from "recharts";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import { useContext } from "react";
@@ -75,12 +68,13 @@ const UserAnalytics = () => {
   return (
     <div className="w-full min-h-screen">
       <div className="w-5/6 min-h-full mx-auto bg-[#6f5cc4] rounded-xl my-10 p-4">
-        <h1 className="text-center text-2xl font-bold p-3 ">
+        <h1 className="text-center text-2xl font-bold p-3 text-white">
           Mr.{user.displayName} Analytics
         </h1>
-        <div className="flex items-center text-white">
-          <div className="w-1/2">
-            <PieChart width={400} height={400}>
+        <div className="flex flex-wrap items-center text-white">
+          {/* Pie chart section */}
+          <div className="w-full md:w-1/2 flex justify-center">
+            <PieChart width={300} height={300}>
               <Pie
                 data={pieChartData}
                 cx="50%"
@@ -101,11 +95,12 @@ const UserAnalytics = () => {
               <Legend />
             </PieChart>
           </div>
-          <div className="w-1/2">
+          {/* Description/Details section */}
+          <div className="w-full md:w-1/2">
             <h1 className="text-2xl font-bold p-2 text-center">
               Participant Status Overview
             </h1>
-            <p>
+            <p className="text-center md:text-left p-2">
               Gain insight into the current status of camp participants with our
               comprehensive analytics dashboard. This section provides a clear
               visual breakdown of Payment Status and Confirmation Status,

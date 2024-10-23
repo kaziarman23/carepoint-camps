@@ -50,28 +50,32 @@ const AllUsers = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 rounded-xl">
-        <h1 className="text-center font-bold text-2xl p-2">All Users</h1>
-        <h1 className="text-left p-2 font-bold">Total Users: {users.length}</h1>
-        {/* table content */}
+      <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 md:rounded-xl">
+        <h1 className="text-center font-bold text-2xl p-2 text-white">
+          All Users
+        </h1>
+        <h2 className="text-left p-2 font-bold text-white">
+          Total Users: {users.length}
+        </h2>
+        {/* Table content */}
         <div className="overflow-x-auto">
-          <table className="table">
-            {/* head */}
+          <table className="min-w-full text-left">
+            {/* Head */}
             <thead>
               <tr className="text-white text-xl">
-                <th>SL:</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
+                <th className="py-2">SL</th>
+                <th className="py-2">Name</th>
+                <th className="py-2">Email</th>
+                <th className="py-2">Role</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <tr key={index} className="text-white">
-                  <th>{index + 1}</th>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td className="font-bold">
+                <tr key={index} className="text-white border-b">
+                  <td className="py-2">{index + 1}</td>
+                  <td className="py-2">{user.name}</td>
+                  <td className="py-2">{user.email}</td>
+                  <td className="py-2 font-bold">
                     {user?.userRole === "admin" ? (
                       "Admin"
                     ) : (
