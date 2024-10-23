@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { AuthContext } from "../Auth/AuthProvider";
 
 const axiosSecure = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://carepoint-camps-server.vercel.app",
 });
 const UseAxiosSecure = () => {
   const { logoutUser } = useContext(AuthContext);
