@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import UseUsers from "../../../../CustomHooks/UseUsers";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const AllUsers = () => {
   // hooks
@@ -36,19 +37,28 @@ const AllUsers = () => {
       }
     });
   };
+
+  if (!users) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10">
+        <h1 className="text-3xl text-center text-purple-600 font-bold">
+          No User found!
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full bg-orange-600 p-4 mx-auto my-10 rounded-xl">
-        <div className="flex justify-center items-center">
-          <h1 className="w-1/2 text-left">Total Users: {users.length}</h1>
-          <h1 className="w-1/2 text-left">All Users</h1>
-        </div>
+      <div className="w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 rounded-xl">
+        <h1 className="text-center font-bold text-2xl p-2">All Users</h1>
+        <h1 className="text-left p-2 font-bold">Total Users: {users.length}</h1>
         {/* table content */}
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
             <thead>
-              <tr>
+              <tr className="text-white text-xl">
                 <th>SL:</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -57,20 +67,20 @@ const AllUsers = () => {
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <tr key={index}>
+                <tr key={index} className="text-white">
                   <th>{index + 1}</th>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
-                  <td>
+                  <td className="font-bold">
                     {user?.userRole === "admin" ? (
-                      "admin"
+                      "Admin"
                     ) : (
-                      <button
+                      <UseMoreDetailsBtn
                         onClick={() => handleMakeAdmin(user)}
-                        className="p-2 bg-yellow-500 rounded-xl"
+                        isUpdate={true}
                       >
                         User
-                      </button>
+                      </UseMoreDetailsBtn>
                     )}
                   </td>
                 </tr>

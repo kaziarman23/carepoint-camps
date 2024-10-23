@@ -3,6 +3,7 @@ import UseCamps from "../../../../CustomHooks/UseCamps";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const UpdateManageCamps = () => {
   // state
@@ -45,7 +46,7 @@ const UpdateManageCamps = () => {
   };
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-orange-600 w-4/5 min-h-full mx-auto my-10 rounded-xl">
+      <div className="bg-[#6f5cc4] w-4/5 min-h-full mx-auto my-10 rounded-xl">
         <h1 className="text-center font-bold p-3 text-2xl">
           Update Manage Camps
         </h1>
@@ -53,7 +54,7 @@ const UpdateManageCamps = () => {
           <div className="grid gap-3 grid-cols-1 md:grid-cols-2 p-4">
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Camp Name</span>
+                <span className="label-text text-white">Camp Name</span>
               </div>
               <input
                 type="text"
@@ -68,7 +69,7 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Camp Fees</span>
+                <span className="label-text text-white">Camp Fees</span>
               </div>
               <input
                 type="text"
@@ -83,7 +84,7 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Date</span>
+                <span className="label-text text-white">Date</span>
               </div>
               <input
                 type="text"
@@ -98,7 +99,7 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">location</span>
+                <span className="label-text text-white">location</span>
               </div>
               <input
                 type="text"
@@ -113,7 +114,9 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Healthcare Professional Name</span>
+                <span className="label-text text-white">
+                  Healthcare Professional Name
+                </span>
               </div>
               <input
                 type="text"
@@ -128,7 +131,7 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Participant count</span>
+                <span className="label-text text-white">Participant count</span>
               </div>
               <input
                 type="number"
@@ -140,7 +143,7 @@ const UpdateManageCamps = () => {
             </label>
             <label className="form-control w-full col-span-2">
               <div className="label">
-                <span className="label-text">Camp Image URL</span>
+                <span className="label-text text-white">Camp Image URL</span>
               </div>
               <input
                 type="text"
@@ -155,18 +158,12 @@ const UpdateManageCamps = () => {
             </label>
           </div>
           <div className="flex justify-end gap-5 p-4">
-            <button
-              onClick={handleCancel}
-              className="btn rounded-xl bg-red-700 hover:bg-red-800 text-black hover:text-white"
-            >
+            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="btn rounded-xl bg-blue-700 hover:bg-green-700 hover:text-black"
-            >
+            </UseMoreDetailsBtn>
+            <UseMoreDetailsBtn type="submit" isSubmit={true}>
               Submit
-            </button>
+            </UseMoreDetailsBtn>
           </div>
         </form>
       </div>

@@ -23,7 +23,7 @@ const Payment = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-orange-600 w-4/5 min-h-full mx-auto my-10 rounded-xl">
+      <div className="bg-[#f6f7f6] w-4/5 min-h-full mx-auto my-10 rounded-xl">
         <h1 className="text-2xl font-bold text-center p-3">Payment</h1>
         <div className="w-4/5 h-28 mx-auto my-10">
           <Elements stripe={stripePromise}>

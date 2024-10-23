@@ -72,7 +72,7 @@ const AuthProvider = ({ children }) => {
 
   // state observer
   useEffect(() => {
-    const onSubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log(currentUser);
       if (currentUser) {
@@ -84,15 +84,14 @@ const AuthProvider = ({ children }) => {
             localStorage.setItem("access-token", res.data.token);
           }
         });
-        setLoading(false);
       } else {
         localStorage.removeItem("access-token");
-        setLoading(true);
       }
+      setLoading(false);
     });
 
     return () => {
-      return onSubscribe();
+      return unSubscribe();
     };
   }, [axiosPublic]);
 

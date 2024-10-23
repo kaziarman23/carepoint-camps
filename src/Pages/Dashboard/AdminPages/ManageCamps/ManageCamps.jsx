@@ -4,6 +4,7 @@ import UseCamps from "../../../../CustomHooks/UseCamps";
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const ManageCamps = () => {
   // context api
@@ -46,9 +47,22 @@ const ManageCamps = () => {
     });
   };
 
+  if (filterCamps.length === 0) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+        <h1 className="text-6xl text-center text-purple-600 font-bold">
+          No Camp Added!
+        </h1>
+        <Link to="/dashboard/addACamp">
+          <UseMoreDetailsBtn isPurple={true}>Add Camps</UseMoreDetailsBtn>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto bg-orange-600 my-10 p-4 rounded-xl">
+      <div className="w-5/6 min-h-full mx-auto bg-[#6f5cc4] my-10 p-4 rounded-xl">
         <h1 className="text-2xl p-3 font-bold text-center">Manage Camps</h1>
         {/* table content */}
         <div className="overflow-x-auto">

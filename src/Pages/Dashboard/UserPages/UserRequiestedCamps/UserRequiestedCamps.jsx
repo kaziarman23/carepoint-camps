@@ -4,6 +4,7 @@ import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const UserRequiestedCamps = () => {
   // context api
@@ -57,12 +58,20 @@ const UserRequiestedCamps = () => {
     );
   }
 
+  if (participantRequiests.length === 0) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+        <h1 className="text-6xl text-center text-purple-600 font-bold">
+          No Requiests Found!
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-orange-600 w-4/5 min-h-full mx-auto my-10 rounded-xl">
-        <h1 className="text-center text-2xl font-bold text-white p-2">
-          Requiested Camps
-        </h1>
+      <div className="bg-[#6f5cc4] w-4/5 min-h-full mx-auto my-10 rounded-xl">
+        <h1 className="text-center text-2xl font-bold p-2">Requiested Camps</h1>
         {/* table content */}
         <div className="w-full overflow-x-auto my-5">
           <table className="table">
@@ -80,7 +89,7 @@ const UserRequiestedCamps = () => {
             </thead>
             <tbody>
               {participantRequiests.map((participant, index) => (
-                <tr key={participant._id}>
+                <tr key={participant._id} className="text-white">
                   <th>{index + 1}</th>
                   <th>{participant.name}</th>
                   <td>{participant.price}</td>
@@ -89,39 +98,40 @@ const UserRequiestedCamps = () => {
                     {participant.paymentStatus === "pay" ? (
                       <>
                         <Link to={`/dashboard/payment/${participant._id}`}>
-                          <button className="px-6 py-3 bg-purple-600 text-black rounded-xl hover:bg-purple-700 hover:text-white">
+                          <UseMoreDetailsBtn isSubmit={true}>
                             Pay
-                          </button>
+                          </UseMoreDetailsBtn>
                         </Link>
                       </>
                     ) : (
-                      <h1 className="text-2xl font-bold uppercase">Paid</h1>
+                      <UseMoreDetailsBtn disabled={true}>
+                        Paid
+                      </UseMoreDetailsBtn>
                     )}
                   </td>
                   <td>
                     {participant.confirmationStatus === "pending" ? (
-                      <h1 className="text-2xl">Pending</h1>
+                      <button className="bg-yellow-400 p-2 rounded-xl uppercase text-white shadow-[0_0_20px_5px_rgba(255,255,0,0.815)]">
+                        Pending
+                      </button>
                     ) : (
-                      <h1 className="text-2xl font-bold uppercase">
+                      <button className="bg-green-700 p-2 rounded-xl text-white shadow-[0_0_30px_5px_rgba(0,255,0,0.815)] uppercase">
                         Confirmed
-                      </h1>
+                      </button>
                     )}
                   </td>
                   <td>
                     {participant.paymentStatus === "pay" ? (
-                      <button
+                      <UseMoreDetailsBtn
                         onClick={() => handleDelete(participant._id)}
-                        className="px-6 py-3 bg-red-600 text-black rounded-xl hover:bg-red-700"
+                        isCancel={true}
                       >
                         Cancel
-                      </button>
+                      </UseMoreDetailsBtn>
                     ) : (
-                      <button
-                        disabled
-                        className="px-6 py-3 bg-red-900 text-black rounded-xl"
-                      >
+                      <UseMoreDetailsBtn disabled={true}>
                         Cancel
-                      </button>
+                      </UseMoreDetailsBtn>
                     )}
                   </td>
                 </tr>

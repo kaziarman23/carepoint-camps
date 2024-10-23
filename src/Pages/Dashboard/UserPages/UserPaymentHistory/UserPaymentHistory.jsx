@@ -14,9 +14,19 @@ const UserPaymentHistory = () => {
     (payment) => payment.email === user.email
   );
 
+  if (filteredpaymentData.length === 0) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+        <h1 className="text-6xl text-center text-purple-600 font-bold">
+          Payment History Not Found!
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full mx-auto bg-orange-600 my-10 rounded-xl p-4">
+      <div className="w-4/5 min-h-full mx-auto bg-[#6f5cc4] my-10 rounded-xl p-4">
         <h1 className="text-2xl text-center p-4 font-bold text-white">
           Payment History
         </h1>
@@ -36,7 +46,7 @@ const UserPaymentHistory = () => {
             </thead>
             <tbody>
               {filteredpaymentData.map((payment, index) => (
-                <tr key={index}>
+                <tr key={index} className="text-white">
                   <th>{index + 1}</th>
                   <td>{payment.campName}</td>
                   <td>{payment.price}</td>

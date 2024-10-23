@@ -21,6 +21,8 @@ import Payment from "../Pages/Dashboard/UserPages/Payments/Payment";
 import PrivateRoute from "./PrivateRoute";
 import ParticipantInformations from "../Pages/Dashboard/UserPages/ParticipantProfile.jsx/ParticipantInformations";
 import AllUsers from "../Pages/Dashboard/AdminPages/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import DashboardInterface from "../Pages/Dashboard/DashboardInterface";
 
 const router = createBrowserRouter([
   {
@@ -59,8 +61,20 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
+      {
+        path: "/dashboard/dashboardInterface",
+        element: (
+          <PrivateRoute>
+            <DashboardInterface />,
+          </PrivateRoute>
+        ),
+      },
       {
         path: "/dashboard/userAnalytics",
         element: <UserAnalytics />,
@@ -89,31 +103,59 @@ const router = createBrowserRouter([
       // Admin route
       {
         path: "/dashboard/organizerProfile",
-        element: <OrganizerProfile />,
+        element: (
+          <AdminRoute>
+            <OrganizerProfile />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/organizerProfileUpdate",
-        element: <OrganizerProfileUpdate />,
+        element: (
+          <AdminRoute>
+            <OrganizerProfileUpdate />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/addACamp",
-        element: <AddACamp />,
+        element: (
+          <AdminRoute>
+            <AddACamp />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/manageCamps",
-        element: <ManageCamps />,
+        element: (
+          <AdminRoute>
+            <ManageCamps />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/updateManageCamps/:id",
-        element: <UpdateManageCamps />,
+        element: (
+          <AdminRoute>
+            <UpdateManageCamps />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/manageRegisteredCamps",
-        element: <ManageRegisteredCamps />,
+        element: (
+          <AdminRoute>
+            <ManageRegisteredCamps />,
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/AllUsers",
-        element: <AllUsers />,
+        element: (
+          <AdminRoute>
+            <AllUsers />,
+          </AdminRoute>
+        ),
       },
     ],
   },

@@ -3,6 +3,7 @@ import UseAxios from "../../../../CustomHooks/UseAxios";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const AddACamp = () => {
   // context api
@@ -42,13 +43,13 @@ const AddACamp = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="bg-orange-600 w-4/5 min-h-full mx-auto my-10 rounded-xl">
+      <div className="bg-[#6f5cc4] w-4/5 min-h-full mx-auto my-10 rounded-xl">
         <h1 className="text-center font-bold p-3 text-2xl">Add a Camp</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid gap-3 grid-cols-1 md:grid-cols-2 p-4">
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Camp Name</span>
+                <span className="label-text text-white">Camp Name</span>
               </div>
               <input
                 type="text"
@@ -62,7 +63,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Camp Fees</span>
+                <span className="label-text text-white">Camp Fees</span>
               </div>
               <input
                 type="text"
@@ -76,7 +77,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Date</span>
+                <span className="label-text text-white">Date</span>
               </div>
               <input
                 type="date"
@@ -90,7 +91,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">location</span>
+                <span className="label-text text-white">location</span>
               </div>
               <input
                 type="text"
@@ -104,7 +105,9 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Healthcare Professional Name</span>
+                <span className="label-text text-white">
+                  Healthcare Professional Name
+                </span>
               </div>
               <input
                 type="text"
@@ -118,7 +121,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Profession Name</span>
+                <span className="label-text text-white">Profession Name</span>
               </div>
               <input
                 type="text"
@@ -132,7 +135,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Participant count</span>
+                <span className="label-text text-white">Participant count</span>
               </div>
               <input
                 type="number"
@@ -144,7 +147,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Camp Image URL</span>
+                <span className="label-text text-white">Camp Image URL</span>
               </div>
               <input
                 type="text"
@@ -158,7 +161,7 @@ const AddACamp = () => {
             </label>
             <label className="form-control col-span-2">
               <div className="label">
-                <span className="label-text">Camp Description</span>
+                <span className="label-text text-white">Camp Description</span>
               </div>
               <textarea
                 className="textarea textarea-bordered h-24 bg-white text-black rounded-xl"
@@ -170,9 +173,9 @@ const AddACamp = () => {
             </label>
           </div>
           <div className="flex justify-end p-4">
-            <button className="btn rounded-xl bg-blue-700 hover:bg-green-700 hover:text-black">
+            <UseMoreDetailsBtn isSubmit={true}>
               Submit
-            </button>
+            </UseMoreDetailsBtn>
           </div>
         </form>
       </div>

@@ -1,4 +1,5 @@
 import UseAxios from "../../../../CustomHooks/UseAxios";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import Swal from "sweetalert2";
 
@@ -38,15 +39,27 @@ const ManageRegisteredCamps = () => {
     });
   };
 
+  // if (Participant.length === 0) {
+  //   return (
+  //     <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+  //       <h1 className="text-6xl text-center text-purple-600 font-bold">
+  //         Participants not found!
+  //       </h1>
+  //     </div>
+  //   );
+  // }
+
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 min-h-full mx-auto bg-orange-600 p-4 rounded-xl">
-        <h1>Manage Registered Camps</h1>
+      <div className="w-4/5 min-h-full mx-auto my-10 bg-[#6f5cc4] p-4 rounded-xl">
+        <h1 className="text-center font-bold p-3 text-2xl">
+          Manage Registered Camps
+        </h1>
         {/* table content */}
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
-              <tr>
+              <tr className="text-white">
                 <th>SL:</th>
                 <th>Participant Name</th>
                 <th>Camp Name</th>
@@ -57,23 +70,35 @@ const ManageRegisteredCamps = () => {
             </thead>
             <tbody>
               {Participant.map((person, index) => (
-                <tr key={person._id}>
+                <tr key={person._id} className="text-white">
                   <th>{index + 1}</th>
                   <th>{person.userName}</th>
                   <th>{person.name}</th>
                   <th>{person.price}</th>
                   <th>
-                    {person.paymentStatus === "pay"
-                      ? "unpaid"
-                      : person.paymentStatus}
+                    {person.paymentStatus === "pay" ? (
+                      <h1 className="bg-red-600 text-center rounded-xl p-2 font-bold">
+                        Unpaid
+                      </h1>
+                    ) : (
+                      <h1 className="bg-green-600 text-center rounded-xl p-2 font-bold">
+                        Paid
+                      </h1>
+                    )}
                   </th>
                   <th>
-                    <button
-                      className="font-bold"
-                      onClick={() => handleConfirmed(person._id)}
-                    >
-                      {person.confirmationStatus}
-                    </button>
+                    {person.confirmationStatus === "pending" ? (
+                      <UseMoreDetailsBtn
+                        isUpdate={true}
+                        onClick={() => handleConfirmed(person._id)}
+                      >
+                        {person.confirmationStatus}
+                      </UseMoreDetailsBtn>
+                    ) : (
+                      <UseMoreDetailsBtn disabled={true}>
+                        {person.confirmationStatus}
+                      </UseMoreDetailsBtn>
+                    )}
                   </th>
                 </tr>
               ))}

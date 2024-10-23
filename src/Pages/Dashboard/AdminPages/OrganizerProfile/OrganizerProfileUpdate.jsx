@@ -5,6 +5,7 @@ import UseUsers from "../../../../CustomHooks/UseUsers";
 import { useNavigate } from "react-router";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import Swal from "sweetalert2";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const OrganizerProfileUpdate = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -37,7 +38,7 @@ const OrganizerProfileUpdate = () => {
           .patch(`/users/${userDetails._id}`, data)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
-              // refetching data and and navigating the user 
+              // refetching data and and navigating the user
               refetch();
               navigate(-1);
 
@@ -65,7 +66,7 @@ const OrganizerProfileUpdate = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-4/5 h-96 mx-auto p-4 my-10 rounded-xl bg-orange-600">
+      <div className="w-4/5 h-96 mx-auto p-4 my-10 rounded-xl bg-[#6f5cc4]">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-2xl p-3 font-bold text-center">
             Updating Organizer Profile
@@ -73,7 +74,7 @@ const OrganizerProfileUpdate = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <label className="form-control w-full col-span-2">
               <div className="label">
-                <span className="label-text">Photo URL</span>
+                <span className="label-text text-white">Photo URL</span>
               </div>
               <input
                 type="text"
@@ -87,7 +88,7 @@ const OrganizerProfileUpdate = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text text-white">Name</span>
               </div>
               <input
                 type="text"
@@ -101,7 +102,7 @@ const OrganizerProfileUpdate = () => {
             </label>
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-white">Email</span>
               </div>
               <input
                 type="email"
@@ -115,19 +116,10 @@ const OrganizerProfileUpdate = () => {
             </label>
           </div>
           <div className="flex justify-end items-center mt-5 gap-4">
-            <button
-              onClick={handleCancel}
-              className="btn rounded-xl bg-red-700 hover:bg-red-800
-            text-black"
-            >
+            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </button>
-            <button
-              className="btn rounded-xl bg-yellow-500 hover:bg-yellow-400
-            text-black"
-            >
-              Submit
-            </button>
+            </UseMoreDetailsBtn>
+            <UseMoreDetailsBtn type="submit" isUpdate={true}>Submit</UseMoreDetailsBtn>
           </div>
         </form>
       </div>

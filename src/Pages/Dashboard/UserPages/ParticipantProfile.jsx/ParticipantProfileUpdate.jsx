@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import Swal from "sweetalert2";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const ParticipantProfileUpdate = () => {
   // state
@@ -48,8 +49,8 @@ const ParticipantProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full h-full bg-white flex justify-center items-center">
-      <div className="w-4/5 h-80 bg-orange-500 rounded-xl">
+    <div className="w-full h-full flex justify-center items-center">
+      <div className="w-4/5 h-80 bg-[#6f5cc4] rounded-xl">
         <h1 className="text-2xl p-2 text-center text-white font-bold">
           Update Participant Information
         </h1>
@@ -150,18 +151,12 @@ const ParticipantProfileUpdate = () => {
             </div>
           </div>
           <div className="flex p-4 gap-4 justify-end items-start">
-            <button
-              onClick={handleCancel}
-              className="btn border hover:bg-red-800 rounded-xl"
-            >
+            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="btn bg-blue-800 hover:bg-green-800 hover:text-black rounded-xl"
-            >
+            </UseMoreDetailsBtn>
+            <UseMoreDetailsBtn type="submit" isSubmit={true}>
               Submit
-            </button>
+            </UseMoreDetailsBtn>
           </div>
         </form>
       </div>

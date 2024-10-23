@@ -56,11 +56,56 @@
 /* Cancel Button Styles */
 .cancelBtn {
   border-color: red;
-  color: red;
+  color: black;
 }
 
 .cancelBtn:hover {
   background: red;
   color: #fff;
   box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.815);
+}
+
+/* Update Button Styles */
+.updateBtn {
+  border-color: yellow;
+  color: yellow;
+}
+
+.updateBtn:hover {
+  background: yellow;
+  color: black;
+  box-shadow: 0 0 30px 5px rgba(255, 255, 0, 0.815);
+}
+
+/* Submit Button Styles */
+.submitBtn {
+  border-color: green;
+  color: black;
+}
+
+.submitBtn:hover {
+  background: green;
+  color: #fff;
+  box-shadow: 0 0 30px 5px rgba(0, 255, 0, 0.815);
+}
+
+/* Purple Button Styles */
+.isPurple {
+  border-color: #6f5cc4; /* Purple border */
+  color: #6f5cc4; /* Purple text color */
+}
+
+.isPurple:hover {
+  background: #6f5cc4; /* Purple background on hover */
+  color: #fff; /* White text on hover */
+  box-shadow: 0 0 30px 5px rgba(111, 92, 196, 0.815); /* Purple shadow */
+}
+
+/* Disabled Button Styles */
+.moreDetailsBtn:disabled {
+  background-color: #d3d3d3; /* Light grey background */
+  color: #a9a9a9; /* Grey text color */
+  border-color: #d3d3d3; /* Grey border */
+  cursor: not-allowed; /* Cursor changes to 'not-allowed' */
+  box-shadow: none; /* No shadow when disabled */
 }

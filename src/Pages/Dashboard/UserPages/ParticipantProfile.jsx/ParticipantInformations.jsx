@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import { Link } from "react-router-dom";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const ParticipantInformations = () => {
   // context api
@@ -24,9 +25,19 @@ const ParticipantInformations = () => {
     );
   }
 
+  if (participantProfile.length === 0) {
+    return (
+      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+        <h1 className="text-6xl text-center text-purple-600 font-bold">
+          No Participants Found!
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full  min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-orange-600">
+      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-[#6f5cc4]">
         <h1 className="p-3 text-2xl text-center font-bold text-white">
           Participant Informations
         </h1>
@@ -49,7 +60,7 @@ const ParticipantInformations = () => {
             </thead>
             <tbody>
               {participantProfile.map((participant, index) => (
-                <tr key={participant._id}>
+                <tr key={participant._id} className="text-white">
                   <th>{index + 1}</th>
                   <th>{participant.name}</th>
                   <td>{participant.location}</td>
@@ -62,9 +73,9 @@ const ParticipantInformations = () => {
                     <Link
                       to={`/dashboard/participantProfileUpdate/${participant._id}`}
                     >
-                      <button className="px-6 py-3 bg-yellow-400 text-black rounded-xl hover:bg-yellow-600">
+                      <UseMoreDetailsBtn isUpdate={true}>
                         Update
-                      </button>
+                      </UseMoreDetailsBtn>
                     </Link>
                   </td>
                 </tr>

@@ -17,10 +17,6 @@ const UserAnalytics = () => {
   // hooks
   const [participant] = UseParticipant();
 
-  // const participantInfo = participant.filter(
-  //   (participant) => participant.userEmail === user.email
-  // );
-
   // checking the user
   if (!user) {
     return (
@@ -31,13 +27,8 @@ const UserAnalytics = () => {
     );
   }
   // cusmot pie chart
-  const data = [
-    { name: "Group A", value: 400 },
-    { name: "Group B", value: 300 },
-    { name: "Group C", value: 300 },
-    { name: "Group D", value: 200 },
-  ];
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
+  const COLORS = ["#FFD700", "#FFA500", "#FF0000", "#FF8042"];
 
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
@@ -83,9 +74,11 @@ const UserAnalytics = () => {
 
   return (
     <div className="w-full min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto bg-orange-600 rounded-xl my-10 p-4">
-      <h1 className='text-center text-2xl font-bold p-3 '>Mr.{user.displayName} Analytics</h1>
-        <div className="flex items-center">
+      <div className="w-5/6 min-h-full mx-auto bg-[#6f5cc4] rounded-xl my-10 p-4">
+        <h1 className="text-center text-2xl font-bold p-3 ">
+          Mr.{user.displayName} Analytics
+        </h1>
+        <div className="flex items-center text-white">
           <div className="w-1/2">
             <PieChart width={400} height={400}>
               <Pie
@@ -109,7 +102,9 @@ const UserAnalytics = () => {
             </PieChart>
           </div>
           <div className="w-1/2">
-            <h1 className='text-2xl font-bold p-2 text-center'>Participant Status Overview</h1>
+            <h1 className="text-2xl font-bold p-2 text-center">
+              Participant Status Overview
+            </h1>
             <p>
               Gain insight into the current status of camp participants with our
               comprehensive analytics dashboard. This section provides a clear

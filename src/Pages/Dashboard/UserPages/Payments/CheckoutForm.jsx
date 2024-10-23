@@ -5,6 +5,7 @@ import { AuthContext } from "../../../../Auth/AuthProvider";
 import moment from "moment";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
+import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 
 const CheckoutForm = ({ price, campName, id }) => {
   // state
@@ -93,7 +94,6 @@ const CheckoutForm = ({ price, campName, id }) => {
             .then((res) => {
               console.log(res.data);
               if (res.data.modifiedCount > 0) {
-                
                 // navigating the user and showing alert
                 navigate("/dashboard/userPaymentHistory");
                 Swal.fire({
@@ -128,13 +128,14 @@ const CheckoutForm = ({ price, campName, id }) => {
           },
         }}
       />
-      <button
+      <UseMoreDetailsBtn
         type="submit"
-        className="px-6 py-2 rounded-xl mt-10 bg-purple-600 cursor-pointer"
+        isSubmit={true}
+        className='mt-5'
         disabled={!stripe || !clientSecret}
       >
         Pay
-      </button>
+      </UseMoreDetailsBtn>
       {paymentError && (
         <h5 className="text-red-500 text-base">{paymentError}</h5>
       )}
