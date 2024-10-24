@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
 import Swal from "sweetalert2";
+import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -175,17 +176,14 @@ const Login = () => {
             </label>
           </div>
 
-          <button
-            type="submit"
-            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
-          >
+          <UseMoreDetailsBtn className="w-full" type="submit">
             Login
-          </button>
+          </UseMoreDetailsBtn>
 
           <p className="my-3 text-center">
             Didn&#39;t have an account? Please{" "}
             <Link to="/register">
-              <span className="hover:underline hover:text-blue-500">
+              <span className="hover:underline font-bold text-blue-500">
                 Register
               </span>
             </Link>

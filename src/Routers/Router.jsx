@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         path: "/dashboard/dashboardInterface",
         element: (
           <PrivateRoute>
-            <DashboardInterface />,
+            <DashboardInterface />
           </PrivateRoute>
         ),
       },
@@ -105,7 +105,7 @@ const router = createBrowserRouter([
         path: "/dashboard/organizerProfile",
         element: (
           <AdminRoute>
-            <OrganizerProfile />,
+            <OrganizerProfile />
           </AdminRoute>
         ),
       },
@@ -113,7 +113,7 @@ const router = createBrowserRouter([
         path: "/dashboard/organizerProfileUpdate",
         element: (
           <AdminRoute>
-            <OrganizerProfileUpdate />,
+            <OrganizerProfileUpdate />
           </AdminRoute>
         ),
       },
@@ -121,7 +121,7 @@ const router = createBrowserRouter([
         path: "/dashboard/AllUsers",
         element: (
           <AdminRoute>
-            <AllUsers />,
+            <AllUsers />
           </AdminRoute>
         ),
       },
@@ -129,7 +129,7 @@ const router = createBrowserRouter([
         path: "/dashboard/addACamp",
         element: (
           <AdminRoute>
-            <AddACamp />,
+            <AddACamp />
           </AdminRoute>
         ),
       },
@@ -137,7 +137,7 @@ const router = createBrowserRouter([
         path: "/dashboard/manageCamps",
         element: (
           <AdminRoute>
-            <ManageCamps />,
+            <ManageCamps />
           </AdminRoute>
         ),
       },
@@ -145,7 +145,7 @@ const router = createBrowserRouter([
         path: "/dashboard/updateManageCamps/:id",
         element: (
           <AdminRoute>
-            <UpdateManageCamps />,
+            <UpdateManageCamps />
           </AdminRoute>
         ),
       },

@@ -4,6 +4,7 @@ import { AuthContext } from "../../../Auth/AuthProvider";
 import Swal from "sweetalert2";
 import UseJoinusBtn from "../../../CustomHooks/UseJoinusBtn";
 import UseLogoutBtn from "../../../CustomHooks/UseLogoutBtn";
+import UseUnderlineBtn from "../../../CustomHooks/UseUnderlineBtn";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -35,13 +36,19 @@ const Header = () => {
   const navlinks = (
     <>
       <NavLink to="/">
-        <li className="p-2 font-bold text-white text-xl">Home</li>
+        <UseUnderlineBtn>
+          <li className="p-2 font-bold text-white text-xl">Home</li>
+        </UseUnderlineBtn>
       </NavLink>
       <NavLink to="/availableCamps">
-        <li className="p-2 font-bold text-white text-xl">Available Camps</li>
+        <UseUnderlineBtn>
+          <li className="p-2 font-bold text-white text-xl">Available Camps</li>
+        </UseUnderlineBtn>
       </NavLink>
       <NavLink to="/dashboard/dashboardInterface">
-        <li className="p-2 font-bold text-white text-xl">DashBoard</li>
+        <UseUnderlineBtn>
+          <li className="p-2 font-bold text-white text-xl">DashBoard</li>
+        </UseUnderlineBtn>
       </NavLink>
     </>
   );
@@ -81,7 +88,7 @@ const Header = () => {
             className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
           />
           {/* <span className="text-2xl text-white">Carepoint Camps</span> */}
-          <span className="text-sm text-white sm:text-base md:text-2xl">
+          <span className="text-sm font-bold text-white sm:text-base md:text-2xl">
             Carepoint Camps
           </span>
         </button>

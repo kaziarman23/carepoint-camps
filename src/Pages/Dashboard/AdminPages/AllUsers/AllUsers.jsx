@@ -49,8 +49,9 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 md:rounded-xl">
+    <div className="w-full min-h-screen  overflow-hidden">
+      {/* <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 md:rounded-xl"> */}
+      <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] text-white p-4 mx-auto my-10 md:rounded-xl">
         <h1 className="text-center font-bold text-2xl p-2 text-white">
           All Users
         </h1>
@@ -62,7 +63,7 @@ const AllUsers = () => {
           <table className="min-w-full text-left">
             {/* Head */}
             <thead>
-              <tr className="text-white text-xl">
+              <tr className=" text-xl border-b text-white">
                 <th className="py-2">SL</th>
                 <th className="py-2">Name</th>
                 <th className="py-2">Email</th>
@@ -71,7 +72,7 @@ const AllUsers = () => {
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <tr key={index} className="text-white border-b">
+                <tr key={index} className="border-b">
                   <td className="py-2">{index + 1}</td>
                   <td className="py-2">{user.name}</td>
                   <td className="py-2">{user.email}</td>

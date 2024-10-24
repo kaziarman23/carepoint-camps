@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import Swal from "sweetalert2";
 import UseAxios from "../../../CustomHooks/UseAxios";
+import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -249,17 +250,17 @@ const Register = () => {
             </label>
           </div>
 
-          <button
+          <UseMoreDetailsBtn
             type="submit"
-            className="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm sm:w-auto lg:w-full px-5 py-3 text-center bg-blue-600 hover:bg-green-500 hover:text-black focus:ring-green-500"
+            className='w-full'
           >
             Register
-          </button>
+          </UseMoreDetailsBtn>
 
           <p className="my-3">
             Already have an account? Please{" "}
             <Link to="/login">
-              <span className="hover:underline hover:text-blue-500">Login</span>
+              <span className="hover:underline font-bold text-blue-500">Login</span>
             </Link>
           </p>
 
