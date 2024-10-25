@@ -49,36 +49,33 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="w-full min-h-screen  overflow-hidden">
-      {/* <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] p-4 mx-auto my-10 md:rounded-xl"> */}
-      <div className="w-full md:w-4/5 min-h-full bg-[#6f5cc4] text-white p-4 mx-auto my-10 md:rounded-xl">
-        <h1 className="text-center font-bold text-2xl p-2 text-white">
+    <div className="w-full min-h-screen overflow-hidden bg-gray-900">
+      <div className="w-full md:w-4/5 min-h-full bg-black text-white p-6 mx-auto my-10 md:rounded-xl shadow-lg">
+        <h1 className="text-center font-bold text-3xl p-2 uppercase text-[#6f5cc4]">
           All Users
         </h1>
-        <h2 className="text-left p-2 font-bold text-white">
-          Total Users: {users.length}
-        </h2>
+        <h2 className="text-left p-2 font-bold">Total Users: {users.length}</h2>
         {/* Table content */}
         <div className="overflow-x-auto">
           <table className="min-w-full text-left">
             {/* Head */}
             <thead>
-              <tr className=" text-xl border-b text-white">
-                <th className="py-2">SL</th>
-                <th className="py-2">Name</th>
-                <th className="py-2">Email</th>
-                <th className="py-2">Role</th>
+              <tr className="bg-[#6f5cc4] text-xl border-b ">
+                <th className="py-3 px-4">SL</th>
+                <th className="py-3 px-4">Name</th>
+                <th className="py-3 px-4">Email</th>
+                <th className="py-3 px-4">Role</th>
               </tr>
             </thead>
             <tbody>
               {users.map((user, index) => (
-                <tr key={index} className="border-b">
-                  <td className="py-2">{index + 1}</td>
-                  <td className="py-2">{user.name}</td>
-                  <td className="py-2">{user.email}</td>
-                  <td className="py-2 font-bold">
+                <tr key={index}>
+                  <td className="py-3 px-4">{index + 1}</td>
+                  <td className="py-3 px-4">{user.name}</td>
+                  <td className="py-3 px-4">{user.email}</td>
+                  <td className="py-3 px-4 font-bold">
                     {user?.userRole === "admin" ? (
-                      "Admin"
+                      <span className="text-purple-600">Admin</span>
                     ) : (
                       <UseMoreDetailsBtn
                         onClick={() => handleMakeAdmin(user)}

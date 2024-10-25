@@ -65,8 +65,8 @@ const OrganizerProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center">
-      <div className="w-full md:w-4/5 h-auto mx-auto p-4 my-10 md:rounded-xl bg-[#6f5cc4]">
+    <div className="w-full min-h-screen flex justify-center items-center bg-gray-900">
+      <div className="w-full md:w-4/5 h-auto mx-auto p-6 my-10 md:rounded-xl bg-black shadow-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-2xl p-3 font-bold text-center text-white">
             Updating Organizer Profile
@@ -78,44 +78,46 @@ const OrganizerProfileUpdate = () => {
               </div>
               <input
                 type="text"
-                className="input input-bordered w-full rounded-xl text-black bg-white"
+                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
                 defaultValue={user.photoURL}
                 {...register("photo", { required: true })}
               />
               {errors.photo?.type === "required" && (
-                <p role="alert" className="text-red-500">
+                <p role="alert" className="text-red-500 mt-1">
                   This field is required
                 </p>
               )}
             </label>
-            <label className="form-control w-full ">
+
+            <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Name</span>
               </div>
               <input
                 type="text"
-                className="input input-bordered w-full rounded-xl text-black bg-white"
+                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
                 defaultValue={user.displayName}
                 {...register("name", { required: true })}
               />
               {errors.name?.type === "required" && (
-                <p role="alert" className="text-red-500">
+                <p role="alert" className="text-red-500 mt-1">
                   This field is required
                 </p>
               )}
             </label>
+
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text text-white">Email</span>
               </div>
               <input
                 type="email"
-                className="input input-bordered w-full rounded-xl text-black bg-white"
+                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
                 defaultValue={user.email}
                 {...register("email", { required: true })}
               />
               {errors.email?.type === "required" && (
-                <p role="alert" className="text-red-500">
+                <p role="alert" className="text-red-500 mt-1">
                   This field is required
                 </p>
               )}
@@ -125,7 +127,7 @@ const OrganizerProfileUpdate = () => {
             <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
               Cancel
             </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit" isUpdate={true}>
+            <UseMoreDetailsBtn type="submit" isSubmit={true}>
               Submit
             </UseMoreDetailsBtn>
           </div>

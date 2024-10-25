@@ -66,7 +66,7 @@ const DashboardInterface = () => {
           </div>
         </div>
         <div className="w-full mt-16 relative">
-          <UseShineBtn className="w-full text-5xl text-center mt-10 font-bold">
+          <UseShineBtn className="w-full text-sm text-left mt-10 font-bold sm:text-center sm:text-base lg:text-2xl xl:text-5xl">
             Ready To Explore the Dashboard
           </UseShineBtn>
         </div>

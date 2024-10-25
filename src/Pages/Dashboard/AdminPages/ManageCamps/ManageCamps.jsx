@@ -49,21 +49,25 @@ const ManageCamps = () => {
 
   if (filterCamps.length === 0) {
     return (
-      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-        <h1 className="text-6xl text-center text-purple-600 font-bold">
-          No Camp Added!
-        </h1>
-        <Link to="/dashboard/addACamp">
-          <UseMoreDetailsBtn isPurple={true}>Add Camps</UseMoreDetailsBtn>
-        </Link>
+      <div className="w-full h-screen bg-black overflow-hidden">
+        <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+          <h1 className="text-6xl text-center text-purple-600 font-bold">
+            No Camp Added!
+          </h1>
+          <Link to="/dashboard/addACamp">
+            <UseMoreDetailsBtn isPurple={true}>Add Camps</UseMoreDetailsBtn>
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-11/12 min-h-full mx-auto bg-[#6f5cc4] my-10 p-4 rounded-xl">
-        <h1 className="text-2xl p-3 font-bold text-white text-center">Manage Camps</h1>
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="w-11/12 min-h-full mx-auto bg-black my-10 p-4 rounded-xl">
+        <h1 className="text-2xl p-3 font-bold text-white text-center">
+          Manage Camps
+        </h1>
         {/* table content */}
         <div className="overflow-x-auto">
           <table className="table min-w-full">

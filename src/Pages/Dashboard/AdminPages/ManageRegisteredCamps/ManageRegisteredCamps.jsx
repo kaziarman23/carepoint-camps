@@ -50,16 +50,16 @@ const ManageRegisteredCamps = () => {
   }
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-11/12 md:w-4/5 min-h-full mx-auto my-10 bg-[#6f5cc4] p-4 rounded-xl">
-        <h1 className="text-center font-bold p-3 text-2xl text-white">
+    <div className="w-full min-h-screen overflow-hidden bg-gray-900">
+      <div className="w-11/12 md:w-4/5 min-h-full mx-auto my-10 bg-black p-4 rounded-xl">
+        <h1 className="text-center font-bold p-3 text-2xl text-purple-400 uppercase">
           Manage Registered Camps
         </h1>
         {/* table content */}
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="text-white">
+              <tr className="text-white uppercase bg-purple-400">
                 <th className="px-2 py-3 text-left text-sm font-medium">SL:</th>
                 <th className="px-2 py-3 text-left text-sm font-medium">
                   Participant Name

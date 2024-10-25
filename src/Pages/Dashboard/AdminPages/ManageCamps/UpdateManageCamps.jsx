@@ -45,8 +45,8 @@ const UpdateManageCamps = () => {
     navigate(-1);
   };
   return (
-    <div className="w-full min-h-screen">
-      <div className="bg-[#6f5cc4] w-11/12 md:w-4/5 min-h-full mx-auto my-10 rounded-xl p-4">
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="bg-black w-11/12 md:w-4/5 min-h-full mx-auto my-10 rounded-xl p-4">
         <h1 className="text-center font-bold p-3 text-2xl text-white">
           Update Manage Camps
         </h1>

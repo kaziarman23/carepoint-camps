@@ -56,7 +56,7 @@
 /* Cancel Button Styles */
 .cancelBtn {
   border-color: red;
-  color: black;
+  color: red;
 }
 
 .cancelBtn:hover {
@@ -80,7 +80,7 @@
 /* Submit Button Styles */
 .submitBtn {
   border-color: green;
-  color: black;
+  color: green;
 }
 
 .submitBtn:hover {

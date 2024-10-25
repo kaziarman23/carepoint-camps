@@ -42,10 +42,10 @@ const AddACamp = () => {
   };
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="bg-[#6f5cc4] w-full md:w-4/5 min-h-full mx-auto my-10 md:rounded-xl p-4">
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="bg-black w-full md:w-4/5 min-h-full mx-auto my-10 md:rounded-xl p-4">
         {/* Responsive heading */}
-        <h1 className="text-center font-bold p-3 text-xl md:text-2xl text-white">
+        <h1 className="text-center font-bold uppercase p-3 text-xl md:text-2xl text-[#6f5cc4]">
           Add a Camp
         </h1>
 
