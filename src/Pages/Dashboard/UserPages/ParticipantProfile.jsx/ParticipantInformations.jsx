@@ -27,26 +27,28 @@ const ParticipantInformations = () => {
 
   if (participantProfile.length === 0) {
     return (
-      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-        <h1 className="text-6xl text-center text-purple-600 font-bold">
-          No Participants Found!
-        </h1>
+      <div className="bg-gray-900 w-full h-screen overflow-hidden">
+        <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+          <h1 className="text-6xl text-center text-purple-600 font-bold">
+            No Participants Found!
+          </h1>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto my-10 rounded-xl bg-[#6f5cc4] p-4">
-        <h1 className="p-3 text-2xl text-center font-bold text-white">
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-black p-4">
+        <h1 className="p-3 text-2xl text-center font-bold text-purple-400 uppercase">
           Participant Information
         </h1>
         {/* table content */}
         <div className="overflow-x-auto my-5">
           <table className="table-auto min-w-full text-left text-sm text-white">
             {/* head */}
-            <thead className="bg-[#4a3a8c] text-white">
-              <tr>
+            <thead >
+              <tr className=" text-white uppercase border-b">
                 <th className="p-2">SL</th>
                 <th className="p-2">Camp Name</th>
                 <th className="p-2">Location</th>
@@ -60,7 +62,7 @@ const ParticipantInformations = () => {
             </thead>
             <tbody>
               {participantProfile.map((participant, index) => (
-                <tr key={participant._id} className="border-b border-gray-700">
+                <tr key={participant._id}>
                   <td className="p-2">{index + 1}</td>
                   <td className="p-2">{participant.name}</td>
                   <td className="p-2">{participant.location}</td>

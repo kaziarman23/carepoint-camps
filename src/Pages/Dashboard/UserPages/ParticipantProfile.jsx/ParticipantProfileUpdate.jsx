@@ -49,9 +49,9 @@ const ParticipantProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center p-4">
-      <div className="w-full max-w-4xl bg-[#6f5cc4] rounded-xl p-6">
-        <h1 className="text-2xl p-3 text-center font-bold text-white">
+    <div className="w-full min-h-screen bg-gray-900 flex justify-center items-center p-4">
+      <div className="w-full max-w-4xl bg-black rounded-xl p-6">
+        <h1 className="text-2xl p-3 text-center font-bold text-purple-400 uppercase">
           Update Participant Information
         </h1>
 

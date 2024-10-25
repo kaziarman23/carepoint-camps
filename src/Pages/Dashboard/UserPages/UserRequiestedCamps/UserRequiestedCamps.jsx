@@ -60,18 +60,20 @@ const UserRequiestedCamps = () => {
 
   if (participantRequiests.length === 0) {
     return (
-      <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-        <h1 className="text-6xl text-center text-purple-600 font-bold">
-          No Requiests Found!
-        </h1>
+      <div className="w-full h-screen bg-gray-900">
+        <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+          <h1 className="text-6xl text-center text-purple-600 font-bold">
+            No Requiests Found!
+          </h1>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="bg-[#6f5cc4] w-full md:w-4/5 min-h-full mx-auto my-10 rounded-xl">
-        <h1 className="text-center text-2xl font-bold p-4 text-white">
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="bg-black w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl">
+        <h1 className="text-center text-2xl font-bold p-4 text-purple-400 uppercase">
           Requested Camps
         </h1>
         {/* table content */}
@@ -123,11 +125,11 @@ const UserRequiestedCamps = () => {
                   </td>
                   <td className="px-4 py-2">
                     {participant.confirmationStatus === "pending" ? (
-                      <button className="bg-yellow-400 p-2 rounded-xl uppercase text-white shadow-[0_0_20px_5px_rgba(255,255,0,0.815)]">
+                      <button className="bg-yellow-400 p-2 rounded-xl uppercase text-white ">
                         Pending
                       </button>
                     ) : (
-                      <button className="bg-green-700 p-2 rounded-xl text-white shadow-[0_0_30px_5px_rgba(0,255,0,0.815)] uppercase">
+                      <button className="bg-green-700 p-2 rounded-xl text-white uppercase">
                         Confirmed
                       </button>
                     )}

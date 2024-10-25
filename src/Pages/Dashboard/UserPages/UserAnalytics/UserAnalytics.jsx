@@ -20,9 +20,7 @@ const UserAnalytics = () => {
     );
   }
   // cusmot pie chart
-
-  const COLORS = ["#FFD700", "#FFA500", "#FF0000", "#FF8042"];
-
+  const COLORS = ["green", "red"];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -59,16 +57,12 @@ const UserAnalytics = () => {
       name: "Pending Payment",
       value: participant.filter((p) => p.paymentStatus === "pay").length,
     },
-    {
-      name: "Not Paid",
-      value: participant.filter((p) => !p.paymentStatus).length,
-    },
   ];
 
   return (
-    <div className="w-full min-h-screen">
-      <div className="w-5/6 min-h-full mx-auto bg-[#6f5cc4] rounded-xl my-10 p-4">
-        <h1 className="text-center text-2xl font-bold p-3 text-white">
+    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+      <div className="w-5/6 min-h-full mx-auto bg-black rounded-xl my-10 p-4">
+        <h1 className="text-center text-2xl font-bold p-3 text-purple-400 uppercase">
           Mr.{user.displayName} Analytics
         </h1>
         <div className="flex flex-wrap items-center text-white">
