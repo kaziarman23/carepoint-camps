@@ -48,7 +48,7 @@ const ParticipantInformations = () => {
           <table className="table-auto min-w-full text-left text-sm text-white">
             {/* head */}
             <thead >
-              <tr className=" text-white uppercase border-b">
+              <tr className="text-white uppercase border-b bg-purple-400">
                 <th className="p-2">SL</th>
                 <th className="p-2">Camp Name</th>
                 <th className="p-2">Location</th>

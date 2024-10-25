@@ -81,7 +81,7 @@ const UserRequiestedCamps = () => {
           <table className="min-w-full divide-y divide-gray-200">
             {/* head */}
             <thead>
-              <tr className="text-white uppercase">
+              <tr className="text-white uppercase bg-purple-400">
                 <th className="px-4 py-2 text-left text-sm font-medium">SL</th>
                 <th className="px-4 py-2 text-left text-sm font-medium">
                   Camp Name

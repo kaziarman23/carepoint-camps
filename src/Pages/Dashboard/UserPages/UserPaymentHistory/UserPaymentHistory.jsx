@@ -37,7 +37,7 @@ const UserPaymentHistory = () => {
           <table className="min-w-full table-auto">
             {/* head */}
             <thead>
-              <tr className="text-white uppercase">
+              <tr className="text-white uppercase bg-purple-400">
                 <th className="px-2 py-1 text-left">SL</th>
                 <th className="px-2 py-1 text-left">Camp Name</th>
                 <th className="px-2 py-1 text-left">Fees</th>
