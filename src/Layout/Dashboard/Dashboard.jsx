@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "../../CustomHooks/UseAdmin";
 import {
@@ -13,6 +13,11 @@ import { FaMoneyCheckAlt, FaUsers, FaUserShield } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { FaHouseMedical } from "react-icons/fa6";
 import { BsPersonWorkspace } from "react-icons/bs";
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from "body-scroll-lock";
 
 const Dashboard = () => {
   const [isAdmin] = UseAdmin();
@@ -20,10 +25,21 @@ const Dashboard = () => {
 
   const toggleSidebar = () => setIsSidebarOpen((preValue) => !preValue);
 
+  // Close sidebar only on small screens
   const handleNavClick = () => {
-    // Close sidebar only on small screens
     if (window.innerWidth < 768) setIsSidebarOpen(false);
   };
+
+  // screen lock when side bar is open
+  useEffect(() => {
+    if (isSidebarOpen) {
+      disableBodyScroll(document.body);
+    } else {
+      enableBodyScroll(document.body);
+    }
+
+    return () => clearAllBodyScrollLocks(document.body);
+  }, [isSidebarOpen]);
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
