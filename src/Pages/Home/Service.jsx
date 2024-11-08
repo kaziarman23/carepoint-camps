@@ -5,11 +5,11 @@ const Service = () => {
   return (
     <div className="w-full h-full">
       <div className="w-full mx-auto grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 xl:w-11/12">
-        <div className="w-72 h-72 rounded-xl bg-[#c2dbf4] p-5 space-y-3 md:w-60 md:h-72 lg:w-80 xl:w-72 xl:h-72">
-          <h1 className="text-center font-bold text-base text-[#455d75] lg:text-xl">
+        <div className="w-72 h-72 rounded-xl bg-[#d7ede4] p-5 space-y-3 md:w-60 md:h-72 lg:w-80 xl:w-72 xl:h-72">
+          <h1 className="text-center font-bold text-xl text-[#455d75]">
             General Health Check-ups
           </h1>
-          <p className="text-[#8ba0b9] h-40 text-sm lg:text-base">
+          <p className="text-[#8ba0b9] h-40 md:text-sm lg:text-base">
             Comprehensive health screenings to assess your overall health. Our
             medical team will evaluate vital signs, conduct basic tests like
             blood pressure and sugar levels for maintaining good health.
