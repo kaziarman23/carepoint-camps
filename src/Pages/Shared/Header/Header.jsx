@@ -1,35 +1,26 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
-import Swal from "sweetalert2";
-import UseJoinusBtn from "../../../CustomHooks/UseJoinusBtn";
 import UseLogoutBtn from "../../../CustomHooks/UseLogoutBtn";
 import UseUnderlineBtn from "../../../CustomHooks/UseUnderlineBtn";
+import toast from "react-hot-toast";
+import { Ri24HoursLine } from "react-icons/ri";
 
 const Header = () => {
+  // states
   const navigate = useNavigate();
+
   // Context api
   const { user, logoutUser } = useContext(AuthContext);
 
   // Handle Logout
   const handleLogout = () => {
     logoutUser().then(() => {
+      // navigating the user
       navigate("/");
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Logout successfull",
-      });
+
+      // showing an alert
+      toast.success("Logout successfull");
     });
   };
 
@@ -80,15 +71,12 @@ const Header = () => {
             {navlinks}
           </ul>
         </div>
-        <button title="Home Page" className="flex items-center gap-2">
-          {/* <img src="/logo.png" alt="header img" className="w-8 h-8" /> */}
-          <img
-            src="/logo.png"
-            alt="header img"
-            className="w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
-          />
-          {/* <span className="text-2xl text-white">Carepoint Camps</span> */}
-          <span className="text-sm font-bold text-white sm:text-base md:text-2xl">
+        <button
+          title="Home Page"
+          className="text-white flex items-center gap-2"
+        >
+          <Ri24HoursLine className="w-8 h-8 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+          <span className="text-xs font-bold sm:text-base md:text-2xl">
             Carepoint Camps
           </span>
         </button>
@@ -112,7 +100,9 @@ const Header = () => {
           </div>
         ) : (
           <Link to="/register">
-            <UseJoinusBtn>Join us</UseJoinusBtn>
+            <button className="uppercase text-xs p-2 rounded-xl font-bold border-2 border-black  bg-white text-black hover:bg-black hover:text-white hover:border-white lg:p-3">
+              Join us
+            </button>
           </Link>
         )}
       </div>

@@ -19,7 +19,7 @@ const AvailableCamps = () => {
       <h1 className="text-center text-xl md:text-2xl lg:text-3xl p-3 font-bold">
         Available Medical Camps
       </h1>
-      <p className="text-sm md:text-base p-2 text-center lg:text-left">
+      <p className="text-sm md:text-base p-2 text-left lg:text-left">
         Explore our upcoming medical camps tailored to various health needs,
         from general wellness check-ups to specialized care for children, women,
         and senior citizens. Each camp offers free screenings, consultations,

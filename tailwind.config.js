@@ -7,7 +7,11 @@ export default {
     "./node_modules/flowbite/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ["poppins", "serif"],
+      },
+    },
   },
   plugins: [require("daisyui"), require("flowbite/plugin")],
   daisyui: {

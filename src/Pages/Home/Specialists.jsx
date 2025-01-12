@@ -25,12 +25,12 @@ const Specialists = () => {
     <section>
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         {/* Heading Section */}
-        <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-          <h2 className="mb-4 text-3xl sm:text-4xl tracking-tight font-extrabold">
+        <div className="mx-auto w-full text-center mb-8 lg:mb-16">
+          <h2 className="mb-4 text-base sm:text-4xl tracking-tight font-extrabold">
             Meet Our Expert{" "}
             <span className="font-bold">Medical Specialists</span>
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg">
+          <p className="text-sm text-left sm:text-base lg:text-lg">
             Our team of highly skilled medical professionals is dedicated to
             providing top-notch healthcare services. With specialists in various
             fields, including cardiology, pediatrics, dermatology, and
@@ -44,7 +44,7 @@ const Specialists = () => {
           {specialistData.map((doc) => (
             <div
               key={doc.id}
-              className="flex flex-col sm:flex-row justify-center items-center rounded-lg shadow bg-[#d8e3e9] p-6"
+              className="w-full h-full flex flex-col justify-center items-center rounded-lg shadow bg-[#d8e3e9] p-3 sm:flex-row sm:justify-evenly"
             >
               <img
                 className="w-32 h-32 rounded-full object-cover mb-4 sm:w-40 sm:h-40 sm:mb-0"

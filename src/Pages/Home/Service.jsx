@@ -1,6 +1,3 @@
-import { TbPointFilled } from "react-icons/tb";
-
-
 const Service = () => {
   return (
     <div className="w-full h-full">
@@ -57,11 +54,11 @@ const Service = () => {
         <div className="flex flex-col lg:flex-row justify-center items-start gap-6 lg:gap-3">
           {/* Text Section */}
           <div className="w-full p-2 lg:w-1/3 ">
-            <h1 className="text-2xl lg:text-3xl p-2 text-center lg:text-left">
+            <h1 className="text-base p-2 text-center sm:text-lg md:text-2xl lg:text-left lg:text-3xl">
               We Provide Finest Patient&#39;s{" "}
               <span className="font-bold">Care & Amenities</span>
             </h1>
-            <p className="p-2 text-left">
+            <p className="p-2 text-left text-sm md:text-base">
               At our medical camp, we are committed to delivering the highest
               standard of patient care. Our experienced medical professionals
               ensure that each patient receives personalized attention,
@@ -89,33 +86,21 @@ const Service = () => {
           </div>
 
           {/* Features Section */}
-          <div className="w-4/5 p-3 mx-auto lg:w-1/3 ">
+          <div className="w-11/12 p-3 mx-auto lg:w-1/3 xl:p-5">
             <img
               src="https://i.pinimg.com/564x/2f/02/97/2f02970cd82044a3b4431b76a154ba0c.jpg"
               alt="service section right image"
               className="w-2/3 md:w-3/4 object-cover mx-auto rounded-xl mb-5"
             />
-            <h3 className="font-bold text-center lg:text-left">
+            <h3 className="font-bold text-left lg:text-left">
               Here are four key features we have:
             </h3>
-            <div className="text-center lg:text-left space-y-2 mt-3">
-              <p className="flex items-center justify-center lg:justify-start">
-                <TbPointFilled className="w-4 h-4 mr-2" />
-                Expert Medical Professionals
-              </p>
-              <p className="flex items-center justify-center lg:justify-start">
-                <TbPointFilled className="w-4 h-4 mr-2" />
-                State-of-the-Art Medical Equipment
-              </p>
-              <p className="flex items-center justify-center lg:justify-start">
-                <TbPointFilled className="w-4 h-4 mr-2" />
-                Free or Affordable Services
-              </p>
-              <p className="flex items-center justify-center lg:justify-start">
-                <TbPointFilled className="w-4 h-4 mr-2" />
-                Holistic Health Approach
-              </p>
-            </div>
+            <ul className="text-left list-disc lg:text-left space-y-2 mt-3">
+              <li>Expert Medical Professionals.</li>
+              <li>State-of-the-Art Medical Equipment.</li>
+              <li>Free or Affordable Services.</li>
+              <li>Holistic Health Approach.</li>
+            </ul>
           </div>
         </div>
       </div>

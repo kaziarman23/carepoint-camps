@@ -1,4 +1,5 @@
 import { FaDiscord, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
+import { Ri24HoursLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -8,20 +9,19 @@ const Footer = () => {
       title: "Error!",
       text: "This is a Demo Link",
       icon: "error",
-      background: "#111827",
-      color: "white",
       confirmButtonText: "Ok, Cool",
     });
   };
 
   return (
-    <footer className="bg-black">
+    <footer className="bg-gray-700">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <h1 className="flex items-center">
-              <Link to="/" className="flex">
-                <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
+              <Link to="/" className="flex items-center text-white gap-2">
+                <Ri24HoursLine className="w-8 h-8 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
+                <span className="self-center text-2xl font-semibold whitespace-nowrap">
                   CarePoint Camps
                 </span>
               </Link>

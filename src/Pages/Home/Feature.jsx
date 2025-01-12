@@ -1,6 +1,6 @@
 const Feature = () => {
   return (
-    <div className="w-4/5 h-full mx-auto">
+    <div className="w-4/5 h-full mx-auto xl:h-screen">
       <div className="flex flex-col lg:flex-row justify-center items-start gap-6 lg:gap-3">
         {/* Image Section */}
         <div className="w-full h-72 sm:h-full lg:w-1/2">

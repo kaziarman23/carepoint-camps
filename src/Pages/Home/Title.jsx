@@ -1,10 +1,10 @@
 import Marquee from "react-fast-marquee";
 
-const Slogan = () => {
+const Title = () => {
   return (
-    <div className="w-full h-32 my-10">
+    <div className="w-full h-full border-y-2">
       <Marquee pauseOnHover="true" speed="80">
-        <h1 className="text-8xl text-[#d4d6e4]">
+        <h1 className="text-7xl p-5 text-[#d4d6e4]">
           We are Your Trusted Friends.
         </h1>
       </Marquee>
@@ -12,4 +12,4 @@ const Slogan = () => {
   );
 };
 
-export default Slogan;
+export default Title;

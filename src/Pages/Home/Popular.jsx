@@ -10,10 +10,10 @@ const Popular = () => {
 
   return (
     <div className="w-full  h-full mx-auto md:w-4/5">
-      <h1 className="text-center text-2xl lg:text-3xl p-3 font-bold">
+      <h1 className="text-center text-base p-3 font-bold sm:text-lg lg:text-3xl">
         Popular Camps at Carepoint
       </h1>
-      <p className="p-2 text-left">
+      <p className="p-2 text-left text-sm lg:text-base">
         Discover the most popular health camps at Carepoint Camps, where we
         provide expert-led medical services and wellness programs tailored to
         diverse health needs. From comprehensive screenings to specialized care
@@ -33,10 +33,10 @@ const Popular = () => {
               />
             </figure>
             <div className="card-body rounded-b-xl border bg-[#f0f8ff] shadow-2xl p-5">
-              <h2 className="card-title text-lg lg:text-xl font-semibold">
+              <h2 className="card-title text-sm lg:text-xl font-semibold">
                 {camp.name}
               </h2>
-              <p className="text-gray-600">{camp.location}</p>
+              <p className="text-gray-600 text-sm">{camp.location}</p>
               <p className="text-gray-600">{camp.date}</p>
               <div className="card-actions justify-end">
                 <Link to={`/campDetails/${camp._id}`}>
