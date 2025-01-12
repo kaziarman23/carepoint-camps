@@ -39,7 +39,7 @@ const ParticipantInformations = () => {
 
   return (
     <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
-      <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-black p-4">
+      <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-black p-5">
         <h1 className="p-3 text-2xl text-center font-bold text-purple-400 uppercase">
           Participant Information
         </h1>
@@ -47,7 +47,7 @@ const ParticipantInformations = () => {
         <div className="overflow-x-auto my-5">
           <table className="table-auto min-w-full text-left text-sm text-white">
             {/* head */}
-            <thead >
+            <thead>
               <tr className="text-white uppercase border-b bg-purple-400">
                 <th className="p-2">SL</th>
                 <th className="p-2">Camp Name</th>

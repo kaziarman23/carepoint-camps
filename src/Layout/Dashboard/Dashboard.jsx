@@ -42,7 +42,7 @@ const Dashboard = () => {
   }, [isSidebarOpen]);
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen font-poppins">
       {/* Toggle Button for Small Screens */}
       <div className="text-white bg-[#6f5cc4] flex justify-start items-center gap-4 md:hidden">
         <div

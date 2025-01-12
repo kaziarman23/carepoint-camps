@@ -3,9 +3,9 @@ import { useContext, useEffect, useState } from "react";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import moment from "moment";
-import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const CheckoutForm = ({ price, campName, id }) => {
   // state
@@ -94,17 +94,19 @@ const CheckoutForm = ({ price, campName, id }) => {
             .then((res) => {
               console.log(res.data);
               if (res.data.modifiedCount > 0) {
-                // navigating the user and showing alert
+                // navigating the user
                 navigate("/dashboard/userPaymentHistory");
-                Swal.fire({
-                  title: "Success!",
-                  text: "Payment Successfull",
-                  icon: "success",
-                  confirmButtonText: "Okay",
-                });
+
+                // showing an alert
+                toast.success("Payment Successfull");
               }
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+              console.log(error);
+
+              // showing an alert
+              toast.error(error);
+            });
         });
       }
     }
@@ -131,7 +133,7 @@ const CheckoutForm = ({ price, campName, id }) => {
       <UseMoreDetailsBtn
         type="submit"
         isSubmit={true}
-        className='mt-5'
+        className="mt-5"
         disabled={!stripe || !clientSecret}
       >
         Pay

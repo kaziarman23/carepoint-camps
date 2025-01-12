@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import UseUsers from "../../../../CustomHooks/UseUsers";
 import { useNavigate } from "react-router";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import Swal from "sweetalert2";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const OrganizerProfileUpdate = () => {
   const { user, updateUser } = useContext(AuthContext);
@@ -28,35 +28,35 @@ const OrganizerProfileUpdate = () => {
   const onSubmit = (data) => {
     updateUser(data.name, data.photo, data.email)
       .then(() => {
-        // const updateInfo = {
-        //   name: data.name,
-        //   photo: data.photo,
-        //   email: data.email,
-        // };
+        const updateInfo = {
+          name: data.name,
+          photo: data.photo,
+          email: data.email,
+        };
 
         axiosPublic
-          .patch(`/users/${userDetails._id}`, data)
+          .patch(`/users/${userDetails._id}`, updateInfo)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
               // refetching data and and navigating the user
               refetch();
               navigate(-1);
-
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Profile updated successfully",
-                showConfirmButton: false,
-                timer: 1500,
-              });
+              // showing an alert
+              toast.success("Profile updated successfully");
             }
           })
           .catch((error) => {
             console.log(error);
+
+            // showing an alert
+            toast.error(error);
           });
       })
       .catch((error) => {
         console.log(error);
+
+        // showing an alert
+        toast.error(error);
       });
   };
 

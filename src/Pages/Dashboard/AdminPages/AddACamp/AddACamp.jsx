@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const AddACamp = () => {
   // context api
@@ -27,18 +27,19 @@ const AddACamp = () => {
       .post("/camps", campInfo)
       .then((res) => {
         if (res.data.insertedId) {
-          // reseting the form and showing alert
+          // reseting the form
           reset();
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "New Camp added",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+
+          // showing an alert
+          toast.success("New Camp added");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+
+        // showing an alert
+        toast.error(error);
+      });
   };
 
   return (
@@ -51,7 +52,6 @@ const AddACamp = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Responsive grid layout */}
-          {/* <div className="w-full grid gap-4 grid-cols-1 md:grid-cols-2 p-2 md:p-4"> */}
           <div className="w-full flex justify-center items-center flex-col p-2 md:p-4">
             {/* Camp Name */}
             <label className="form-control w-full">

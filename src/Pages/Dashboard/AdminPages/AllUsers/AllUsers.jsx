@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import UseUsers from "../../../../CustomHooks/UseUsers";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const AllUsers = () => {
   // hooks
@@ -33,7 +34,11 @@ const AllUsers = () => {
               });
             }
           })
-          .catch((error) => console.log(error));
+          .catch((error) => {
+            console.log(error);
+            // showing an alert
+            toast.error(error);
+          });
       }
     });
   };

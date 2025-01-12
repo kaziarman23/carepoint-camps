@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
@@ -26,15 +27,18 @@ const ManageRegisteredCamps = () => {
           .put(`/participants/confirm/${id}`, updatedInfo)
           .then((res) => {
             if (res.data.modifiedCount > 0) {
+              // refetching the data
               refetch();
-              Swal.fire({
-                title: "Confirmed!",
-                text: "Participant registation has been confirmed.",
-                icon: "success",
-              });
+
+              // showing an alert
+              toast.success("Participant registation has been confirmed.");
             }
           })
-          .catch((error) => console.log(error));
+          .catch((error) => {
+            console.log(error);
+            // showing an alert
+            toast.error(error);
+          });
       }
     });
   };

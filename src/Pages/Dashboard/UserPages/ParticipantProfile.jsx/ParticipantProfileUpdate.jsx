@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import Swal from "sweetalert2";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const ParticipantProfileUpdate = () => {
   // state
@@ -30,15 +30,14 @@ const ParticipantProfileUpdate = () => {
     axiosPublic.patch(`/participants/${id}`, data).then((res) => {
       console.log(res.data);
       if (res.data.modifiedCount > 0) {
-        navigate("/dashboard/ParticipantProfile");
+        // refetching data
         refetch();
 
-        Swal.fire({
-          title: "Success!",
-          text: "Data Updated Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-        });
+        // navigating the user
+
+        navigate("/dashboard/ParticipantProfile");
+        // showing an alert
+        toast.success("Data Updated Successfully");
       }
     });
   };

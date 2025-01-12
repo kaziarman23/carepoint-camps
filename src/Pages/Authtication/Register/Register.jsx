@@ -4,11 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
-import Swal from "sweetalert2";
 import UseAxios from "../../../CustomHooks/UseAxios";
 import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  // states
   const navigate = useNavigate();
 
   // Context api
@@ -45,24 +46,19 @@ const Register = () => {
               reset();
               navigate("/");
 
-              const Toast = Swal.mixin({
-                toast: true,
-                position: "top-end",
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
-                },
-              });
-              Toast.fire({
-                icon: "success",
-                title: "Registation successfully",
-              });
+              // navigating the user to home page
+              navigate("/");
+
+              // showing an alert
+              toast.success("Registation successfully");
             }
           })
-          .catch((error) => console.log(error.message, error));
+          .catch((error) => {
+            console.log(error);
+
+            // showing an alert
+            toast.error(error);
+          });
       });
     });
   };
@@ -84,24 +80,16 @@ const Register = () => {
             // navigating the user to home page
             navigate("/");
 
-            const Toast = Swal.mixin({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-              },
-            });
-            Toast.fire({
-              icon: "success",
-              title: "Registation successfully",
-            });
+            // showing an alert
+            toast.success("Registation successfully");
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+
+          // showing an alert
+          toast.error(error);
+        });
     });
   };
 
@@ -120,27 +108,19 @@ const Register = () => {
         .then((res) => {
           console.log(res);
           if (res.data.insertedId) {
-            // showing alert and navigating the user to home page
+            // navigating the user
             navigate("/");
 
-            const Toast = Swal.mixin({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-              },
-            });
-            Toast.fire({
-              icon: "success",
-              title: "Registation successfully",
-            });
+            // showing an alert
+            toast.success("Registation successfully");
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+
+          // showing an alert
+          toast.error(error);
+        });
     });
   };
 
@@ -250,17 +230,16 @@ const Register = () => {
             </label>
           </div>
 
-          <UseMoreDetailsBtn
-            type="submit"
-            className='w-full'
-          >
+          <UseMoreDetailsBtn type="submit" className="w-full">
             Register
           </UseMoreDetailsBtn>
 
           <p className="my-3">
             Already have an account? Please{" "}
             <Link to="/login">
-              <span className="hover:underline font-bold text-blue-500">Login</span>
+              <span className="hover:underline font-bold text-blue-500">
+                Login
+              </span>
             </Link>
           </p>
 

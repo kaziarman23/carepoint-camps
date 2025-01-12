@@ -4,8 +4,8 @@ import { VscGithubInverted } from "react-icons/vsc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
-import Swal from "sweetalert2";
 import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,21 +33,8 @@ const Login = () => {
       const redirectTo = location?.state?.from || "/";
       navigate(redirectTo);
 
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "logged in successfully",
-      });
+      // showing an alert
+      toast.success("LoggedIn successfully");
     });
   };
 
@@ -60,48 +47,25 @@ const Login = () => {
 
       // showing alert and reseting the form
       reset();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Logged in successfully",
-      });
+
+      // showing an alert
+      toast.success("LoggedIn successfully");
     });
   };
 
   // Login with Github
   const handleGithubLogin = () => {
     githubAuthintication().then(() => {
+
       // navigating the user
       const redirectTo = location?.state?.from || "/";
       navigate(redirectTo);
 
       // showing alert and reseting the form
       reset();
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.onmouseenter = Swal.stopTimer;
-          toast.onmouseleave = Swal.resumeTimer;
-        },
-      });
-      Toast.fire({
-        icon: "success",
-        title: "Logged in successfully",
-      });
+
+      // showing an alert
+      toast.success("LoggedIn successfully");
     });
   };
 

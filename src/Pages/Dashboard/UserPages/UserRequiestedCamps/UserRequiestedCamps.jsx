@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const UserRequiestedCamps = () => {
   // context api
@@ -33,16 +34,18 @@ const UserRequiestedCamps = () => {
           .delete(`/participants/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
+              // refetching data
               refetch();
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your registation has been deleted.",
-                icon: "success",
-              });
+
+              // showing an alert
+              toast.success("Your registation has been deleted.");
             }
           })
           .catch((error) => {
             console.log(error);
+
+            // showing an alert
+            toast.error(error);
           });
       }
     });
@@ -72,7 +75,7 @@ const UserRequiestedCamps = () => {
 
   return (
     <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
-      <div className="bg-black w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl">
+      <div className="bg-black w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl p-5">
         <h1 className="text-center text-2xl font-bold p-4 text-purple-400 uppercase">
           Requested Camps
         </h1>
@@ -125,13 +128,13 @@ const UserRequiestedCamps = () => {
                   </td>
                   <td className="px-4 py-2">
                     {participant.confirmationStatus === "pending" ? (
-                      <button className="bg-yellow-400 p-2 rounded-xl uppercase text-white ">
+                      <h1 className="p-2 rounded-xl uppercase text-yellow-500 text-2xl font-bold">
                         Pending
-                      </button>
+                      </h1>
                     ) : (
-                      <button className="bg-green-700 p-2 rounded-xl text-white uppercase">
+                      <h1 className="p-2 rounded-xl uppercase text-green-500 text-2xl font-bold">
                         Confirmed
-                      </button>
+                      </h1>
                     )}
                   </td>
                   <td className="px-4 py-2">

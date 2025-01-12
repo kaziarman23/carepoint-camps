@@ -3,9 +3,9 @@ import { AuthContext } from "../../Auth/AuthProvider";
 import UseAxios from "../../CustomHooks/UseAxios";
 import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../CustomHooks/UseCamps";
-import Swal from "sweetalert2";
 import ParticipantRegistration from "./ParticipantRegistration";
 import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const CampDetails = () => {
   // context api
@@ -52,18 +52,14 @@ const CampDetails = () => {
     // sending req to server
     axiosPublic.post("/participants", participantInfo).then((res) => {
       if (res.data.partticipantResult.insertedId) {
-        // refetching the data and sending user to home
+        // refetching the data
         refetch();
+
+        // navigating the user
         navigate("/availableCamps");
 
         // showing alert
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Your request accepted",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        toast.success("Your request accepted");
       }
     });
   };
@@ -82,8 +78,8 @@ const CampDetails = () => {
   }
 
   return (
-    <div className="w-4/5 h-full mx-auto flex justify-center items-center p-4">
-      <div className="w-full max-w-4xl gap-2 flex flex-col justify-center items-center bg-[#F5F5F5] p-5 rounded-xl">
+    <div className="w-full h-full mx-auto flex justify-center items-center">
+      <div className="w-11/12 h-full mt-5 gap-2 flex flex-col justify-center items-center bg-[#F5F5F5] p-5 rounded-xl xl:w-4/5">
         <h1 className="font-bold text-2xl p-2">Camp Details</h1>
         {/* Camp details */}
         <div className="w-full flex flex-col md:flex-row justify-center items-center md:space-x-5">
@@ -91,45 +87,45 @@ const CampDetails = () => {
             <img
               src={selectedCamp.image}
               alt={selectedCamp.name}
-              className="object-cover w-full h-72 md:h-96 rounded-xl"
+              className="object-cover w-full h-1/2 md:h-96 rounded-xl"
             />
           </div>
-          <div className="w-full md:w-1/2 text-left space-y-3">
-            <h1 className="text-lg md:text-xl">
+          <div className="w-full text-sm md:w-1/2 text-left space-y-3 lg:text-base">
+            <h1>
               <span className="font-bold">Camp Name: </span>
               {selectedCamp.name}
             </h1>
-            <h1 className="text-lg md:text-xl">
+            <h1>
               <span className="font-bold">Healthcare Professional Name: </span>
               {selectedCamp.leadBy}
             </h1>
-            <h3 className="text-lg md:text-xl">
+            <h3>
               <span className="font-bold">Profession: </span>
               {selectedCamp.role}
             </h3>
-            <p className="text-lg md:text-xl">
+            <p>
               <span className="font-bold">Location: </span>
               {selectedCamp.location}
             </p>
-            <p className="text-lg md:text-xl">
+            <p>
               <span className="font-bold">Date: </span>
               {selectedCamp.date}
             </p>
-            <p className="text-lg md:text-xl">
+            <p>
               <span className="font-bold">Price: </span>
               {selectedCamp.price}
             </p>
-            <p className="text-lg md:text-xl">
+            <p>
               <span className="font-bold">participant_count: </span>
               {selectedCamp.participant_count}
             </p>
-            <p className="text-lg md:text-xl">
+            <p>
               <span className="font-bold">Description: </span>
               {selectedCamp.description}
             </p>
           </div>
         </div>
-        <div className="w-full gap-5 p-4 flex flex-col md:flex-row justify-end items-center">
+        <div className="w-full gap-5 p-4 flex flex-col sm:flex-row justify-end items-center">
           <UseMoreDetailsBtn isCancel={true} onClick={handleBackBtn}>
             Back
           </UseMoreDetailsBtn>
@@ -150,7 +146,7 @@ const CampDetails = () => {
         />
       )}
     </div>
-  );
+  )
 };
 
 export default CampDetails;

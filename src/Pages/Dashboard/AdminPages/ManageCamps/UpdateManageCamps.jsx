@@ -2,8 +2,8 @@ import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../../../CustomHooks/UseCamps";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const UpdateManageCamps = () => {
   // state
@@ -26,16 +26,17 @@ const UpdateManageCamps = () => {
   const onSubmit = (data) => {
     axiosPublic.patch(`/camps/${id}`, data).then((res) => {
       if (res.data.modifiedCount > 0) {
+        // navigating the user
         navigate(-1);
+
+        // refetching the data
         refetch();
+
+        // clearing the form
         reset();
 
-        Swal.fire({
-          title: "Success!",
-          text: "Data Updated Successfully",
-          icon: "success",
-          confirmButtonText: "Cool",
-        });
+        // showing an alert
+        toast.success("Data Updated Successfully");
       }
     });
   };

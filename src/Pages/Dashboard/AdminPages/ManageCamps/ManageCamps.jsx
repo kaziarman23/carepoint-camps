@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
 import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import toast from "react-hot-toast";
 
 const ManageCamps = () => {
   // context api
@@ -42,6 +43,9 @@ const ManageCamps = () => {
           })
           .catch((error) => {
             console.log(error);
+            
+            // showing an alert
+            toast.error(error);
           });
       }
     });
