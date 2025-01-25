@@ -36,7 +36,7 @@ const Reviews = () => {
         >
           {reviewData.map((review) => (
             <SwiperSlide key={review._id}>
-              <article className="mx-4 sm:mx-8 md:mx-14">
+              <article className="mx-4 sm:mx-8 md:mx-14 p-4">
                 <div className="flex items-center mb-4">
                   <img
                     className="w-8 h-8 sm:w-10 sm:h-10 mr-3 rounded-full"

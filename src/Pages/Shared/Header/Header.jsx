@@ -45,7 +45,7 @@ const Header = () => {
   );
 
   return (
-    <div className="navbar bg-blue-800 glass sticky top-0 left-0 z-50">
+    <div className="navbar bg-blue-800 glass">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -100,7 +100,7 @@ const Header = () => {
           </div>
         ) : (
           <Link to="/register">
-            <button className="uppercase text-xs p-2 rounded-xl font-bold border-2 border-black  bg-white text-black hover:bg-black hover:text-white hover:border-white lg:p-3">
+            <button className="uppercase text-xs p-2 rounded-xl font-bold text-white border-transparent bg-[#637ABC] border-2 hover:text-black hover:bg-blue-600 lg:p-3">
               Join us
             </button>
           </Link>

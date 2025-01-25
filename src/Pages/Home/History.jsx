@@ -1,8 +1,10 @@
+import Title from "./Title";
+
 const History = () => {
   return (
-    <div className="w-full h-full bg-[#e9ecf1]">
-      <div className="w-4/5 h-full mx-auto">
-        <h1 className="text-2xl text-center p-3">
+    <div className="w-full h-full xl:h-screen bg-[#e9ecf1]">
+      <div className="w-4/5 h-full mx-auto lg:w-11/12 xl:w-4/5">
+        <h1 className="text-3xl text-center p-3">
           Some Success stories of <span className="font-bold">our Camps</span>
         </h1>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 p-5 lg:p-10">
@@ -102,6 +104,8 @@ const History = () => {
             />
           </div>
         </div>
+        {/* Title Part */}
+        <Title />
       </div>
     </div>
   );

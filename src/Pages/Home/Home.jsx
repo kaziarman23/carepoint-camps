@@ -4,7 +4,6 @@ import History from "./History";
 import Reviews from "./Reviews";
 import Hero from "./Hero";
 import Service from "./Service";
-import Title from "./Title";
 import Popular from "./Popular";
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
       <Hero />
       <Service />
       <History />
-      <Title />
       <Feature />
       <Popular />
       <Specialists />
