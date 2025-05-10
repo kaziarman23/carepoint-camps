@@ -1,6 +1,6 @@
 # CarePoint Camps
 
-**Live Demo:** [Visit Website](https://your-live-site-link.com)
+**Live Demo:** [Visit Website](https://carepoint-camps.vercel.app)
 
 Manage your medical camps effortlessly with **CarePoint Camps**. Our comprehensive platform offers seamless registration, efficient resource planning, and real-time insights—ensuring every camp runs smoothly. Whether you're a doctor, volunteer, patient, or admin, CarePoint Camps helps you focus on delivering exceptional care without logistical stress.
 
@@ -49,19 +49,21 @@ Built with modern and scalable tools:
 ```bash
 git clone https://github.com/your-username/carepoint-camps.git
 cd carepoint-camps
+```
 
 2. Install dependencies
 
 
-
+```bash
 npm install
+```
 
 3. Start the development server
 
 
-
+```bash
 npm run dev
-
+```
 
 ---
 
@@ -69,6 +71,7 @@ Environment Variables
 
 Make sure to set up the following environment variables in a .env file:
 
+```bash
 VITE_FIREBASE_API_KEY=
 VITE_FIREBASE_AUTH_DOMAIN=
 VITE_FIREBASE_PROJECT_ID=
@@ -76,7 +79,7 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 VITE_STRIPE_PUBLISHABLE_KEY=
-
+```
 
 ---
 
