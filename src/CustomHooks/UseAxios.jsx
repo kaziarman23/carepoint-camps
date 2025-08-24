@@ -2,8 +2,9 @@ import axios from "axios";
 
 const UseAxios = () => {
   const axiosInstance = axios.create({
-    baseURL: "https://carepoint-camps-server.vercel.app",
+    baseURL: import.meta.env.VITE_BASE_URL_SERVER,
   });
+
   return axiosInstance;
 };
 
