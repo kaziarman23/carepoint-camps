@@ -21,7 +21,7 @@ const SocialIcon = ({ href, children }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-sky-200 text-black pt-20 pb-5 font-sans">
+    <footer className="bg-sky-300 text-black pt-20 pb-5 font-sans">
       {/* Top Section with four columns */}
       <div className="w-4/5 mx-auto">
         <div className="flex gap-10 justify-between">
@@ -49,7 +49,6 @@ const Footer = () => {
             </form>
           </div>
           <div className="w-11/12 grid lg:grid-cols-4 md:grid-cols-2 gap-10 mb-16">
-            {/* Column 2: Menu */}
             <div className="space-y-4">
               <h3 className="font-bold  text-lg">Menu</h3>
               <ul className="space-y-2 text-gray-500">
@@ -76,9 +75,8 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3: Utility Pages */}
             <div className="space-y-4">
-              <h3 className="font-bold text-lg">Utility Pages</h3>
+              <h3 className="font-bold text-lg">Pages</h3>
               <ul className="space-y-2 text-gray-500">
                 <li>
                   <a href="#" className="hover:text-[#5e548e]">
@@ -92,7 +90,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="#" className="hover:text-[#5e548e]">
-                    404 Not Found
+                    Service
                   </a>
                 </li>
                 <li>
@@ -103,21 +101,20 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 4: Contact */}
             <div className="space-y-4">
               <h3 className="font-bold text-lg">Contact</h3>
               <div className="space-y-3 text-gray-500">
                 <p className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-[#5e548e]" />
-                  contact@medicalcamp.com
+                  CarepointCamp@proton.me
                 </p>
                 <p className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-[#5e548e]" />
-                  (123) 456 - 7890
+                  +8801123456789
                 </p>
                 <p className="flex items-start">
                   <MapPin className="h-5 w-5 mr-3 text-[#5e548e] flex-shrink-0 mt-1" />
-                  123 Health St, Wellness City, USA
+                  143 Malibag, Dhaka City, Bangladesh
                 </p>
               </div>
             </div>

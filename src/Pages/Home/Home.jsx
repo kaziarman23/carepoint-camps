@@ -4,8 +4,9 @@ import History from "./History";
 import Reviews from "./Reviews";
 import Hero from "./Hero";
 import Service from "./Service";
-import DiscountedServices from './DiscountedServices';
+import DiscountedServices from "./DiscountedServices";
 import Popular from "./Popular";
+import Banner from './Banner';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <DiscountedServices />
       <Promotion />
       <Service />
+      <Banner />
       <History />
       <Popular />
       <Specialists />
