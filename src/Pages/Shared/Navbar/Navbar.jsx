@@ -2,9 +2,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import UseLogoutBtn from "../../../CustomHooks/UseLogoutBtn";
-// import UseUnderlineBtn from "../../../CustomHooks/UseUnderlineBtn";
 import toast from "react-hot-toast";
-// import { Ri24HoursLine } from "react-icons/ri";
 
 const Navbar = () => {
   // states
@@ -19,7 +17,6 @@ const Navbar = () => {
     const menuBtn = document.getElementById("menu-btn");
     const menu = document.getElementById("menu");
 
-    // Scroll effect
     const handleScroll = () => {
       if (window.scrollY > 50) {
         navbar.classList.add("bg-white/40", "backdrop-blur-md", "shadow-md");
@@ -30,39 +27,16 @@ const Navbar = () => {
       }
     };
 
-    // Mobile menu toggle
     const handleMenuToggle = () => {
       menu.classList.toggle("hidden");
-    };
-
-    // Smooth scrolling for anchor links
-    const handleAnchorClick = (e) => {
-      e.preventDefault();
-      const targetId = e.currentTarget.getAttribute("href");
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: "smooth" });
-      }
-      if (!menu.classList.contains("lg:flex")) {
-        menu.classList.add("hidden");
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     menuBtn.addEventListener("click", handleMenuToggle);
 
-    document
-      .querySelectorAll("#menu a")
-      .forEach((link) => link.addEventListener("click", handleAnchorClick));
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       menuBtn.removeEventListener("click", handleMenuToggle);
-      document
-        .querySelectorAll("#menu a")
-        .forEach((link) =>
-          link.removeEventListener("click", handleAnchorClick)
-        );
     };
   }, []);
 
@@ -79,15 +53,18 @@ const Navbar = () => {
 
   const navlinks = (
     <>
-      <NavLink to="/">
-        <li className="p-2 font-bold text-base">Home</li>
-      </NavLink>
-      <NavLink to="/availableCamps">
-        <li className="p-2 font-bold text-base">Available Camps</li>
-      </NavLink>
-      <NavLink to="/dashboard/dashboardInterface">
-        <li className="p-2 font-bold text-base">DashBoard</li>
-      </NavLink>
+      <li className="p-2 font-bold text-base">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="p-2 font-bold text-base">
+        <NavLink to="/availableCamps">Available Camps</NavLink>
+      </li>
+      <li className="p-2 font-bold text-base">
+        <NavLink to="/aboutUs">About</NavLink>
+      </li>
+      <li className="p-2 font-bold text-base">
+        <NavLink to="/contactUs">Contact Us</NavLink>
+      </li>
     </>
   );
 
@@ -122,7 +99,7 @@ const Navbar = () => {
             </>
           ) : (
             <Link to="/register">
-              <button className="uppercase text-white bg-slate-800 border-black text-xs px-3 py-2 rounded-lg font-bold lg:p-3 border hover:bg-slate-900 transition">
+              <button className="uppercase text-black bg-transparent border-black text-xs px-3 py-2 rounded-lg font-bold lg:p-3 border hover:text-white hover:bg-black transition">
                 Register
               </button>
             </Link>

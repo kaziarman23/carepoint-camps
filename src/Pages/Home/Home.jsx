@@ -4,12 +4,14 @@ import History from "./History";
 import Reviews from "./Reviews";
 import Hero from "./Hero";
 import Service from "./Service";
+import DiscountedServices from './DiscountedServices';
 import Popular from "./Popular";
 
 const Home = () => {
   return (
-    <div className="space-y-4">
+    <div>
       <Hero />
+      <DiscountedServices />
       <Service />
       <History />
       <Feature />
