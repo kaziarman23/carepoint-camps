@@ -1,109 +1,148 @@
-import { FaDiscord, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
-import { Ri24HoursLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  HeartHandshake,
+} from "lucide-react";
+
+const SocialIcon = ({ href, children }) => (
+  <a
+    href={href}
+    className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center hover:bg-purple-600 hover:text-white transition-colors duration-300"
+    aria-label="Social media link"
+  >
+    {children}
+  </a>
+);
 
 const Footer = () => {
-  const handleClick = () => {
-    Swal.fire({
-      title: "Error!",
-      text: "This is a Demo Link",
-      icon: "error",
-      confirmButtonText: "Ok, Cool",
-    });
-  };
-
   return (
-    <footer className="bg-gray-700">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-            <h1 className="flex items-center">
-              <Link to="/" className="flex items-center text-white gap-2">
-                <Ri24HoursLine className="w-8 h-8 sm:w-6 sm:h-6 lg:w-8 lg:h-8" />
-                <span className="self-center text-2xl font-semibold whitespace-nowrap">
-                  CarePoint Camps
-                </span>
-              </Link>
-            </h1>
+    <footer className="bg-sky-200 text-black pt-20 pb-5 font-sans">
+      {/* Top Section with four columns */}
+      <div className="w-4/5 mx-auto">
+        <div className="flex gap-10 justify-between">
+          <div className="w-1/2 space-y-4">
+            <div className="flex items-center">
+              <HeartHandshake className="h-8 w-8 mr-2 text-[#5e548e]" />
+              <span className="font-bold text-xl">Carepoint Camps</span>
+            </div>
+            <h3 className="font-bold text-lg">Subscribe to our Newsletter</h3>
+            <p className="text-gray-500">
+              Get the latest news and updates from our medical camps.
+            </p>
+            <form className="flex">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full p-3 rounded-l-lg border-2 border-gray-200 focus:outline-none focus:border-[#9f86c0]"
+              />
+              <button
+                type="submit"
+                className="bg-[#5e548e] text-white font-semibold px-6 rounded-r-lg hover:bg-purple-600 hover:text-black transition-colors duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
-              <h2 className="mb-6 text-sm font-semibold  uppercase text-white">
-                Resources
-              </h2>
-              <ul className=" text-gray-400 font-medium">
-                <li className="mb-4">
-                  <p className="hover:underline">Flowbite</p>
+          <div className="w-11/12 grid lg:grid-cols-4 md:grid-cols-2 gap-10 mb-16">
+            {/* Column 2: Menu */}
+            <div className="space-y-4">
+              <h3 className="font-bold  text-lg">Menu</h3>
+              <ul className="space-y-2 text-gray-500">
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Home
+                  </a>
                 </li>
                 <li>
-                  <p className="hover:underline">Daisy ui</p>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Blog
+                  </a>
                 </li>
               </ul>
             </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-                Follow us
-              </h2>
-              <ul className="text-gray-400 font-medium">
-                <li className="mb-4">
-                  <p className="hover:underline">Github</p>
+
+            {/* Column 3: Utility Pages */}
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">Utility Pages</h3>
+              <ul className="space-y-2 text-gray-500">
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Contact
+                  </a>
                 </li>
                 <li>
-                  <p className="hover:underline">Discord</p>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Plans
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    404 Not Found
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-[#5e548e]">
+                    Changelog
+                  </a>
                 </li>
               </ul>
             </div>
-            <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase text-white">
-                Legal
-              </h2>
-              <ul className="text-gray-400 font-medium">
-                <li className="mb-4">
-                  <p className="hover:underline">Privacy Policy</p>
-                </li>
-                <li>
-                  <p className="hover:underline">Terms &amp; Conditions</p>
-                </li>
-              </ul>
+
+            {/* Column 4: Contact */}
+            <div className="space-y-4">
+              <h3 className="font-bold text-lg">Contact</h3>
+              <div className="space-y-3 text-gray-500">
+                <p className="flex items-center">
+                  <Mail className="h-5 w-5 mr-3 text-[#5e548e]" />
+                  contact@medicalcamp.com
+                </p>
+                <p className="flex items-center">
+                  <Phone className="h-5 w-5 mr-3 text-[#5e548e]" />
+                  (123) 456 - 7890
+                </p>
+                <p className="flex items-start">
+                  <MapPin className="h-5 w-5 mr-3 text-[#5e548e] flex-shrink-0 mt-1" />
+                  123 Health St, Wellness City, USA
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm  sm:text-center text-gray-400">
-            © 2025{" "}
-            <Link to="/" className="hover:underline">
-              CarePoint-Camps™
-            </Link>
-            . All Rights Reserved.
-          </span>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
-            <p className="text-gray-500 hover:text-white ms-5">
-              <FaFacebook
-                className="w-8 h-8 cursor-pointer"
-                onClick={handleClick}
-              />
-            </p>
-            <p className="text-gray-500 hover:text-white ms-5">
-              <FaDiscord
-                className="w-8 h-8 cursor-pointer"
-                onClick={handleClick}
-              />
-            </p>
-            <p className="text-gray-500 hover:text-white ms-5">
-              <FaTwitter
-                className="w-8 h-8 cursor-pointer"
-                onClick={handleClick}
-              />
-            </p>
-            <p className="text-gray-500 hover:text-white ms-5">
-              <FaGithub
-                className="w-8 h-8 cursor-pointer"
-                onClick={handleClick}
-              />
-            </p>
-          </div>
+      </div>
+      <hr />
+      {/* Bottom Bar */}
+      <div className="w-4/5 mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
+        <p className="text-gray-500 text-sm">
+          Copyright © Carepoint Camps | All Rights Reserved
+        </p>
+        <div className="flex space-x-3">
+          <SocialIcon href="#">
+            <Facebook size={16} />
+          </SocialIcon>
+          <SocialIcon href="#">
+            <Twitter size={16} />
+          </SocialIcon>
+          <SocialIcon href="#">
+            <Instagram size={16} />
+          </SocialIcon>
+          <SocialIcon href="#">
+            <Linkedin size={16} />
+          </SocialIcon>
         </div>
       </div>
     </footer>

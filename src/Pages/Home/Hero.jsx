@@ -82,7 +82,9 @@ export default function Hero() {
           </StatCard>
 
           <StatCard className="xl:col-span-2">
-            <h2 className="text-4xl font-bold text-brand-500">+600</h2>
+            <h2 className="text-4xl text-center font-bold text-brand-500">
+              +600
+            </h2>
             <p className="mt-1 text-gray-600 font-medium">
               Certificated therapists in +40 States.
             </p>

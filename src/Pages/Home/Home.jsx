@@ -1,4 +1,4 @@
-import Feature from "./Feature";
+import Promotion from "./Promotion";
 import Specialists from "./Specialists";
 import History from "./History";
 import Reviews from "./Reviews";
@@ -12,9 +12,9 @@ const Home = () => {
     <div>
       <Hero />
       <DiscountedServices />
+      <Promotion />
       <Service />
       <History />
-      <Feature />
       <Popular />
       <Specialists />
       <Reviews />

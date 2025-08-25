@@ -42,7 +42,7 @@ const DiscountedServices = () => {
         </div>
 
         {/* Discount Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 max-w-7xl mx-auto">
           {services.map((service) => (
             <div
               key={service.id}
@@ -69,7 +69,7 @@ const DiscountedServices = () => {
               Exceptional Care at{" "}
               <span className="text-purple-600">Discounted Rates</span>
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base">
+            <p className="text-gray-500 text-sm sm:text-base">
               Our medical camp offers affordable healthcare without compromising
               quality. Enjoy discounted services provided by expert
               professionals, modern equipment, and a patient-focused approach.
@@ -93,16 +93,10 @@ const DiscountedServices = () => {
                   className="w-2/3 md:w-1/3 h-4/5 object-cover rounded-xl"
                 />
               </div>
-              <h3 className="font-bold text-gray-800 text-lg">Key Benefits:</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-1">
-                <li>Expert Medical Professionals</li>
-                <li>Affordable & Discounted Rates</li>
-                <li>Modern Medical Equipment</li>
-              </ul>
             </div>
           </div>
 
-          {/* Main Image */}
+          {/* Left Side Image Section */}
           <div className="lg:w-1/2 w-4/5 h-72 flex justify-center items-center gap-2 sm:h-[500px] md:h-[600px] mx-auto">
             <img
               src="https://i.pinimg.com/736x/07/b9/73/07b973f60b40437736a159e0764dc3f7.jpg"

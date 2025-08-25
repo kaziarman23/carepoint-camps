@@ -61,7 +61,7 @@ export default function Service() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center relative bg-sky-100 py-8 md:py-16"
+      className="min-h-screen bg-cover bg-center relative bg-sky-200 py-8 md:py-16"
       style={{
         backgroundImage:
           "url('https://i.pinimg.com/736x/0d/3c/b2/0d3cb245ae06e56a52f83be6b5ea40f3.jpg')",
