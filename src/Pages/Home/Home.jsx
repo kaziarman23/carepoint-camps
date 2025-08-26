@@ -1,12 +1,12 @@
 import Promotion from "./Promotion";
 import Specialists from "./Specialists";
 import History from "./History";
-import Reviews from "./Reviews";
 import Hero from "./Hero";
 import Service from "./Service";
 import DiscountedServices from "./DiscountedServices";
 import Popular from "./Popular";
 import Banner from './Banner';
+import Team from './Team';
 
 const Home = () => {
   return (
@@ -19,7 +19,7 @@ const Home = () => {
       <History />
       <Popular />
       <Specialists />
-      <Reviews />
+      <Team />
     </div>
   );
 };
