@@ -1,5 +1,5 @@
 // Import icons from lucide-react
-import { Sparkles, ArrowUp, LineChart } from "lucide-react";
+import { ArrowUp, LineChart, HeartHandshake } from "lucide-react";
 
 // Main Stat Card component
 const StatCard = ({ children, className = "" }) => (
@@ -18,7 +18,7 @@ export default function Hero() {
         <header className="bg-gradient-to-b from-brand-300/80 to-brand-100/80 p-6 sm:p-8 rounded-3xl shadow-xl my-12">
           <div className="flex justify-center items-center gap-1 mb-6">
             {/* Using Sparkles icon as a logo */}
-            <Sparkles className="h-8 w-8 text-gray-800" />
+            <HeartHandshake className="h-8 w-8 mr-2 text-black" />
             <span className="text-3xl font-bold text-gray-900">
               Carepoint Camp
             </span>
