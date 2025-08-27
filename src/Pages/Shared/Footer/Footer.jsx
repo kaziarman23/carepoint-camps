@@ -27,11 +27,11 @@ const Footer = () => {
         <div className="flex gap-10 justify-between">
           <div className="w-1/2 space-y-4">
             <div className="flex items-center">
-              <HeartHandshake className="h-8 w-8 mr-2 text-[#5e548e]" />
+              <HeartHandshake className="h-8 w-8 mr-2 text-black" />
               <span className="font-bold text-xl">Carepoint Camps</span>
             </div>
             <h3 className="font-bold text-lg">Subscribe to our Newsletter</h3>
-            <p className="text-gray-500">
+            <p className="text-gray-600">
               Get the latest news and updates from our medical camps.
             </p>
             <form className="flex">
@@ -42,7 +42,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="bg-[#5e548e] text-white font-semibold px-6 rounded-r-lg hover:bg-purple-600 hover:text-black transition-colors duration-300"
+                className="bg-purple-800 text-white font-semibold px-6 rounded-r-lg hover:bg-purple-600 transition-colors duration-300"
               >
                 Subscribe
               </button>
@@ -51,24 +51,24 @@ const Footer = () => {
           <div className="w-11/12 grid lg:grid-cols-4 md:grid-cols-2 gap-10 mb-16">
             <div className="space-y-4">
               <h3 className="font-bold  text-lg">Menu</h3>
-              <ul className="space-y-2 text-gray-500">
+              <ul className="space-y-2 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Blog
                   </a>
                 </li>
@@ -77,24 +77,24 @@ const Footer = () => {
 
             <div className="space-y-4">
               <h3 className="font-bold text-lg">Pages</h3>
-              <ul className="space-y-2 text-gray-500">
+              <ul className="space-y-2 text-gray-600">
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Contact
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Plans
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Service
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-[#5e548e]">
+                  <a href="#" className="hover:text-black">
                     Changelog
                   </a>
                 </li>
@@ -103,7 +103,7 @@ const Footer = () => {
 
             <div className="space-y-4">
               <h3 className="font-bold text-lg">Contact</h3>
-              <div className="space-y-3 text-gray-500">
+              <div className="space-y-3 text-gray-600">
                 <p className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-[#5e548e]" />
                   CarepointCamp@proton.me
@@ -124,7 +124,7 @@ const Footer = () => {
       <hr />
       {/* Bottom Bar */}
       <div className="w-4/5 mx-auto pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-4 md:space-y-0">
-        <p className="text-gray-500 text-sm">
+        <p className="text-black text-sm">
           Copyright © Carepoint Camps | All Rights Reserved
         </p>
         <div className="flex space-x-3">
