@@ -15,13 +15,13 @@ const Specialists = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-sky-100">
-      <div className="w-4/5 h-full mx-auto py-10">
+    <section className="w-full min-h-screen bg-sky-100 py-10">
+      <div className="w-4/5 h-full mx-auto">
         {/* Heading Section */}
         <div className="mx-auto w-full text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-base sm:text-4xl tracking-tight font-extrabold">
             Meet Our Expert{" "}
-            <span className="font-bold">Medical Specialists</span>
+            <span className="font-bold text-purple-600">Medical Specialists</span>
           </h2>
           <p className="text-sm text-left sm:text-base lg:text-lg">
             Our team of highly skilled medical professionals is dedicated to

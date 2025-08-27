@@ -3,7 +3,6 @@ import Specialists from "./Specialists";
 import Hero from "./Hero";
 import Service from "./Service";
 import DiscountedServices from "./DiscountedServices";
-import Popular from "./Popular";
 import Banner from './Banner';
 import Team from './Team';
 import Testimonials from './Testimonials';
@@ -15,11 +14,10 @@ const Home = () => {
       <DiscountedServices />
       <Promotion />
       <Service />
+      <Specialists />
       <Banner />
       <Team />
       <Testimonials />
-      <Specialists />
-      <Popular />
     </div>
   );
 };
