@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
 import UseAxios from "../../CustomHooks/UseAxios";
 import UseSocialIcons from "../../CustomHooks/UseSocialIcons";
+import toast from 'react-hot-toast';
 
 const Specialists = () => {
   const [specialistData, setSpecialistData] = useState([]);
@@ -11,19 +11,12 @@ const Specialists = () => {
   axiosPublic.get("/specialists").then((res) => setSpecialistData(res.data));
 
   const handleClick = () => {
-    Swal.fire({
-      title: "Error!",
-      text: "This is a Demo Link",
-      icon: "error",
-      background: "#111827",
-      color: "white",
-      confirmButtonText: "Ok, Cool",
-    });
+    toast.error("This is a demo link.")
   };
 
   return (
-    <section>
-      <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <section className="w-full min-h-screen bg-sky-100">
+      <div className="w-4/5 h-full mx-auto py-10">
         {/* Heading Section */}
         <div className="mx-auto w-full text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-base sm:text-4xl tracking-tight font-extrabold">
@@ -44,7 +37,7 @@ const Specialists = () => {
           {specialistData.map((doc) => (
             <div
               key={doc.id}
-              className="w-full h-full flex flex-col justify-center items-center rounded-lg shadow bg-[#d8e3e9] p-3 sm:flex-row sm:justify-evenly"
+              className="w-full h-full flex flex-col justify-center items-center rounded-2xl shadow-xl bg-sky-300/20 p-3 sm:flex-row sm:justify-evenly"
             >
               <img
                 className="w-32 h-32 rounded-full object-cover mb-4 sm:w-40 sm:h-40 sm:mb-0"
