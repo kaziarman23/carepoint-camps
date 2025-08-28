@@ -46,7 +46,7 @@ const AllUsers = () => {
   if (!users) {
     return (
       <div className="w-4/5 h-80 mx-auto my-10">
-        <h1 className="text-3xl text-center text-purple-600 font-bold">
+        <h1 className="text-3xl text-center text-CPC-ocean font-bold">
           No User found!
         </h1>
       </div>
@@ -80,7 +80,7 @@ const AllUsers = () => {
                   <td className="py-3 px-4">{user.email}</td>
                   <td className="py-3 px-4 font-bold">
                     {user?.userRole === "admin" ? (
-                      <span className="text-purple-600">Admin</span>
+                      <span className="text-CPC-ocean">Admin</span>
                     ) : (
                       <UseMoreDetailsBtn
                         onClick={() => handleMakeAdmin(user)}

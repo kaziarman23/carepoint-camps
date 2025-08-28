@@ -21,7 +21,7 @@ const Specialists = () => {
         <div className="mx-auto w-full text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-base sm:text-4xl tracking-tight font-extrabold">
             Meet Our Expert{" "}
-            <span className="font-bold text-purple-600">Medical Specialists</span>
+            <span className="font-bold text-CPC-ocean">Medical Specialists</span>
           </h2>
           <p className="text-sm text-left sm:text-base lg:text-lg">
             Our team of highly skilled medical professionals is dedicated to
@@ -37,7 +37,7 @@ const Specialists = () => {
           {specialistData.map((doc) => (
             <div
               key={doc.id}
-              className="w-full h-full flex flex-col justify-center items-center rounded-2xl shadow-xl bg-sky-300/20 p-3 sm:flex-row sm:justify-evenly"
+              className="w-full h-full flex flex-col justify-center items-center rounded-2xl shadow-xl bg-CPC-ocean/20 p-3 sm:flex-row sm:justify-evenly"
             >
               <img
                 className="w-32 h-32 rounded-full object-cover mb-4 sm:w-40 sm:h-40 sm:mb-0"

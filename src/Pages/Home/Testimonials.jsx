@@ -128,7 +128,7 @@ const Testimonials = () => {
       <div className="w-4/5 mx-auto flex py-20">
         <div className="w-1/2 p-2 space-y-2">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Voices from Our <span className="text-purple-600">Community</span>
+            Voices from Our <span className="text-CPC-ocean">Community</span>
           </h2>
           <p className="text-lg text-slate-600">
             Hear what people are saying about our medical camps and how

@@ -12,12 +12,10 @@ export default {
         poppins: ["poppins", "serif"],
       },
       colors: {
-        brand: {
-          900: "#231942", // deep indigo
-          700: "#5e548e", // muted purple
-          500: "#9f86c0", // lavender purple
-          300: "#be95c4", // soft violet
-          100: "#e0b1cb", // pale pinkish purple
+        CPC: {
+          white: "#edf6f9",
+          sky: "#83c5be",
+          ocean: "#006d77",
         },
       },
     },

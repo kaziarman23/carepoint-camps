@@ -47,7 +47,7 @@ const ManageRegisteredCamps = () => {
     return (
       <div className="w-full h-screen overflow-hidden bg-black">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-          <h1 className="text-6xl text-center text-purple-600 font-bold">
+          <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             Participants not found!
           </h1>
         </div>

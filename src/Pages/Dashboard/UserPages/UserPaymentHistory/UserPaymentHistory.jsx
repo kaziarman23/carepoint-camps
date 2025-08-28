@@ -18,7 +18,7 @@ const UserPaymentHistory = () => {
     return (
       <div className="w-full h-screen overflow-hidden bg-gray-900">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-          <h1 className="text-6xl text-center text-purple-600 font-bold">
+          <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             Payment History Not Found!
           </h1>
         </div>

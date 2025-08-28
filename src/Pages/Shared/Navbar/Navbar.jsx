@@ -53,16 +53,16 @@ const Navbar = () => {
 
   const navlinks = (
     <>
-      <li className="p-2 font-bold text-base">
+      <li className="p-2 font-bold text-base hover:text-CPC-ocean">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="p-2 font-bold text-base">
+      <li className="p-2 font-bold text-base hover:text-CPC-ocean">
         <NavLink to="/availableCamps">Available Camps</NavLink>
       </li>
-      <li className="p-2 font-bold text-base">
+      <li className="p-2 font-bold text-base hover:text-CPC-ocean">
         <NavLink to="/aboutUs">About</NavLink>
       </li>
-      <li className="p-2 font-bold text-base">
+      <li className="p-2 font-bold text-base hover:text-CPC-ocean">
         <NavLink to="/contactUs">Contact Us</NavLink>
       </li>
     </>

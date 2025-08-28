@@ -29,7 +29,7 @@ const ParticipantInformations = () => {
     return (
       <div className="bg-gray-900 w-full h-screen overflow-hidden">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
-          <h1 className="text-6xl text-center text-purple-600 font-bold">
+          <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             No Participants Found!
           </h1>
         </div>

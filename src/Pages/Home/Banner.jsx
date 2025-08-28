@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-sky-100 font-sans">
       <div className="w-4/5 mx-auto">
-        <div className="bg-purple-600 rounded-2xl shadow-lg overflow-hidden">
+        <div className="bg-CPC-ocean rounded-2xl shadow-lg overflow-hidden">
           <div className="flex flex-col md:flex-row items-center">
             {/* Left side: Text content and button */}
             <div className="w-full md:w-1/2 p-8 sm:p-12 lg:p-16 text-white text-center md:text-left">

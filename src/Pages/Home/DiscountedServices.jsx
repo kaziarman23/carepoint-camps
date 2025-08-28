@@ -32,7 +32,7 @@ const DiscountedServices = () => {
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Our <span className="text-purple-600">Special offres</span>
+            Our <span className="text-CPC-ocean">Special offres</span>
           </h2>
           <p className="text-gray-600 text-sm sm:text-base md:text-lg">
             Take advantage of our special offers on essential healthcare
@@ -54,7 +54,7 @@ const DiscountedServices = () => {
               <p className="text-gray-600 text-sm flex-grow">
                 {service.description}
               </p>
-              <button className="mt-4 text-purple-600 font-semibold hover:underline text-left">
+              <button className="mt-4 text-CPC-ocean font-semibold hover:underline text-left">
                 Book Now
               </button>
             </div>
@@ -67,7 +67,7 @@ const DiscountedServices = () => {
           <div className="lg:w-1/2 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
               Exceptional Care at{" "}
-              <span className="text-purple-600">Discounted Rates</span>
+              <span className="text-CPC-ocean">Discounted Rates</span>
             </h2>
             <p className="text-gray-500 text-sm sm:text-base">
               Our medical camp offers affordable healthcare without compromising

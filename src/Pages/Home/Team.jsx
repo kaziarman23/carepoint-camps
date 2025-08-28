@@ -108,7 +108,7 @@ export default function Team() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">
               <span className="text-black">{firstName} </span>
-              <span className="text-purple-600">{lastName}</span>
+              <span className="text-CPC-ocean">{lastName}</span>
             </h1>
             <h2 className="text-lg sm:text-xl text-gray-700 font-medium mb-6">
               {selectedMember.role}
@@ -172,7 +172,7 @@ export default function Team() {
                   <div
                     className={`relative w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden border-4 transition-colors duration-300 ${
                       selectedMemberId === member.id
-                        ? "border-purple-600"
+                        ? "border-CPC-ocean"
                         : "border-transparent group-hover:border-purple-300"
                     }`}
                   >
@@ -193,7 +193,7 @@ export default function Team() {
                   <p
                     className={`mt-2 text-sm font-semibold transition-colors duration-300 ${
                       selectedMemberId === member.id
-                        ? "text-purple-600"
+                        ? "text-CPC-ocean"
                         : "text-gray-800"
                     }`}
                   >

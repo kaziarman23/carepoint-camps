@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 const ContactCard = ({ icon, title, children }) => (
   <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
-    <div className="bg-purple-600 rounded-full p-3 text-white">{icon}</div>
+    <div className="bg-CPC-ocean rounded-full p-3 text-white">{icon}</div>
     <div>
       <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
       <div className="text-gray-600">{children}</div>
@@ -226,7 +226,7 @@ export default function ContactUs() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-purple-600 hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-purple-500 transition duration-150 ease-in-out"
+                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-CPC-ocean hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-purple-500 transition duration-150 ease-in-out"
                   >
                     Submit
                   </button>
