@@ -39,7 +39,7 @@ const Promotion = () => {
           </p>
           <div className="mt-6">
             <button
-              className="bg-CPC-ocean hover:bg-purple-700
+              className="bg-CPC-ocean hover:bg-CPC-sky
             text-white font-semibold py-3 px-8
             rounded-2xl shadow-lg 
             hover:text-black transition-transform duration-300 hover:scale-105"

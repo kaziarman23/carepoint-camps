@@ -12,7 +12,7 @@ const Banner = () => {
                 Schedule a virtual or presential appointment today
               </h2>
 
-              <button className="flex gap-2 bg-white text-indigo-600 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-brand-300 hover:text-black hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+              <button className="flex gap-2 bg-CPC-sky text-black font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-CPC-sky/50 hover:text-black hover:shadow-lg transition-all duration-300 ease-in-out transform hover:-translate-y-1">
                 Book an Appointment
                 <ClipboardClock />
               </button>
