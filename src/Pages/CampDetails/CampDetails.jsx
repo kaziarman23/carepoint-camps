@@ -4,7 +4,7 @@ import UseAxios from "../../CustomHooks/UseAxios";
 import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../CustomHooks/UseCamps";
 import ParticipantRegistration from "./ParticipantRegistration";
-import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const CampDetails = () => {
@@ -126,13 +126,13 @@ const CampDetails = () => {
           </div>
         </div>
         <div className="w-full gap-5 p-4 flex flex-col sm:flex-row justify-end items-center">
-          <UseMoreDetailsBtn isCancel={true} onClick={handleBackBtn}>
+          <UsePrimaryBtn isCancel={true} onClick={handleBackBtn}>
             Back
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
 
-          <UseMoreDetailsBtn onClick={() => setModelOpen(true)}>
+          <UsePrimaryBtn onClick={() => setModelOpen(true)}>
             Join Camp
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
         </div>
       </div>
       {/* model content */}

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const AddACamp = () => {
@@ -213,9 +213,9 @@ const AddACamp = () => {
 
           {/* Submit Button */}
           <div className="flex justify-end p-2 md:p-4">
-            <UseMoreDetailsBtn isSubmit={true} type="submit">
+            <UsePrimaryBtn isSubmit={true} type="submit">
               Submit
-            </UseMoreDetailsBtn>
+            </UsePrimaryBtn>
           </div>
         </form>
       </div>

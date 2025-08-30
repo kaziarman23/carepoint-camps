@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const ParticipantProfileUpdate = () => {
@@ -150,12 +150,12 @@ const ParticipantProfileUpdate = () => {
             </div>
           </div>
           <div className="flex p-4 gap-4 justify-end items-start">
-            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
+            <UsePrimaryBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit" isSubmit={true}>
+            </UsePrimaryBtn>
+            <UsePrimaryBtn type="submit" isSubmit={true}>
               Submit
-            </UseMoreDetailsBtn>
+            </UsePrimaryBtn>
           </div>
         </form>
       </div>

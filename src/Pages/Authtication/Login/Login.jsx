@@ -4,7 +4,7 @@ import { VscGithubInverted } from "react-icons/vsc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
-import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const Login = () => {
@@ -140,9 +140,9 @@ const Login = () => {
             </label>
           </div>
 
-          <UseMoreDetailsBtn className="w-full" type="submit">
+          <UsePrimaryBtn className="w-full" type="submit">
             Login
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
 
           <p className="my-3 text-center">
             Didn&#39;t have an account? Please{" "}

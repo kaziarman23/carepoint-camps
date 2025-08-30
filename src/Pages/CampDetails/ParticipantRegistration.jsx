@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../CustomHooks/UsePrimaryBtn";
 
 const ParticipantRegistration = ({
   isOpen,
@@ -155,14 +155,14 @@ const ParticipantRegistration = ({
 
           {/* Action buttons */}
           <div className="flex justify-end mt-4 gap-4">
-            <UseMoreDetailsBtn
+            <UsePrimaryBtn
               onClick={onClose} // Close the modal
               type="button"
               isCancel={true}
             >
               Cancel
-            </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit">Submit</UseMoreDetailsBtn>
+            </UsePrimaryBtn>
+            <UsePrimaryBtn type="submit">Submit</UsePrimaryBtn>
           </div>
         </form>
       </div>

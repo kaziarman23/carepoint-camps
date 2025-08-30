@@ -1,6 +1,6 @@
-import "./CSS/UseMoreDetailsBtn.css";
+import "./CSS/UsePrimaryBtn.css";
 
-const UseMoreDetailsBtn = ({
+const UsePrimaryBtn = ({
   children,
   onClick,
   isCancel,
@@ -8,19 +8,20 @@ const UseMoreDetailsBtn = ({
   isSubmit,
   isPurple,
   disabled,
-  className
+  className,
 }) => {
   return (
     <button
       onClick={onClick}
       className={`
-        moreDetailsBtn 
+        UsePrimaryBtn 
         ${isCancel ? "cancelBtn" : ""}
         ${isUpdate ? "updateBtn" : ""}
         ${isSubmit ? "submitBtn" : ""}
         ${isPurple ? "isPurple" : ""}
         ${className ? className : ""}
-
+        sm:px-5 sm:py-2.5 sm:text-sm
+        xs:w-full xs:text-sm
         `}
       disabled={disabled}
     >
@@ -29,4 +30,4 @@ const UseMoreDetailsBtn = ({
   );
 };
 
-export default UseMoreDetailsBtn;
+export default UsePrimaryBtn;

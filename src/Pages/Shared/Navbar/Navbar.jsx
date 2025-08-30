@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import UseLogoutBtn from "../../../CustomHooks/UseLogoutBtn";
 import toast from "react-hot-toast";
+import UsePrimaryBtn from "../../../CustomHooks/UsePrimaryBtn";
 
 const Navbar = () => {
   // states
@@ -99,9 +100,7 @@ const Navbar = () => {
             </>
           ) : (
             <Link to="/register">
-              <button className="uppercase text-black bg-transparent border-black text-xs px-3 py-2 rounded-lg font-bold lg:p-3 border hover:text-white hover:bg-black transition">
-                Register
-              </button>
+              <UsePrimaryBtn>Register</UsePrimaryBtn>
             </Link>
           )}
         </div>

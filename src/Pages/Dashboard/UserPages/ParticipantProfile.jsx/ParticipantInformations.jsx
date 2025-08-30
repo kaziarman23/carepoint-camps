@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import { Link } from "react-router-dom";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 
 const ParticipantInformations = () => {
   // context api
@@ -75,9 +75,9 @@ const ParticipantInformations = () => {
                     <Link
                       to={`/dashboard/participantProfileUpdate/${participant._id}`}
                     >
-                      <UseMoreDetailsBtn isUpdate={true}>
+                      <UsePrimaryBtn isUpdate={true}>
                         Update
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     </Link>
                   </td>
                 </tr>

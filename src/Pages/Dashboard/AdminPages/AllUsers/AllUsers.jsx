@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import UseUsers from "../../../../CustomHooks/UseUsers";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const AllUsers = () => {
@@ -82,12 +82,12 @@ const AllUsers = () => {
                     {user?.userRole === "admin" ? (
                       <span className="text-CPC-ocean">Admin</span>
                     ) : (
-                      <UseMoreDetailsBtn
+                      <UsePrimaryBtn
                         onClick={() => handleMakeAdmin(user)}
                         isUpdate={true}
                       >
                         User
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     )}
                   </td>
                 </tr>

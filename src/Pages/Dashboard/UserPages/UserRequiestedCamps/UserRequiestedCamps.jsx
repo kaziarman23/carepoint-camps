@@ -4,7 +4,7 @@ import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const UserRequiestedCamps = () => {
@@ -116,14 +116,14 @@ const UserRequiestedCamps = () => {
                   <td className="px-4 py-2">
                     {participant.paymentStatus === "pay" ? (
                       <Link to={`/dashboard/payment/${participant._id}`}>
-                        <UseMoreDetailsBtn isSubmit={true}>
+                        <UsePrimaryBtn isSubmit={true}>
                           Pay
-                        </UseMoreDetailsBtn>
+                        </UsePrimaryBtn>
                       </Link>
                     ) : (
-                      <UseMoreDetailsBtn disabled={true}>
+                      <UsePrimaryBtn disabled={true}>
                         Paid
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     )}
                   </td>
                   <td className="px-4 py-2">
@@ -139,16 +139,16 @@ const UserRequiestedCamps = () => {
                   </td>
                   <td className="px-4 py-2">
                     {participant.paymentStatus === "pay" ? (
-                      <UseMoreDetailsBtn
+                      <UsePrimaryBtn
                         onClick={() => handleDelete(participant._id)}
                         isCancel={true}
                       >
                         Cancel
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     ) : (
-                      <UseMoreDetailsBtn disabled={true}>
+                      <UsePrimaryBtn disabled={true}>
                         Cancel
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     )}
                   </td>
                 </tr>

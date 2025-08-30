@@ -5,7 +5,7 @@ import { VscGithubInverted } from "react-icons/vsc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import UseAxios from "../../../CustomHooks/UseAxios";
-import UseMoreDetailsBtn from "../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const Register = () => {
@@ -230,9 +230,9 @@ const Register = () => {
             </label>
           </div>
 
-          <UseMoreDetailsBtn type="submit" className="w-full">
+          <UsePrimaryBtn type="submit" className="w-full">
             Register
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
 
           <p className="my-3">
             Already have an account? Please{" "}

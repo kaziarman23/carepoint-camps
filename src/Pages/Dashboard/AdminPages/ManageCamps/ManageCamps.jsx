@@ -4,7 +4,7 @@ import UseCamps from "../../../../CustomHooks/UseCamps";
 import Swal from "sweetalert2";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { Link } from "react-router-dom";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const ManageCamps = () => {
@@ -59,7 +59,7 @@ const ManageCamps = () => {
             No Camp Added!
           </h1>
           <Link to="/dashboard/addACamp">
-            <UseMoreDetailsBtn isPurple={true}>Add Camps</UseMoreDetailsBtn>
+            <UsePrimaryBtn isPurple={true}>Add Camps</UsePrimaryBtn>
           </Link>
         </div>
       </div>
@@ -110,16 +110,16 @@ const ManageCamps = () => {
                   </td>
                   <td className="flex items-center gap-2">
                     <Link to={`/dashboard/updateManageCamps/${camp._id}`}>
-                      <UseMoreDetailsBtn isUpdate={true}>
+                      <UsePrimaryBtn isUpdate={true}>
                         Update
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     </Link>
-                    <UseMoreDetailsBtn
+                    <UsePrimaryBtn
                       onClick={() => handleDelete(camp._id)}
                       isCancel={true}
                     >
                       Delete
-                    </UseMoreDetailsBtn>
+                    </UsePrimaryBtn>
                   </td>
                 </tr>
               ))}

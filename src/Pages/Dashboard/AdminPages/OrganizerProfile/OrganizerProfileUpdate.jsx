@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import UseUsers from "../../../../CustomHooks/UseUsers";
 import { useNavigate } from "react-router";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const OrganizerProfileUpdate = () => {
@@ -124,12 +124,12 @@ const OrganizerProfileUpdate = () => {
             </label>
           </div>
           <div className="flex justify-end items-center mt-5 gap-4">
-            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
+            <UsePrimaryBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit" isSubmit={true}>
+            </UsePrimaryBtn>
+            <UsePrimaryBtn type="submit" isSubmit={true}>
               Submit
-            </UseMoreDetailsBtn>
+            </UsePrimaryBtn>
           </div>
         </form>
       </div>

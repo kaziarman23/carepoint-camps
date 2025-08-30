@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router";
 import UseCamps from "../../../../CustomHooks/UseCamps";
 import UseAxios from "../../../../CustomHooks/UseAxios";
 import { useForm } from "react-hook-form";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const UpdateManageCamps = () => {
@@ -186,12 +186,12 @@ const UpdateManageCamps = () => {
 
           {/* Buttons */}
           <div className="flex flex-col md:flex-row justify-end gap-5 p-4">
-            <UseMoreDetailsBtn onClick={handleCancel} isCancel={true}>
+            <UsePrimaryBtn onClick={handleCancel} isCancel={true}>
               Cancel
-            </UseMoreDetailsBtn>
-            <UseMoreDetailsBtn type="submit" isSubmit={true}>
+            </UsePrimaryBtn>
+            <UsePrimaryBtn type="submit" isSubmit={true}>
               Submit
-            </UseMoreDetailsBtn>
+            </UsePrimaryBtn>
           </div>
         </form>
       </div>

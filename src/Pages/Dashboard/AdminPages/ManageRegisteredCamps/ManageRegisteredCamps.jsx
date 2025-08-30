@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 import UseAxios from "../../../../CustomHooks/UseAxios";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
 import Swal from "sweetalert2";
 
@@ -104,16 +104,16 @@ const ManageRegisteredCamps = () => {
                   </td>
                   <td className="px-2 py-4">
                     {person.confirmationStatus === "pending" ? (
-                      <UseMoreDetailsBtn
+                      <UsePrimaryBtn
                         isUpdate={true}
                         onClick={() => handleConfirmed(person._id)}
                       >
                         {person.confirmationStatus}
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     ) : (
-                      <UseMoreDetailsBtn disabled={true}>
+                      <UsePrimaryBtn disabled={true}>
                         {person.confirmationStatus}
-                      </UseMoreDetailsBtn>
+                      </UsePrimaryBtn>
                     )}
                   </td>
                 </tr>

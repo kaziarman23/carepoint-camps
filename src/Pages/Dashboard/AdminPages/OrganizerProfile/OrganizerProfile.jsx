@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import { Link } from "react-router-dom";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 
 const OrganizerProfile = () => {
   const { user } = useContext(AuthContext);
@@ -31,12 +31,12 @@ const OrganizerProfile = () => {
         </div>
         <div className="flex justify-end items-center mt-5">
           <Link to="/dashboard/organizerProfileUpdate">
-            <UseMoreDetailsBtn
+            <UsePrimaryBtn
               isUpdate={true}
               className="text-gray-900 bg-purple-400 hover:bg-purple-300 font-semibold px-4 py-2 rounded-lg shadow-sm"
             >
               Update Profile
-            </UseMoreDetailsBtn>
+            </UsePrimaryBtn>
           </Link>
         </div>
       </div>

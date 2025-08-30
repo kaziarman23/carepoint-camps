@@ -1,3 +1,5 @@
+import UsePrimaryBtn from "../../CustomHooks/UsePrimaryBtn";
+
 const Promotion = () => {
   const stats = [
     {
@@ -38,14 +40,11 @@ const Promotion = () => {
             committed to making healthcare accessible for everyone.
           </p>
           <div className="mt-6">
-            <button
-              className="bg-CPC-ocean hover:bg-CPC-sky
-            text-white font-semibold py-3 px-8
-            rounded-2xl shadow-lg 
-            hover:text-black transition-transform duration-300 hover:scale-105"
+            <UsePrimaryBtn
+              className={`transition-transform duration-300 hover:scale-105`}
             >
-              Register Now
-            </button>
+              Join Now
+            </UsePrimaryBtn>
           </div>
         </div>
 

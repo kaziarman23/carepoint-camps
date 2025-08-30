@@ -4,7 +4,7 @@ import UseAxios from "../../../../CustomHooks/UseAxios";
 import { AuthContext } from "../../../../Auth/AuthProvider";
 import moment from "moment";
 import { useNavigate } from "react-router";
-import UseMoreDetailsBtn from "../../../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
 
 const CheckoutForm = ({ price, campName, id }) => {
@@ -130,14 +130,14 @@ const CheckoutForm = ({ price, campName, id }) => {
           },
         }}
       />
-      <UseMoreDetailsBtn
+      <UsePrimaryBtn
         type="submit"
         isSubmit={true}
         className="mt-5"
         disabled={!stripe || !clientSecret}
       >
         Pay
-      </UseMoreDetailsBtn>
+      </UsePrimaryBtn>
       {paymentError && (
         <h5 className="text-red-500 text-base">{paymentError}</h5>
       )}

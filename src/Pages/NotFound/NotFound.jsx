@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../CustomHooks/UsePrimaryBtn";
 import Marquee from "react-fast-marquee";
 
 const NotFound = () => {
@@ -26,9 +26,9 @@ const NotFound = () => {
 
         {/* Back to Homepage Button */}
         <Link to="/">
-          <UseMoreDetailsBtn isCancel={true}>
+          <UsePrimaryBtn isCancel={true}>
             Back to Homepage
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
         </Link>
       </div>
     </section>

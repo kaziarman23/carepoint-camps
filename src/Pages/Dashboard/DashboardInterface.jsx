@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import DashboardAnimation from "../../CustomHooks/DashboardAnimation";
 import UseAdmin from "../../CustomHooks/UseAdmin";
-import UseMoreDetailsBtn from "../../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../../CustomHooks/UsePrimaryBtn";
 import UseShineBtn from "../../CustomHooks/UseShineBtn";
 
 const DashboardInterface = () => {
@@ -13,9 +13,9 @@ const DashboardInterface = () => {
         <p className="text-white w-80 h-80 loading loading-infinity loading-xl"></p>
         <h1 className="text-2xl text-white">Loading Data...</h1>
         <Link to="/">
-          <UseMoreDetailsBtn isCancel={true}>
+          <UsePrimaryBtn isCancel={true}>
             Back to Home Page
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
         </Link>
       </div>
     );

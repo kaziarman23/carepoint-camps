@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Navigate, useLocation } from "react-router";
-import UseMoreDetailsBtn from "../CustomHooks/UseMoreDetailsBtn";
+import UsePrimaryBtn from "../CustomHooks/UsePrimaryBtn";
 import { Link } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
@@ -18,9 +18,9 @@ const PrivateRoute = ({ children }) => {
         <p className="text-white w-80 h-80 loading loading-infinity loading-xl"></p>
         <h1 className="text-2xl text-white">Loading Data...</h1>
         <Link to="/">
-          <UseMoreDetailsBtn isCancel={true}>
+          <UsePrimaryBtn isCancel={true}>
             Back to Home Page
-          </UseMoreDetailsBtn>
+          </UsePrimaryBtn>
         </Link>
       </div>
     );

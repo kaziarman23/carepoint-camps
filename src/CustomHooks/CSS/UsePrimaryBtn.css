@@ -1,8 +1,8 @@
-.moreDetailsBtn {
+.UsePrimaryBtn {
   position: relative;
   padding: 10px 20px;
   border-radius: 7px;
-  border: 1px solid rgb(61, 106, 255);
+  border: 1px solid #006d77;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
@@ -14,14 +14,14 @@
   transition: all 0.2s ease-in;
 }
 
-.moreDetailsBtn:hover {
-  background: rgb(61, 106, 255);
+.UsePrimaryBtn:hover {
+  background: #006d77;
   color: #fff;
-  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  box-shadow: 0 0 30px 5px #02919e;
   transition: all 0.2s ease-out;
 }
 
-.moreDetailsBtn::before {
+.UsePrimaryBtn::before {
   content: "";
   display: block;
   width: 0px;
@@ -49,7 +49,7 @@
   }
 }
 
-.moreDetailsBtn:hover::before {
+.UsePrimaryBtn:hover::before {
   animation: sh02 0.5s 0s linear;
 }
 
@@ -77,32 +77,8 @@
   box-shadow: 0 0 30px 5px rgba(255, 255, 0, 0.815);
 }
 
-/* Submit Button Styles */
-.submitBtn {
-  border-color: green;
-  color: green;
-}
-
-.submitBtn:hover {
-  background: green;
-  color: #fff;
-  box-shadow: 0 0 30px 5px rgba(0, 255, 0, 0.815);
-}
-
-/* Purple Button Styles */
-.isPurple {
-  border-color: #6f5cc4; /* Purple border */
-  color: #6f5cc4; /* Purple text color */
-}
-
-.isPurple:hover {
-  background: #6f5cc4; /* Purple background on hover */
-  color: #fff; /* White text on hover */
-  box-shadow: 0 0 30px 5px rgba(111, 92, 196, 0.815); /* Purple shadow */
-}
-
 /* Disabled Button Styles */
-.moreDetailsBtn:disabled {
+.UsePrimaryBtn:disabled {
   background-color: #d3d3d3; /* Light grey background */
   color: #a9a9a9; /* Grey text color */
   border-color: #d3d3d3; /* Grey border */
