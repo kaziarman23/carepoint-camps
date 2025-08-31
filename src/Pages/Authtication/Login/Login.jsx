@@ -4,8 +4,8 @@ import { VscGithubInverted } from "react-icons/vsc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
-import UsePrimaryBtn from "../../../CustomHooks/UsePrimaryBtn";
 import toast from "react-hot-toast";
+import { HeartHandshake, LogIn, UserPlus } from "lucide-react";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -56,7 +56,6 @@ const Login = () => {
   // Login with Github
   const handleGithubLogin = () => {
     githubAuthintication().then(() => {
-
       // navigating the user
       const redirectTo = location?.state?.from || "/";
       navigate(redirectTo);
@@ -69,107 +68,152 @@ const Login = () => {
     });
   };
 
+  // sound wave graphic.
+  const SoundWave = () => (
+    <div className="flex items-end space-x-1 h-20 w-full overflow-hidden">
+      {Array.from({ length: 60 }).map((_, i) => (
+        <div
+          key={i}
+          className="bg-[#83c5be] opacity-50 w-1 rounded-t-full"
+          style={{ height: `${Math.sin(i * 0.4) * 45 + 50}%` }}
+        ></div>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="w-full h-screen flex justify-center items-center px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md h-auto bg-[#d8e3e9] p-5 rounded-xl">
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto">
-          <h1 className="text-center font-bold text-2xl mb-6">Please Login</h1>
-
-          <div className="relative z-0 w-full mb-5 group">
-            <input
-              type="email"
-              id="floating_email"
-              name="email"
-              className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0  peer"
-              placeholder=" "
-              {...register("email", { required: true })}
-            />
-            {/* handling email error */}
-            {errors.email?.type === "required" && (
-              <p className="text-red-500">email is required</p>
-            )}
-            <label
-              htmlFor="floating_email"
-              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto  peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Email address
-            </label>
-          </div>
-
-          <div className="relative z-0 w-full mb-5 group">
-            <input
-              type="password"
-              name="password"
-              id="floating_password"
-              className="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none border-gray-600 focus:border-blue-500 focus:outline-none focus:ring-0 peer"
-              placeholder=" "
-              {...register("password", {
-                required: true,
-                minLength: 7,
-                maxLength: 90,
-                pattern: {
-                  value:
-                    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^])[A-Za-z\d@$!%*?&#^]{7,90}$/,
-                  message:
-                    "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.",
-                },
-              })}
-            />
-            {/* handling password error */}
-            {errors.password?.type === "required" && (
-              <p className="text-red-500">password required</p>
-            )}
-            {errors.password?.type === "minLength" && (
-              <p className="text-red-500">
-                password must be at least 7 characters long
-              </p>
-            )}
-            {errors.password?.type === "maxLength" && (
-              <p className="text-red-500">
-                password must be less than 90 characters long
-              </p>
-            )}
-            {errors.password?.type === "pattern" && (
-              <p className="text-red-500">{errors.password.message}</p>
-            )}
-            <label
-              htmlFor="floating_password"
-              className="peer-focus:font-medium absolute text-sm text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >
-              Password
-            </label>
-          </div>
-
-          <UsePrimaryBtn className="w-full" type="submit">
-            Login
-          </UsePrimaryBtn>
-
-          <p className="my-3 text-center">
-            Didn&#39;t have an account? Please{" "}
+    <div className="min-h-screen bg-sky-100 flex items-center justify-center py-20">
+      <div className="w-11/12 mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
+        {/* Left Form Side */}
+        <div className="w-full md:w-1/2 p-8 sm:p-12 bg-[#edf6f9]">
+          {/* Top Navigation */}
+          <div className="flex items-center justify-start space-x-6">
             <Link to="/register">
-              <span className="hover:underline font-bold text-blue-500">
-                Register
-              </span>
+              <button className="flex items-center space-x-2 text-[#006d77] font-semibold hover:opacity-80 transition-opacity">
+                <LogIn />
+                <span>Register</span>
+              </button>
             </Link>
-          </p>
-
-          <p className="my-3 text-center">or Login With</p>
-          <div className="flex justify-center items-center gap-5">
-            <button
-              onClick={handleGoogleLogin}
-              className="btn hover:text-white hover:bg-black flex items-center gap-2"
-            >
-              <FcGoogle className="w-6 h-6" /> Google
-            </button>
-            <button
-              onClick={handleGithubLogin}
-              className="btn hover:text-white hover:bg-black flex items-center gap-2"
-            >
-              <VscGithubInverted className="w-6 h-6" />
-              Github
-            </button>
           </div>
-        </form>
+
+          {/* Login Form */}
+          <div className="mt-12">
+            <h2 className="text-3xl font-bold text-[#006d77]">Login</h2>
+            <p className="text-gray-500 mt-2">Access your account</p>
+
+            <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
+              {/* Email */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="text-sm font-semibold text-gray-700"
+                >
+                  E-mail address:
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Invalid email format",
+                    },
+                  })}
+                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                   focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Password */}
+              <div>
+                <label
+                  htmlFor="password"
+                  className="text-sm font-semibold text-gray-700"
+                >
+                  Password:
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  {...register("password", {
+                    required: "Password is required",
+                  })}
+                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                   focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
+                />
+                {errors.password && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className="w-full py-3 px-4 bg-[#006d77] hover:bg-opacity-90 text-white font-bold rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#006d77]"
+              >
+                LOGIN
+              </button>
+
+              <div className="flex items-center">
+                <div className="flex-grow border-t border-gray-300"></div>
+                <span className="flex-shrink mx-4 text-sm text-gray-500">
+                  Or continue with
+                </span>
+                <div className="flex-grow border-t border-gray-300"></div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <button
+                  type="button"
+                  onClick={handleGoogleLogin}
+                  className="w-full inline-flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-CPC-ocean hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
+                >
+                  <FcGoogle size={25} />
+                  <span className="ml-2">Google</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleGithubLogin}
+                  className="w-full inline-flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-CPC-ocean hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
+                >
+                  <VscGithubInverted size={25} />
+                  <span className="ml-2">GitHub</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        {/* Right Branding */}
+        <div className="w-full md:w-1/2 bg-[#006d77] text-[#edf6f9] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <div className="flex items-center">
+              <HeartHandshake className="h-10 w-10 mr-2 text-white" />
+              <h1 className="text-4xl font-extrabold">Carepoint Camp</h1>
+            </div>
+            <div className="mt-16 sm:mt-24">
+              <h1 className="text-4xl lg:text-2xl font-extrabold leading-tight">
+                Welcome Back to Carepoint Camp
+              </h1>
+              <p className="mt-4 text-[#83c5be] text-lg">
+                Log in to access your health dashboard, manage appointments, and
+                continue your journey to better health.
+              </p>
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0">
+            <SoundWave />
+          </div>
+        </div>
       </div>
     </div>
   );
