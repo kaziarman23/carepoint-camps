@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Auth/AuthProvider";
 import { useContext } from "react";
 import toast from "react-hot-toast";
-import { HeartHandshake, LogIn, UserPlus } from "lucide-react";
+import { HeartHandshake, LogIn } from "lucide-react";
 
 const Login = () => {
   const navigate = useNavigate();

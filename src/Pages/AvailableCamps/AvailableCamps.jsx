@@ -107,10 +107,10 @@ const AvailableCamps = () => {
                   />
                 </figure>
                 <div className="card-body rounded-b-xl bg-CPC-white shadow-2xl">
-                  <h2 className="card-title text-lg md:text-lg font-bold">
+                  <h2 className="card-title text-CPC-ocean text-lg md:text-lg font-bold">
                     {camp.name}
                   </h2>
-                  <p className="text-sm md:text-base">{camp.location}</p>
+                  <p className="text-black text-sm md:text-base">{camp.location}</p>
                   <div className="card-actions justify-end mt-3">
                     <Link to={`/campDetails/${camp._id}`}>
                       <UsePrimaryBtn>More Details</UsePrimaryBtn>
@@ -134,10 +134,10 @@ const AvailableCamps = () => {
             pageCount={pageCount}
             onPageChange={handlePageClick}
             containerClassName="flex justify-center gap-2 mt-6"
-            pageClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-200"
-            activeClassName="bg-sky-500 text-white"
-            previousClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-200"
-            nextClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-200"
+            pageClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
+            activeClassName="bg-sky-300 text-white"
+            previousClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
+            nextClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
             disabledClassName="opacity-50 cursor-not-allowed"
           />
         )}
