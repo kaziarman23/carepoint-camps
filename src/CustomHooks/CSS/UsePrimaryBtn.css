@@ -53,6 +53,19 @@
   animation: sh02 0.5s 0s linear;
 }
 
+/* Logout Button Styles */
+.logoutBtn {
+  border-color: 1px solid black;
+  color: black;
+}
+
+.logoutBtn:hover {
+  background: red;
+  color: #fff;
+  border: 1px solid red;
+  box-shadow: 0 0 30px 5px rgba(255, 0, 0, 0.815);
+}
+
 /* Cancel Button Styles */
 .cancelBtn {
   border-color: red;

@@ -44,7 +44,7 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col md:flex-row min-h-screen font-poppins">
       {/* Toggle Button for Small Screens */}
-      <div className="text-white bg-[#6f5cc4] flex justify-start items-center gap-4 md:hidden">
+      <div className="text-white bg-CPC-ocean flex justify-start items-center gap-4 md:hidden">
         <div
           tabIndex={0}
           role="button"
@@ -73,9 +73,9 @@ const Dashboard = () => {
       <div
         className={`${
           isSidebarOpen ? "block" : "hidden"
-        } md:block w-full md:w-64 min-h-screen bg-[#6f5cc4] text-white md:relative absolute z-10`}
+        } md:block w-full md:w-64 min-h-screen bg-CPC-ocean text-white md:relative absolute z-10`}
       >
-        <div className="text-white bg-[#6f5cc4] flex justify-start items-center gap-4 md:hidden">
+        <div className="text-white bg-CPC-ocean flex justify-start items-center gap-4 md:hidden">
           <div
             tabIndex={0}
             role="button"
@@ -100,6 +100,7 @@ const Dashboard = () => {
           <h1>Carepoint Camp</h1>
         </div>
         <ul className="menu p-4 space-y-2">
+          {/* admin routes */}
           {isAdmin ? (
             <>
               <li onClick={handleNavClick}>
@@ -108,7 +109,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <FaUserShield className="w-6 h-6 mr-2" />
-                  Organizer Profile
+                  <p className="text-sm hover:text-CPC-sky">Organizer Profile</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -117,7 +118,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <FaUsers className="w-6 h-6 mr-2" />
-                  All Users
+                  <p className="text-sm hover:text-CPC-sky">All Users</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -126,7 +127,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <MdAddBusiness className="w-6 h-6 mr-2" />
-                  Add A Camp
+                  <p className="text-sm hover:text-CPC-sky">Add A Camp</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -135,7 +136,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <MdHomeWork className="w-6 h-6 mr-2" />
-                  Manage Camps
+                  <p className="text-sm hover:text-CPC-sky">Manage Camps</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -143,8 +144,8 @@ const Dashboard = () => {
                   to="/dashboard/manageRegisteredCamps"
                   className="flex items-center p-2 rounded-xl"
                 >
-                  <BsPersonWorkspace className="w-6 h-6 mr-2" />
-                  Manage Registered Camps
+                  <BsPersonWorkspace className="w-4 h-4 mr-2" />
+                  <p className="text-sm hover:text-CPC-sky">Manage Reg. Camps</p>
                 </NavLink>
               </li>
             </>

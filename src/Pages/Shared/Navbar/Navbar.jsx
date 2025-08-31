@@ -1,7 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../Auth/AuthProvider";
-import UseLogoutBtn from "../../../CustomHooks/UseLogoutBtn";
 import toast from "react-hot-toast";
 import UsePrimaryBtn from "../../../CustomHooks/UsePrimaryBtn";
 
@@ -66,8 +65,15 @@ const Navbar = () => {
       <li className="p-2 font-bold text-base hover:text-CPC-ocean">
         <NavLink to="/contactUs">Contact Us</NavLink>
       </li>
+      {user && (
+        <li className="p-2 font-bold text-base hover:text-CPC-ocean">
+          <NavLink to="/dashboard/dashboardInterface">Dashboard</NavLink>
+        </li>
+      )}
     </>
   );
+
+  console.log("user:", user);
 
   return (
     <nav
@@ -89,14 +95,16 @@ const Navbar = () => {
             <>
               <img
                 src={
-                  user?.photoURL
+                  user.photoURL
                     ? user.photoURL
-                    : "https://i.pinimg.com/enabled/564x/9e/83/75/9e837528f01cf3f42119c5aeeed1b336.jpg"
+                    : "https://i.pinimg.com/736x/e2/86/dd/e286dde020e3fea2a6522c090eb7da6a.jpg"
                 }
                 alt="user profile"
                 className="w-6 h-6 object-cover rounded-full xl:w-8 xl:h-8"
               />
-              <UseLogoutBtn onClick={handleLogout}>Logout</UseLogoutBtn>
+              <UsePrimaryBtn isLogout onClick={handleLogout}>
+                Logout
+              </UsePrimaryBtn>
             </>
           ) : (
             <Link to="/register">

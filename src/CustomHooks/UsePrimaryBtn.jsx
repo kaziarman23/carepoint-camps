@@ -3,10 +3,9 @@ import "./CSS/UsePrimaryBtn.css";
 const UsePrimaryBtn = ({
   children,
   onClick,
+  isLogout,
   isCancel,
   isUpdate,
-  isSubmit,
-  isPurple,
   disabled,
   className,
 }) => {
@@ -15,10 +14,9 @@ const UsePrimaryBtn = ({
       onClick={onClick}
       className={`
         UsePrimaryBtn 
+        ${isLogout ? "logoutBtn" : ""}
         ${isCancel ? "cancelBtn" : ""}
         ${isUpdate ? "updateBtn" : ""}
-        ${isSubmit ? "submitBtn" : ""}
-        ${isPurple ? "isPurple" : ""}
         ${className ? className : ""}
         sm:px-5 sm:py-2.5 sm:text-sm
         xs:w-full xs:text-sm
