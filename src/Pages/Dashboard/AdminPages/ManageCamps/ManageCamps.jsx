@@ -43,7 +43,7 @@ const ManageCamps = () => {
           })
           .catch((error) => {
             console.log(error);
-            
+
             // showing an alert
             toast.error(error);
           });
@@ -53,13 +53,13 @@ const ManageCamps = () => {
 
   if (filterCamps.length === 0) {
     return (
-      <div className="w-full h-screen bg-black overflow-hidden">
-        <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
+      <div className="w-full h-screen bg-sky-100 overflow-hidden">
+        <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-10">
           <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             No Camp Added!
           </h1>
           <Link to="/dashboard/addACamp">
-            <UsePrimaryBtn isPurple={true}>Add Camps</UsePrimaryBtn>
+            <UsePrimaryBtn blackBorder>Add Camps</UsePrimaryBtn>
           </Link>
         </div>
       </div>
@@ -67,8 +67,8 @@ const ManageCamps = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
-      <div className="w-11/12 min-h-full mx-auto bg-black my-10 p-4 rounded-xl">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
+      <div className="w-11/12 min-h-full mx-auto bg-CPC-ocean my-10 p-4 rounded-xl">
         <h1 className="text-2xl p-3 font-bold text-white text-center">
           Manage Camps
         </h1>
@@ -110,13 +110,12 @@ const ManageCamps = () => {
                   </td>
                   <td className="flex items-center gap-2">
                     <Link to={`/dashboard/updateManageCamps/${camp._id}`}>
-                      <UsePrimaryBtn isUpdate={true}>
-                        Update
-                      </UsePrimaryBtn>
+                      <UsePrimaryBtn isUpdate>Update</UsePrimaryBtn>
                     </Link>
                     <UsePrimaryBtn
                       onClick={() => handleDelete(camp._id)}
-                      isCancel={true}
+                      isLogout
+                      blackBorder
                     >
                       Delete
                     </UsePrimaryBtn>

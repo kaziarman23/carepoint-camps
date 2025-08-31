@@ -60,7 +60,7 @@ const UserAnalytics = () => {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
       <div className="w-5/6 min-h-full mx-auto bg-black rounded-xl my-10 p-4">
         <h1 className="text-center text-2xl font-bold p-3 text-purple-400 uppercase">
           Mr.{user.displayName} Analytics

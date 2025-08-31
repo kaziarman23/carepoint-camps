@@ -63,7 +63,7 @@ const UserRequiestedCamps = () => {
 
   if (participantRequiests.length === 0) {
     return (
-      <div className="w-full h-screen bg-gray-900">
+      <div className="w-full h-screen bg-sky-100">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
           <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             No Requiests Found!
@@ -74,7 +74,7 @@ const UserRequiestedCamps = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
       <div className="bg-black w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl p-5">
         <h1 className="text-center text-2xl font-bold p-4 text-purple-400 uppercase">
           Requested Camps

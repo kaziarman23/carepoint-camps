@@ -54,9 +54,9 @@ const AllUsers = () => {
   }
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-gray-900">
-      <div className="w-full md:w-4/5 min-h-full bg-black text-white p-6 mx-auto my-10 md:rounded-xl shadow-lg">
-        <h1 className="text-center font-bold text-3xl p-2 uppercase text-[#6f5cc4]">
+    <div className="w-full min-h-screen overflow-hidden bg-sky-100">
+      <div className="w-full md:w-4/5 min-h-full bg-CPC-ocean text-white p-6 mx-auto my-10 md:rounded-xl shadow-lg xl:w-11/12">
+        <h1 className="text-center font-bold text-3xl p-2 uppercase text-white">
           All Users
         </h1>
         <h2 className="text-left p-2 font-bold">Total Users: {users.length}</h2>
@@ -65,7 +65,7 @@ const AllUsers = () => {
           <table className="min-w-full text-left">
             {/* Head */}
             <thead>
-              <tr className="bg-[#6f5cc4] text-xl border-b ">
+              <tr className="bg-CPC-sky text-xl">
                 <th className="py-3 px-4">SL</th>
                 <th className="py-3 px-4">Name</th>
                 <th className="py-3 px-4">Email</th>
@@ -80,11 +80,11 @@ const AllUsers = () => {
                   <td className="py-3 px-4">{user.email}</td>
                   <td className="py-3 px-4 font-bold">
                     {user?.userRole === "admin" ? (
-                      <span className="text-CPC-ocean">Admin</span>
+                      <span className="text-black">Admin</span>
                     ) : (
                       <UsePrimaryBtn
                         onClick={() => handleMakeAdmin(user)}
-                        isUpdate={true}
+                        isUpdate
                       >
                         User
                       </UsePrimaryBtn>

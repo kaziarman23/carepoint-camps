@@ -7,9 +7,9 @@ const OrganizerProfile = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
-      <div className="w-full md:w-11/12 mx-auto p-6 my-10 md:rounded-xl bg-black shadow-lg">
-        <h1 className="text-4xl p-3 font-bold text-center uppercase text-purple-400">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
+      <div className="w-full md:w-11/12 mx-auto p-6 my-10 md:rounded-xl bg-CPC-ocean shadow-lg">
+        <h1 className="text-4xl p-3 font-bold text-center uppercase text-white">
           Organizer Profile
         </h1>
         <div className="flex flex-col lg:flex-row justify-center items-center my-10">
@@ -20,23 +20,16 @@ const OrganizerProfile = () => {
               className="h-60 w-60 rounded-full object-cover border-4 border-purple-400 shadow-md"
             />
           </div>
-          <div className="w-full lg:w-1/2 text-left p-5">
-            <h1 className="text-2xl font-bold text-purple-300 mb-2">
-              Name: <span className="text-gray-100">{user.displayName}</span>
-            </h1>
-            <h1 className="text-2xl font-bold text-purple-300">
-              Email: <span className="text-gray-100">{user.email}</span>
-            </h1>
+          <div className="w-full lg:w-1/2 text-left p-5 text-white space-y-3">
+            <h1 className="text-3xl font-extrabold">Personal Details</h1>
+            <h1 className="text-xl font-bold">Name: {user.displayName}</h1>
+            <h1 className="text-xl font-bold">Email: {user.email}</h1>
+            <h1 className="text-xl font-bold">Role: Admin</h1>
           </div>
         </div>
-        <div className="flex justify-end items-center mt-5">
+        <div className="flex justify-end items-center ">
           <Link to="/dashboard/organizerProfileUpdate">
-            <UsePrimaryBtn
-              isUpdate={true}
-              className="text-gray-900 bg-purple-400 hover:bg-purple-300 font-semibold px-4 py-2 rounded-lg shadow-sm"
-            >
-              Update Profile
-            </UsePrimaryBtn>
+            <UsePrimaryBtn blackBorder>Update Profile</UsePrimaryBtn>
           </Link>
         </div>
       </div>

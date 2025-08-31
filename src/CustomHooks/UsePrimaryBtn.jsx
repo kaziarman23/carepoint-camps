@@ -8,6 +8,7 @@ const UsePrimaryBtn = ({
   isUpdate,
   disabled,
   className,
+  blackBorder,
 }) => {
   return (
     <button
@@ -17,6 +18,7 @@ const UsePrimaryBtn = ({
         ${isLogout ? "logoutBtn" : ""}
         ${isCancel ? "cancelBtn" : ""}
         ${isUpdate ? "updateBtn" : ""}
+        ${blackBorder ? "blackBorder" : ""}
         ${className ? className : ""}
         sm:px-5 sm:py-2.5 sm:text-sm
         xs:w-full xs:text-sm

@@ -45,7 +45,7 @@ const ManageRegisteredCamps = () => {
 
   if (Participant.length === 0) {
     return (
-      <div className="w-full h-screen overflow-hidden bg-black">
+      <div className="w-full h-screen overflow-hidden bg-sky-100">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
           <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             Participants not found!
@@ -56,16 +56,16 @@ const ManageRegisteredCamps = () => {
   }
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-gray-900">
-      <div className="w-11/12 md:w-4/5 min-h-full mx-auto my-10 bg-black p-4 rounded-xl">
-        <h1 className="text-center font-bold p-3 text-2xl text-purple-400 uppercase">
+    <div className="w-full min-h-screen overflow-hidden bg-sky-100">
+      <div className="w-11/12 md:w-4/5 min-h-full mx-auto my-10 bg-CPC-ocean p-4 rounded-xl xl:w-11/12">
+        <h1 className="text-center font-bold p-3 text-2xl text-white uppercase">
           Manage Registered Camps
         </h1>
         {/* table content */}
         <div className="overflow-x-auto">
           <table className="min-w-full table-auto">
             <thead>
-              <tr className="text-white uppercase bg-purple-400">
+              <tr className="text-white uppercase bg-CPC-sky">
                 <th className="px-2 py-3 text-left text-sm font-medium">SL:</th>
                 <th className="px-2 py-3 text-left text-sm font-medium">
                   Participant Name

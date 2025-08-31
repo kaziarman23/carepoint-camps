@@ -109,7 +109,9 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <FaUserShield className="w-6 h-6 mr-2" />
-                  <p className="text-sm hover:text-CPC-sky">Organizer Profile</p>
+                  <p className="text-sm hover:text-CPC-sky">
+                    Organizer Profile
+                  </p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -145,7 +147,9 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <BsPersonWorkspace className="w-4 h-4 mr-2" />
-                  <p className="text-sm hover:text-CPC-sky">Manage Reg. Camps</p>
+                  <p className="text-sm hover:text-CPC-sky">
+                    Manage Reg. Camps
+                  </p>
                 </NavLink>
               </li>
             </>
@@ -193,6 +197,15 @@ const Dashboard = () => {
           <hr className="w-full my-5 border-gray-300" />
 
           <li onClick={handleNavClick}>
+            <NavLink
+              to="/dashboard/dashboardInterface"
+              className="flex items-center p-2 rounded-xl"
+            >
+              <MdDashboard className="w-6 h-6 mr-2" />
+              Dashboard
+            </NavLink>
+          </li>
+          <li onClick={handleNavClick}>
             <NavLink to="/" className="flex items-center p-2 rounded-xl">
               <IoMdHome className="w-6 h-6 mr-2" />
               Home
@@ -205,15 +218,6 @@ const Dashboard = () => {
             >
               <FaHouseMedical className="w-6 h-6 mr-2" />
               Available Camps
-            </NavLink>
-          </li>
-          <li onClick={handleNavClick}>
-            <NavLink
-              to="/dashboard/dashboardInterface"
-              className="flex items-center p-2 rounded-xl"
-            >
-              <MdDashboard className="w-6 h-6 mr-2" />
-              Dashboard
             </NavLink>
           </li>
         </ul>

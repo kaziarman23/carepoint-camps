@@ -65,8 +65,8 @@ const OrganizerProfileUpdate = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex justify-center items-center bg-gray-900">
-      <div className="w-full md:w-4/5 h-auto mx-auto p-6 my-10 md:rounded-xl bg-black shadow-lg">
+    <div className="w-full min-h-screen flex justify-center items-center bg-sky-100">
+      <div className="w-full md:w-4/5 h-auto mx-auto p-6 my-10 md:rounded-xl bg-CPC-ocean shadow-lg">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1 className="text-2xl p-3 font-bold text-center text-white">
             Updating Organizer Profile
@@ -78,7 +78,7 @@ const OrganizerProfileUpdate = () => {
               </div>
               <input
                 type="text"
-                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="input input-bordered w-full rounded-xl text-black bg-white focus:outline-none focus:ring-2"
                 defaultValue={user.photoURL}
                 {...register("photo", { required: true })}
               />
@@ -95,7 +95,7 @@ const OrganizerProfileUpdate = () => {
               </div>
               <input
                 type="text"
-                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="input input-bordered w-full rounded-xl text-black bg-white focus:outline-none focus:ring-2"
                 defaultValue={user.displayName}
                 {...register("name", { required: true })}
               />
@@ -112,7 +112,7 @@ const OrganizerProfileUpdate = () => {
               </div>
               <input
                 type="email"
-                className="input input-bordered w-full rounded-xl text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-purple-300"
+                className="input input-bordered w-full rounded-xl text-black bg-white focus:outline-none focus:ring-2"
                 defaultValue={user.email}
                 {...register("email", { required: true })}
               />
@@ -124,10 +124,10 @@ const OrganizerProfileUpdate = () => {
             </label>
           </div>
           <div className="flex justify-end items-center mt-5 gap-4">
-            <UsePrimaryBtn onClick={handleCancel} isCancel={true}>
+            <UsePrimaryBtn onClick={handleCancel} blackBorder isLogout>
               Cancel
             </UsePrimaryBtn>
-            <UsePrimaryBtn type="submit" isSubmit={true}>
+            <UsePrimaryBtn type="submit" blackBorder isSubmit>
               Submit
             </UsePrimaryBtn>
           </div>

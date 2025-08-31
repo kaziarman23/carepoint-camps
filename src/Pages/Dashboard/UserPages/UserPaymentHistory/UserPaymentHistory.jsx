@@ -16,7 +16,7 @@ const UserPaymentHistory = () => {
 
   if (filteredpaymentData.length === 0) {
     return (
-      <div className="w-full h-screen overflow-hidden bg-gray-900">
+      <div className="w-full h-screen overflow-hidden bg-sky-100">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
           <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             Payment History Not Found!
@@ -27,7 +27,7 @@ const UserPaymentHistory = () => {
   }
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-gray-900">
+    <div className="w-full min-h-screen overflow-hidden bg-sky-100">
       <div className="w-full md:w-11/12 min-h-full mx-auto bg-black my-10 md:rounded-xl p-4">
         <h1 className="text-2xl text-center p-4 font-bold text-purple-400 uppercase">
           Payment History

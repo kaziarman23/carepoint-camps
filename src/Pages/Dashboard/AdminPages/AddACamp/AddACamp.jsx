@@ -43,10 +43,10 @@ const AddACamp = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
-      <div className="bg-black w-full md:w-4/5 min-h-full mx-auto my-10 md:rounded-xl p-4">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
+      <div className="bg-CPC-ocean w-full md:w-4/5 min-h-full mx-auto my-10 md:rounded-xl p-4">
         {/* Responsive heading */}
-        <h1 className="text-center font-bold uppercase p-3 text-xl md:text-2xl text-[#6f5cc4]">
+        <h1 className="text-center font-bold uppercase p-3 text-xl md:text-2xl text-white">
           Add a Camp
         </h1>
 
@@ -56,7 +56,9 @@ const AddACamp = () => {
             {/* Camp Name */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Camp Name</span>
+                <span className="label-text font-semibold text-white">
+                  Camp Name
+                </span>
               </div>
               <input
                 type="text"
@@ -74,7 +76,9 @@ const AddACamp = () => {
             {/* Camp Fees */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Camp Fees</span>
+                <span className="label-text font-semibold text-white">
+                  Camp Fees
+                </span>
               </div>
               <input
                 type="text"
@@ -92,7 +96,9 @@ const AddACamp = () => {
             {/* Date */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Date</span>
+                <span className="label-text font-semibold text-white">
+                  Date
+                </span>
               </div>
               <input
                 type="date"
@@ -109,7 +115,9 @@ const AddACamp = () => {
             {/* Location */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Location</span>
+                <span className="label-text font-semibold text-white">
+                  Location
+                </span>
               </div>
               <input
                 type="text"
@@ -127,7 +135,7 @@ const AddACamp = () => {
             {/* Healthcare Professional */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">
+                <span className="label-text font-semibold text-white">
                   Healthcare Professional
                 </span>
               </div>
@@ -147,7 +155,9 @@ const AddACamp = () => {
             {/* Profession Name */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Profession Name</span>
+                <span className="label-text font-semibold text-white">
+                  Profession Name
+                </span>
               </div>
               <input
                 type="text"
@@ -165,7 +175,9 @@ const AddACamp = () => {
             {/* Participant Count */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Participant Count</span>
+                <span className="label-text font-semibold text-white">
+                  Participant Count
+                </span>
               </div>
               <input
                 type="number"
@@ -179,7 +191,9 @@ const AddACamp = () => {
             {/* Camp Image */}
             <label className="form-control w-full">
               <div className="label">
-                <span className="label-text text-white">Camp Image URL</span>
+                <span className="label-text font-semibold text-white">
+                  Camp Image URL
+                </span>
               </div>
               <input
                 type="text"
@@ -197,7 +211,9 @@ const AddACamp = () => {
             {/* Camp Description */}
             <label className="form-control w-full col-span-2">
               <div className="label">
-                <span className="label-text text-white">Camp Description</span>
+                <span className="label-text font-semibold text-white">
+                  Camp Description
+                </span>
               </div>
               <textarea
                 className="textarea textarea-bordered h-24 bg-white text-black rounded-xl"
@@ -213,7 +229,7 @@ const AddACamp = () => {
 
           {/* Submit Button */}
           <div className="flex justify-end p-2 md:p-4">
-            <UsePrimaryBtn isSubmit={true} type="submit">
+            <UsePrimaryBtn isSubmit blackBorder type="submit">
               Submit
             </UsePrimaryBtn>
           </div>

@@ -27,7 +27,7 @@ const ParticipantInformations = () => {
 
   if (participantProfile.length === 0) {
     return (
-      <div className="bg-gray-900 w-full h-screen overflow-hidden">
+      <div className="bg-sky-100 w-full h-screen overflow-hidden">
         <div className="w-4/5 h-80 mx-auto my-10 flex justify-center items-center flex-col gap-5">
           <h1 className="text-6xl text-center text-CPC-ocean font-bold">
             No Participants Found!
@@ -38,7 +38,7 @@ const ParticipantInformations = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-gray-900 overflow-hidden">
+    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
       <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-black p-5">
         <h1 className="p-3 text-2xl text-center font-bold text-purple-400 uppercase">
           Participant Information
