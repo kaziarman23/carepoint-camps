@@ -3,6 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import { useParams } from "react-router";
 import UseParticipant from "../../../../CustomHooks/UseParticipant";
+import UsePrimaryBtn from "../../../../CustomHooks/UsePrimaryBtn";
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_PK);
 
@@ -23,13 +24,17 @@ const Payment = () => {
 
   return (
     <div className="w-full min-h-screen overflow-hidden bg-sky-100">
-      <div className="bg-black w-full md:w-4/5 min-h-full mx-auto my-10 rounded-xl">
-        <h1 className="text-2xl font-bold text-center p-3 text-purple-400 uppercase">Payment</h1>
+      <div className="bg-CPC-ocean w-full md:w-4/5 min-h-full mx-auto my-10 shadow-xl rounded-xl">
+        <h1 className="text-2xl font-bold text-center p-3 text-white uppercase">
+          Payment
+        </h1>
+
         <div className="w-full md:w-4/5 h-auto mx-auto my-10 p-4 ">
           <Elements stripe={stripePromise}>
             <CheckoutForm price={price} campName={campName} id={id} />
           </Elements>
         </div>
+       
       </div>
     </div>
   );

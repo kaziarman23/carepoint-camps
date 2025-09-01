@@ -78,11 +78,11 @@ const CampDetails = () => {
   }
 
   return (
-    <div className="w-full h-full mx-auto flex justify-center items-center">
-      <div className="w-11/12 h-full mt-5 gap-2 flex flex-col justify-center items-center bg-[#F5F5F5] p-5 rounded-xl xl:w-4/5">
-        <h1 className="font-bold text-2xl p-2">Camp Details</h1>
+    <div className="w-full h-full mx-auto flex justify-center items-center bg-sky-100 py-20">
+      <div className="w-11/12 h-full mt-5 gap-2 flex flex-col justify-center items-center bg-white rounded-xl shadow-xl p-5 xl:w-4/5">
+        <h1 className="font-bold text-2xl p-2 text-black">Camp Details</h1>
         {/* Camp details */}
-        <div className="w-full flex flex-col md:flex-row justify-center items-center md:space-x-5">
+        <div className="w-full flex flex-col md:flex-row justify-center items-center md:space-x-5 text-black">
           <div className="w-full md:w-1/2 h-full flex justify-center items-center mb-4 md:mb-0">
             <img
               src={selectedCamp.image}
@@ -126,11 +126,11 @@ const CampDetails = () => {
           </div>
         </div>
         <div className="w-full gap-5 p-4 flex flex-col sm:flex-row justify-end items-center">
-          <UsePrimaryBtn isCancel={true} onClick={handleBackBtn}>
+          <UsePrimaryBtn blackBorder isLogout onClick={handleBackBtn}>
             Back
           </UsePrimaryBtn>
 
-          <UsePrimaryBtn onClick={() => setModelOpen(true)}>
+          <UsePrimaryBtn blackBorder onClick={() => setModelOpen(true)}>
             Join Camp
           </UsePrimaryBtn>
         </div>
@@ -146,7 +146,7 @@ const CampDetails = () => {
         />
       )}
     </div>
-  )
+  );
 };
 
 export default CampDetails;

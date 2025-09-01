@@ -23,8 +23,8 @@ import ParticipantInformations from "../Pages/Dashboard/UserPages/ParticipantPro
 import AllUsers from "../Pages/Dashboard/AdminPages/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import DashboardInterface from "../Pages/Dashboard/DashboardInterface";
-import AboutUs from '../Pages/AboutUs/AboutUs';
-import ContactUs from '../Pages/ContactUs/ContactUs';
+import AboutUs from "../Pages/AboutUs/AboutUs";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         path: "/campDetails/:id",
         element: (
           <PrivateRoute>
-            <CampDetails />,
+            <CampDetails />
           </PrivateRoute>
         ),
       },
@@ -163,7 +163,7 @@ const router = createBrowserRouter([
         path: "/dashboard/manageRegisteredCamps",
         element: (
           <AdminRoute>
-            <ManageRegisteredCamps />,
+            <ManageRegisteredCamps />
           </AdminRoute>
         ),
       },

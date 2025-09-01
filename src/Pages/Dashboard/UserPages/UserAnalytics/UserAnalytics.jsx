@@ -20,7 +20,7 @@ const UserAnalytics = () => {
     );
   }
   // cusmot pie chart
-  const COLORS = ["green", "red"];
+  const COLORS = ["green", "orange"];
   const RADIAN = Math.PI / 180;
   const renderCustomizedLabel = ({
     cx,
@@ -61,8 +61,8 @@ const UserAnalytics = () => {
 
   return (
     <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
-      <div className="w-5/6 min-h-full mx-auto bg-black rounded-xl my-10 p-4">
-        <h1 className="text-center text-2xl font-bold p-3 text-purple-400 uppercase">
+      <div className="w-5/6 min-h-full mx-auto bg-CPC-ocean rounded-xl my-10 p-4">
+        <h1 className="text-center text-2xl font-bold p-3 text-white uppercase">
           Mr.{user.displayName} Analytics
         </h1>
         <div className="flex flex-wrap items-center text-white">
@@ -86,7 +86,25 @@ const UserAnalytics = () => {
                   />
                 ))}
               </Pie>
-              <Legend />
+              <Legend
+                formatter={(value) => {
+                  if (value === "Paid") {
+                    return (
+                      <span style={{ color: "white", fontWeight: "bold" }}>
+                        {value}
+                      </span>
+                    );
+                  }
+                  if (value === "Pending Payment") {
+                    return (
+                      <span style={{ color: "white", fontWeight: "bold" }}>
+                        {value}
+                      </span>
+                    );
+                  }
+                  return value;
+                }}
+              />
             </PieChart>
           </div>
           {/* Description/Details section */}

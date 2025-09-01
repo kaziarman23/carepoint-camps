@@ -49,8 +49,8 @@ const ParticipantProfileUpdate = () => {
 
   return (
     <div className="w-full min-h-screen bg-sky-100 flex justify-center items-center p-4">
-      <div className="w-full max-w-4xl bg-black rounded-xl p-6">
-        <h1 className="text-2xl p-3 text-center font-bold text-purple-400 uppercase">
+      <div className="w-full max-w-4xl bg-CPC-ocean rounded-xl p-6">
+        <h1 className="text-2xl p-3 text-center font-bold text-white uppercase">
           Update Participant Information
         </h1>
 
@@ -150,10 +150,10 @@ const ParticipantProfileUpdate = () => {
             </div>
           </div>
           <div className="flex p-4 gap-4 justify-end items-start">
-            <UsePrimaryBtn onClick={handleCancel} isCancel={true}>
+            <UsePrimaryBtn onClick={handleCancel} isLogout blackBorder>
               Cancel
             </UsePrimaryBtn>
-            <UsePrimaryBtn type="submit" isSubmit={true}>
+            <UsePrimaryBtn type="submit" blackBorder>
               Submit
             </UsePrimaryBtn>
           </div>

@@ -161,7 +161,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <MdAnalytics className="w-6 h-6 mr-2" />
-                  Analytics
+                  <p className="text-sm hover:text-CPC-sky">Analytics</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -170,7 +170,9 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <MdOutlineMedicalInformation className="w-6 h-6 mr-2" />
-                  Participant Informations
+                  <p className="text-sm hover:text-CPC-sky">
+                    Participant Informations
+                  </p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -179,7 +181,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <GiCampingTent className="w-6 h-6 mr-2" />
-                  Requested Camps
+                  <p className="text-sm hover:text-CPC-sky">Requested Camps</p>
                 </NavLink>
               </li>
               <li onClick={handleNavClick}>
@@ -188,7 +190,7 @@ const Dashboard = () => {
                   className="flex items-center p-2 rounded-xl"
                 >
                   <FaMoneyCheckAlt className="w-6 h-6 mr-2" />
-                  Payment History
+                  <p className="text-sm hover:text-CPC-sky">Payment History</p>
                 </NavLink>
               </li>
             </>

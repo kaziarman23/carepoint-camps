@@ -28,7 +28,7 @@ const ParticipantRegistration = ({
 
   return (
     <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-[#F5F5F5] p-6 rounded-lg w-4/5 h-auto mx-auto ">
+      <div className="bg-[#F5F5F5] p-6 rounded-lg w-4/5 h-auto mx-auto">
         <h2 className="text-2xl font-bold p-3 text-center">Join Camp</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="grid grid-cols-2 gap-5">
@@ -57,10 +57,6 @@ const ParticipantRegistration = ({
               <label className="font-bold">Participant Email: </label>
               <p>{user?.email ? user.email : "testEmail"}</p>
             </div>
-            {/* <div>
-              <label className="font-bold">Participant Email: </label>
-              <p>{user?.email ? user.email : "testEmail"}</p>
-            </div> */}
 
             {/* Input fields for participant to fill */}
             <div className="space-y-2">
@@ -158,11 +154,14 @@ const ParticipantRegistration = ({
             <UsePrimaryBtn
               onClick={onClose} // Close the modal
               type="button"
-              isCancel={true}
+              isLogout
+              blackBorder
             >
               Cancel
             </UsePrimaryBtn>
-            <UsePrimaryBtn type="submit">Submit</UsePrimaryBtn>
+            <UsePrimaryBtn blackBorder type="submit">
+              Submit
+            </UsePrimaryBtn>
           </div>
         </form>
       </div>

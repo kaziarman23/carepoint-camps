@@ -39,8 +39,8 @@ const ParticipantInformations = () => {
 
   return (
     <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
-      <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-black p-5">
-        <h1 className="p-3 text-2xl text-center font-bold text-purple-400 uppercase">
+      <div className="w-11/12 min-h-full mx-auto my-10 rounded-xl bg-CPC-ocean p-5">
+        <h1 className="p-3 text-2xl text-center font-bold text-white uppercase">
           Participant Information
         </h1>
         {/* table content */}
@@ -48,7 +48,7 @@ const ParticipantInformations = () => {
           <table className="table-auto min-w-full text-left text-sm text-white">
             {/* head */}
             <thead>
-              <tr className="text-white uppercase border-b bg-purple-400">
+              <tr className="text-white uppercase bg-CPC-sky">
                 <th className="p-2">SL</th>
                 <th className="p-2">Camp Name</th>
                 <th className="p-2">Location</th>
@@ -75,7 +75,7 @@ const ParticipantInformations = () => {
                     <Link
                       to={`/dashboard/participantProfileUpdate/${participant._id}`}
                     >
-                      <UsePrimaryBtn isUpdate={true}>
+                      <UsePrimaryBtn isUpdate>
                         Update
                       </UsePrimaryBtn>
                     </Link>

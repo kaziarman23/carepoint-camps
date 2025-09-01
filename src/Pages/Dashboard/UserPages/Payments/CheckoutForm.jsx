@@ -113,33 +113,51 @@ const CheckoutForm = ({ price, campName, id }) => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-md mx-auto p-6 bg-CPC-ocean"
+    >
+      {/* Card input wrapper */}
+      <div className="border-b-2 border-white focus-within:border-sky-400 transition-colors duration-300">
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "white",
+                "::placeholder": {
+                  color: "#cbd5e1", // Tailwind slate-300 equivalent
+                },
+              },
+              invalid: {
+                color: "#f87171", // Tailwind red-400
               },
             },
-            invalid: {
-              color: "#9e2146",
-            },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
+
+      {/* Button */}
       <UsePrimaryBtn
         type="submit"
-        isSubmit={true}
-        className="mt-5"
+        isSubmit
+        blackBorder
+        className="mt-6 w-full py-3 rounded-xl shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
         disabled={!stripe || !clientSecret}
       >
         Pay
       </UsePrimaryBtn>
+      <UsePrimaryBtn className="mt-6 w-full" blackBorder>
+        <a href="https://docs.stripe.com/testing#cards" target="_blank">
+          Test Cards
+        </a>
+      </UsePrimaryBtn>
+
+      {/* Error message */}
       {paymentError && (
-        <h5 className="text-red-500 text-base">{paymentError}</h5>
+        <h5 className="text-red-400 text-sm mt-3 text-center font-medium">
+          {paymentError}
+        </h5>
       )}
     </form>
   );

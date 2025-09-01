@@ -75,8 +75,8 @@ const UserRequiestedCamps = () => {
 
   return (
     <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
-      <div className="bg-black w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl p-5">
-        <h1 className="text-center text-2xl font-bold p-4 text-purple-400 uppercase">
+      <div className="bg-CPC-ocean w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl p-5">
+        <h1 className="text-center text-2xl font-bold p-4 text-white uppercase">
           Requested Camps
         </h1>
         {/* table content */}
@@ -84,7 +84,7 @@ const UserRequiestedCamps = () => {
           <table className="min-w-full divide-y divide-gray-200">
             {/* head */}
             <thead>
-              <tr className="text-white uppercase bg-purple-400">
+              <tr className="text-white uppercase bg-CPC-sky">
                 <th className="px-4 py-2 text-left text-sm font-medium">SL</th>
                 <th className="px-4 py-2 text-left text-sm font-medium">
                   Camp Name
@@ -116,14 +116,12 @@ const UserRequiestedCamps = () => {
                   <td className="px-4 py-2">
                     {participant.paymentStatus === "pay" ? (
                       <Link to={`/dashboard/payment/${participant._id}`}>
-                        <UsePrimaryBtn isSubmit={true}>
+                        <UsePrimaryBtn blackBorder>
                           Pay
                         </UsePrimaryBtn>
                       </Link>
                     ) : (
-                      <UsePrimaryBtn disabled={true}>
-                        Paid
-                      </UsePrimaryBtn>
+                      <UsePrimaryBtn disabled>Paid</UsePrimaryBtn>
                     )}
                   </td>
                   <td className="px-4 py-2">
@@ -141,12 +139,13 @@ const UserRequiestedCamps = () => {
                     {participant.paymentStatus === "pay" ? (
                       <UsePrimaryBtn
                         onClick={() => handleDelete(participant._id)}
-                        isCancel={true}
+                        isLogout
+                        blackBorder
                       >
                         Cancel
                       </UsePrimaryBtn>
                     ) : (
-                      <UsePrimaryBtn disabled={true}>
+                      <UsePrimaryBtn disabled isLogout blackBorder>
                         Cancel
                       </UsePrimaryBtn>
                     )}
