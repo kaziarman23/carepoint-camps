@@ -20,7 +20,7 @@ const DashboardInterface = () => {
   }
   return (
     <div className="w-full min-h-screen bg-sky-100">
-      <div className="w-full h-screen md:w-4/5 mx-auto rounded-xl flex flex-col justify-center items-center p-4 text-black">
+      <div className="w-full md:w-4/5 mx-auto rounded-xl flex flex-col justify-center items-center p-4 text-black">
         <h1 className="text-xl text-CPC-ocean font-bold xl:text-4xl">
           Dashboard Interface.
         </h1>

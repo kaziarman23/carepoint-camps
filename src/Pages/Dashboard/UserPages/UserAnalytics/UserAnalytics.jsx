@@ -90,14 +90,26 @@ const UserAnalytics = () => {
                 formatter={(value) => {
                   if (value === "Paid") {
                     return (
-                      <span style={{ color: "white", fontWeight: "bold" }}>
+                      <span
+                        style={{
+                          color: "white",
+                          fontWeight: "bold",
+                          fontSize: "12px",
+                        }}
+                      >
                         {value}
                       </span>
                     );
                   }
                   if (value === "Pending Payment") {
                     return (
-                      <span style={{ color: "white", fontWeight: "bold" }}>
+                      <span
+                        style={{
+                          color: "white",
+                          fontWeight: "bold",
+                          fontSize: "12px",
+                        }}
+                      >
                         {value}
                       </span>
                     );
@@ -109,10 +121,10 @@ const UserAnalytics = () => {
           </div>
           {/* Description/Details section */}
           <div className="w-full md:w-1/2">
-            <h1 className="text-2xl font-bold p-2 text-center">
+            <h1 className="text-2xl font-bold p-2 text-left sm:text-center">
               Participant Status Overview
             </h1>
-            <p className="text-center md:text-left p-2">
+            <p className="text-left p-2">
               Gain insight into the current status of camp participants with our
               comprehensive analytics dashboard. This section provides a clear
               visual breakdown of Payment Status and Confirmation Status,

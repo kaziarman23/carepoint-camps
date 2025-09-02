@@ -27,7 +27,7 @@ const UserPaymentHistory = () => {
   }
 
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-sky-100">
+    <div className="w-full min-h-screen overflow-hidden p-2 bg-sky-100">
       <div className="w-full md:w-11/12 min-h-full mx-auto bg-CPC-ocean my-10 md:rounded-xl p-4">
         <h1 className="text-2xl text-center p-4 font-bold text-white uppercase">
           Payment History

@@ -74,7 +74,7 @@ const UserRequiestedCamps = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-sky-100 overflow-hidden">
+    <div className="w-full min-h-screen p-2 bg-sky-100 overflow-hidden">
       <div className="bg-CPC-ocean w-full md:w-11/12 min-h-full mx-auto my-10 rounded-xl p-5">
         <h1 className="text-center text-2xl font-bold p-4 text-white uppercase">
           Requested Camps
