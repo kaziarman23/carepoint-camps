@@ -31,7 +31,7 @@ function Introduction() {
               </span>
               <span className="w-2 h-2 bg-CPC-ocean rounded-full"></span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h1 className="text-2xl font-extrabold text-gray-900 leading-tight md:text-5xl lg:text-3xl xl:text-5xl">
               Introduction To{" "}
               <span className="text-CPC-ocean">Carepoint Camps!</span>
             </h1>
