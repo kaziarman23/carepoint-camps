@@ -137,18 +137,17 @@ const Register = () => {
   );
 
   return (
-    // Main container with the sky-100 background
-    <div className="min-h-screen bg-sky-100 flex items-center justify-center py-20">
-      <div className="w-11/12 mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
+    <div className="min-h-screen bg-sky-100 flex items-center justify-center py-16 lg:py-20">
+      <div className="w-11/12 lg:w-10/12 xl:w-11/12 mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Left "Branding" Side */}
-        <div className="w-full md:w-1/2 bg-[#006d77] text-[#edf6f9] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+        <div className="hidden md:flex w-full md:w-1/2 bg-[#006d77] text-[#edf6f9] p-8 sm:p-12 flex-col justify-between relative overflow-hidden">
           <div>
             <div className="flex items-center">
               <HeartHandshake className="h-10 w-10 mr-2 text-white" />
-              <h1 className="text-4xl font-extrabold ">Carepoint Camp</h1>
+              <h1 className="text-2xl font-extrabold lg:text-3xl">Carepoint Camp</h1>
             </div>
             <div className="mt-16 sm:mt-24">
-              <h1 className="text-4xl lg:text-2xl font-extrabold leading-tight">
+              <h1 className="text-2xl lg:text-3xl font-extrabold leading-tight">
                 You make the Choice for Health. We make it Happen.
               </h1>
               <p className="mt-4 text-[#83c5be] text-lg">
@@ -165,11 +164,11 @@ const Register = () => {
         </div>
 
         {/* Right "Form" Side */}
-        <div className="w-full md:w-1/2 p-8 sm:p-12 bg-[#edf6f9]">
+        <div className="w-full md:w-1/2 p-6 sm:p-10 lg:p-12 bg-[#edf6f9]">
           {/* Top Navigation */}
-          <div className="flex items-center justify-start space-x-6">
+          <div className="flex items-center justify-start">
             <Link to="/login">
-              <button className="flex items-center space-x-2 text-[#006d77] font-semibold  hover:opacity-80 transition-opacity">
+              <button className="flex items-center space-x-2 text-[#006d77] font-semibold text-sm sm:text-base hover:opacity-80 transition-opacity">
                 <LogIn />
                 <span>Sign In</span>
               </button>
@@ -177,11 +176,18 @@ const Register = () => {
           </div>
 
           {/* Registration Form */}
-          <div className="mt-12">
-            <h2 className="text-3xl font-bold text-[#006d77]">Registration</h2>
-            <p className="text-gray-500 mt-2">Create your account</p>
+          <div className="mt-8 sm:mt-10 lg:mt-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#006d77]">
+              Registration
+            </h2>
+            <p className="text-gray-500 text-sm sm:text-base mt-1 sm:mt-2">
+              Create your account
+            </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="mt-6 sm:mt-8 space-y-5 sm:space-y-6"
+            >
               {/* Full Name */}
               <div>
                 <label
@@ -195,11 +201,11 @@ const Register = () => {
                   id="name"
                   placeholder="Your Full Name"
                   {...register("name", { required: "Full name is required" })}
-                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                  className="w-full mt-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-200 rounded-lg 
                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
                     {errors.name.message}
                   </p>
                 )}
@@ -218,11 +224,11 @@ const Register = () => {
                   id="photo"
                   placeholder="Photo URL"
                   {...register("photo", { required: "Photo URL is required" })}
-                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                  className="w-full mt-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-200 rounded-lg 
                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.photo && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
                     {errors.photo.message}
                   </p>
                 )}
@@ -247,11 +253,11 @@ const Register = () => {
                       message: "Invalid email format",
                     },
                   })}
-                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                  className="w-full mt-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-200 rounded-lg 
                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
                     {errors.email.message}
                   </p>
                 )}
@@ -276,11 +282,11 @@ const Register = () => {
                       message: "Password must be at least 8 characters",
                     },
                   })}
-                  className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
+                  className="w-full mt-2 px-3 sm:px-4 py-2.5 sm:py-3 bg-white border border-gray-200 rounded-lg 
                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.password && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-red-500 text-xs sm:text-sm mt-1">
                     {errors.password.message}
                   </p>
                 )}
@@ -298,7 +304,7 @@ const Register = () => {
                 />
                 <label
                   htmlFor="terms"
-                  className="ml-2 block text-sm text-gray-700"
+                  className="ml-2 block text-xs sm:text-sm text-gray-700"
                 >
                   I accept the{" "}
                   <a
@@ -310,43 +316,43 @@ const Register = () => {
                 </label>
               </div>
               {errors.terms && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-xs sm:text-sm mt-1">
                   {errors.terms.message}
                 </p>
               )}
 
               <button
                 type="submit"
-                className="w-full py-3 px-4 bg-[#006d77] hover:bg-opacity-90 text-white font-bold rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#006d77]"
+                className="w-full py-2.5 sm:py-3 px-4 bg-[#006d77] hover:bg-opacity-90 text-white font-bold rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#006d77]"
               >
                 CREATE ACCOUNT
               </button>
 
+              {/* Divider */}
               <div className="flex items-center">
                 <div className="flex-grow border-t border-gray-300"></div>
-                <span className="flex-shrink mx-4 text-sm text-gray-500">
+                <span className="flex-shrink mx-3 sm:mx-4 text-xs sm:text-sm text-gray-500">
                   Or continue with
                 </span>
                 <div className="flex-grow border-t border-gray-300"></div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Social Buttons */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 <button
                   type="button"
                   onClick={handleGoogleRegister}
-                  className="w-full inline-flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-CPC-ocean
-                  hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
+                  className="w-full inline-flex justify-center items-center py-2 sm:py-2.5 px-4 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-700 font-medium hover:bg-CPC-ocean hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
                 >
-                  <FcGoogle size={25} />
+                  <FcGoogle size={22} className="sm:size-25" />
                   <span className="ml-2">Google</span>
                 </button>
                 <button
                   type="button"
                   onClick={handleGithubRegister}
-                  className="w-full inline-flex justify-center items-center py-2.5 px-4 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-CPC-ocean
-                  hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
+                  className="w-full inline-flex justify-center items-center py-2 sm:py-2.5 px-4 border border-gray-300 rounded-lg text-sm sm:text-base text-gray-700 font-medium hover:bg-CPC-ocean hover:text-CPC-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#83c5be] transition"
                 >
-                  <VscGithubInverted size={25} />
+                  <VscGithubInverted size={22} className="sm:size-25" />
                   <span className="ml-2">GitHub</span>
                 </button>
               </div>

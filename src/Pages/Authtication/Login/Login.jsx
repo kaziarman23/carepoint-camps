@@ -85,7 +85,7 @@ const Login = () => {
     <div className="min-h-screen bg-sky-100 flex items-center justify-center py-20">
       <div className="w-11/12 mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row">
         {/* Left Form Side */}
-        <div className="w-full md:w-1/2 p-8 sm:p-12 bg-[#edf6f9]">
+        <div className="w-full md:w-1/2 p-4 sm:p-12 bg-[#edf6f9]">
           {/* Top Navigation */}
           <div className="flex items-center justify-start space-x-6">
             <Link to="/register">
@@ -122,7 +122,7 @@ const Login = () => {
                     },
                   })}
                   className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
-                   focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
+                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.email && (
                   <p className="text-red-500 text-sm mt-1">
@@ -147,7 +147,7 @@ const Login = () => {
                     required: "Password is required",
                   })}
                   className="w-full mt-2 px-4 py-3 bg-white border border-gray-200 rounded-lg 
-                   focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
+                  focus:outline-none focus:ring-2 focus:ring-[#83c5be] transition"
                 />
                 {errors.password && (
                   <p className="text-red-500 text-sm mt-1">
@@ -194,14 +194,14 @@ const Login = () => {
         </div>
 
         {/* Right Branding */}
-        <div className="w-full md:w-1/2 bg-[#006d77] text-[#edf6f9] p-8 sm:p-12 flex flex-col justify-between relative overflow-hidden">
+        <div className="hidden md:flex w-full md:w-1/2 bg-[#006d77] text-[#edf6f9] p-8 sm:p-12 flex-col justify-between relative overflow-hidden">
           <div>
             <div className="flex items-center">
               <HeartHandshake className="h-10 w-10 mr-2 text-white" />
-              <h1 className="text-4xl font-extrabold">Carepoint Camp</h1>
+              <h1 className="font-extrabold md:text-2xl lg:text-3xl xl:text-4xl">Carepoint Camp</h1>
             </div>
             <div className="mt-16 sm:mt-24">
-              <h1 className="text-4xl lg:text-2xl font-extrabold leading-tight">
+              <h1 className="text-2xl lg:text-3xl font-extrabold leading-tight">
                 Welcome Back to Carepoint Camp
               </h1>
               <p className="mt-4 text-[#83c5be] text-lg">
