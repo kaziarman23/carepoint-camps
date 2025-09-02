@@ -28,13 +28,13 @@ const DiscountedServices = () => {
 
   return (
     <section className="w-full min-h-screen bg-sky-100 py-16">
-      <div className="w-4/5 mx-auto">
+      <div className="w-11/12 xl:w-4/5 mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        <div className="mx-auto mb-12">
+          <h2 className="text-center text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Our <span className="text-CPC-ocean">Special offres</span>
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base md:text-lg">
+          <p className="text-gray-600 text-left text-sm sm:text-base md:text-lg">
             Take advantage of our special offers on essential healthcare
             services. We provide high-quality care at discounted rates to ensure
             everyone has access to medical support.
@@ -64,7 +64,7 @@ const DiscountedServices = () => {
         {/* Best Care Section */}
         <div className="mt-20 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
           {/* Text Section */}
-          <div className="lg:w-1/2 space-y-4">
+          <div className="w-full lg:w-1/2 space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
               Exceptional Care at{" "}
               <span className="text-CPC-ocean">Discounted Rates</span>
@@ -75,33 +75,31 @@ const DiscountedServices = () => {
               professionals, modern equipment, and a patient-focused approach.
               We make healthcare accessible and reliable for everyone.
             </p>
-            <div>
-              <div className="flex justify-center items-center gap-2">
-                <img
-                  src="https://i.pinimg.com/736x/40/4d/93/404d93c8834127cc3ed273112f0b53c9.jpg"
-                  alt="features"
-                  className="w-2/3 md:w-1/3 h-4/5 object-cover rounded-xl"
-                />
-                <img
-                  src="https://i.pinimg.com/1200x/bb/db/6f/bbdb6fbc940d4a8746e349769dc5f3e5.jpg"
-                  alt="features"
-                  className="w-2/3 md:w-1/3 h-4/5 object-cover rounded-xl"
-                />
-                <img
-                  src="https://i.pinimg.com/736x/30/53/da/3053da7e5d6abb0b1411e77e73bcb66e.jpg"
-                  alt="features"
-                  className="w-2/3 md:w-1/3 h-4/5 object-cover rounded-xl"
-                />
-              </div>
+            <div className="w-full flex justify-center items-center gap-2 p-2">
+              <img
+                src="https://i.pinimg.com/736x/40/4d/93/404d93c8834127cc3ed273112f0b53c9.jpg"
+                alt="features"
+                className="w-1/3 md:w-1/3 h-4/5 object-cover rounded-xl"
+              />
+              <img
+                src="https://i.pinimg.com/1200x/bb/db/6f/bbdb6fbc940d4a8746e349769dc5f3e5.jpg"
+                alt="features"
+                className="w-1/3 md:w-1/3 h-4/5 object-cover rounded-xl"
+              />
+              <img
+                src="https://i.pinimg.com/736x/30/53/da/3053da7e5d6abb0b1411e77e73bcb66e.jpg"
+                alt="features"
+                className="w-1/3 md:w-1/3 h-4/5 object-cover rounded-xl"
+              />
             </div>
           </div>
 
           {/* Left Side Image Section */}
-          <div className="lg:w-1/2 w-4/5 h-72 flex justify-center items-center gap-2 sm:h-[500px] md:h-[600px] mx-auto">
+          <div className="w-full lg:w-1/2 h-72 flex justify-center items-center gap-2 sm:h-[500px] md:h-[600px] mx-auto">
             <img
               src="https://i.pinimg.com/736x/07/b9/73/07b973f60b40437736a159e0764dc3f7.jpg"
               alt="discounted services"
-              className="w-1/2 h-4/5 object-cover md:rounded-bl-[200px]"
+              className="w-1/2 h-4/5 object-cover rounded-bl-[80px] md:rounded-bl-[200px]"
             />
             <img
               src="https://i.pinimg.com/564x/da/dd/21/dadd2104a744fd60f80b8589e71bdfad.jpg"

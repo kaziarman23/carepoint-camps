@@ -17,18 +17,20 @@ export default function Hero() {
         {/* Header Section */}
         <header className="bg-CPC-ocean p-6 sm:p-8 rounded-3xl shadow-xl my-12">
           <div className="flex justify-center items-center gap-1 mb-6">
-            {/* Using Sparkles icon as a logo */}
+            {/* logo */}
             <HeartHandshake className="h-10 w-10 mr-2 text-white" />
-            <h1 className="text-5xl font-bold text-white">Carepoint Camp</h1>
+            <h1 className="text-2xl font-bold text-white xl:text-5xl">
+              Carepoint Camp
+            </h1>
           </div>
         </header>
 
         {/* Title Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
+          <h1 className="text-xl md:text-5xl font-extrabold text-black leading-tight xl:text-4xl">
             Fueling company growth
           </h1>
-          <p className="text-4xl md:text-5xl font-extrabold mt-1 text-CPC-ocean">
+          <p className=" md:text-5xl font-extrabold mt-1 text-CPC-ocean xl:text-4xl">
             through mental well-being
           </p>
         </div>

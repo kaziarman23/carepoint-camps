@@ -8,12 +8,12 @@ import {
 } from "lucide-react";
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white/20 min-h-40 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-start space-x-4 shadow-lg">
+  <div className="bg-white/20 min-h-40 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-start space-x-4 shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300">
     <div className="flex-shrink-0 text-purple-500 bg-white/30 p-3 rounded-full">
       {icon}
     </div>
     <div>
-      <h3 className="text-black font-semibold text-sm mb-2">{title}</h3>
+      <h3 className="text-black font-semibold text-base mb-2">{title}</h3>
       <p className="text-gray-700 text-sm">{description}</p>
     </div>
   </div>
@@ -61,41 +61,30 @@ export default function Service() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center relative bg-sky-200 py-8 md:py-16"
+      className="min-h-screen bg-cover bg-center relative bg-sky-200 py-12 md:py-16"
       style={{
         backgroundImage:
           "url('https://i.pinimg.com/736x/0d/3c/b2/0d3cb245ae06e56a52f83be6b5ea40f3.jpg')",
       }}
     >
-      <div className="w-4/5 mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-black mb-4">
+      <div className="w-11/12 mx-auto">
+        {/* Heading */}
+        {/* text was in the center */}
+        <div className="mb-12">
+          <h2 className="text-center text-xl md:text-4xl font-bold text-black mb-4">
             Comprehensive Services at Our Carepoint Camp
           </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto">
+          <p className="text-left text-gray-700 mx-auto text-sm md:text-base">
             We are dedicated to providing quality healthcare services to the
             community. Explore the key features of our upcoming medical camp.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Left Column */}
-          <div className="space-y-8">
-            <ServiceCard {...services[0]} />
-            <ServiceCard {...services[1]} />
-          </div>
-
-          {/* center Column */}
-          <div className="space-y-8">
-            <ServiceCard {...services[2]} />
-            <ServiceCard {...services[3]} />
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-8">
-            <ServiceCard {...services[4]} />
-            <ServiceCard {...services[5]} />
-          </div>
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, idx) => (
+            <ServiceCard key={idx} {...service} />
+          ))}
         </div>
       </div>
     </div>

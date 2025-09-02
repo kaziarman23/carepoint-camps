@@ -16,7 +16,7 @@ const Specialists = () => {
 
   return (
     <section className="w-full min-h-screen bg-sky-100 py-10">
-      <div className="w-4/5 h-full mx-auto">
+      <div className="w-11/12 xl:w-4/5 mx-auto">
         {/* Heading Section */}
         <div className="mx-auto w-full text-center mb-8 lg:mb-16">
           <h2 className="mb-4 text-base sm:text-4xl tracking-tight font-extrabold">

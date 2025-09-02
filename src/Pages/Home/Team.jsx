@@ -96,8 +96,8 @@ export default function Team() {
   const lastName = selectedMember.name.split(" ").slice(1).join(" ");
 
   return (
-    <div className="bg-sky-100 min-h-screen font-sans flex items-center justify-center p-4 sm:p-6 md:p-8">
-      <div className="w-4/5 mx-auto">
+    <div className="bg-sky-100 min-h-screen font-sans flex items-center justify-center px-4 sm:px-6 md:px-8 py-8">
+      <div className="w-11/12 mx-auto xl:w-4/5">
         <main className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Text + Description */}
           <div className="text-center lg:text-left p-4 md:p-0 order-2 lg:order-1">
@@ -106,22 +106,23 @@ export default function Team() {
               <span className="ml-1">Management Team</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight">
               <span className="text-black">{firstName} </span>
               <span className="text-CPC-ocean">{lastName}</span>
             </h1>
-            <h2 className="text-lg sm:text-xl text-gray-700 font-medium mb-6">
+
+            <h2 className="text-base sm:text-lg md:text-xl text-gray-700 font-medium mb-6">
               {selectedMember.role}
             </h2>
 
-            <p className="text-gray-500 leading-relaxed text-base text-left">
+            <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg text-left max-w-xl mx-auto lg:mx-0">
               {selectedMember.description}
             </p>
           </div>
 
           {/* Image */}
           <div className="relative order-1 lg:order-2 flex justify-center">
-            <div className="w-[280px] h-[330px] sm:w-[300px] sm:h-[350px] md:w-[400px] md:h-[450px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="w-[240px] h-[280px] sm:w-[300px] sm:h-[350px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
               <img
                 src={selectedMember.imageUrl}
                 alt={selectedMember.name}
@@ -137,22 +138,24 @@ export default function Team() {
         </main>
 
         {/* Swiper Avatars */}
-        <div className="mt-12 sm:mt-16 xl:mt-5">
+        <div className="mt-10 sm:mt-14 lg:mt-16">
           <Swiper
             modules={[Navigation, Autoplay]}
             slidesPerView={3}
-            spaceBetween={20}
+            spaceBetween={16}
             loop={true}
-            autoplay={{ delay: 5000 }}
+            autoplay={{ delay: 4000 }}
             navigation={{
               nextEl: ".swiper-button-next-custom",
               prevEl: ".swiper-button-prev-custom",
             }}
             breakpoints={{
-              640: { slidesPerView: 4 },
-              1024: { slidesPerView: 6 },
+              480: { slidesPerView: 4, spaceBetween: 20 },
+              768: { slidesPerView: 5, spaceBetween: 24 },
+              1024: { slidesPerView: 6, spaceBetween: 28 },
+              1440: { slidesPerView: 7, spaceBetween: 32 },
             }}
-            className="!px-6"
+            className="!px-4 sm:!px-8"
             onSlideChange={(swiper) =>
               setSelectedMemberId(
                 teamMembers[swiper.realIndex % teamMembers.length].id
@@ -165,12 +168,12 @@ export default function Team() {
                   onClick={() => setSelectedMemberId(member.id)}
                   className={`text-center cursor-pointer group transition-all duration-300 ease-in-out flex-shrink-0 py-4 ${
                     selectedMemberId === member.id
-                      ? "transform scale-110"
+                      ? "scale-110"
                       : "opacity-70 hover:opacity-100"
                   }`}
                 >
                   <div
-                    className={`relative w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden border-4 transition-colors duration-300 ${
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-full overflow-hidden border-4 transition-colors duration-300 ${
                       selectedMemberId === member.id
                         ? "border-CPC-ocean"
                         : "border-transparent group-hover:border-purple-300"
@@ -191,7 +194,7 @@ export default function Team() {
                     )}
                   </div>
                   <p
-                    className={`mt-2 text-sm font-semibold transition-colors duration-300 ${
+                    className={`mt-2 text-xs sm:text-sm font-semibold transition-colors duration-300 ${
                       selectedMemberId === member.id
                         ? "text-CPC-ocean"
                         : "text-gray-800"
@@ -199,7 +202,7 @@ export default function Team() {
                   >
                     {member.name}
                   </p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-[10px] sm:text-xs text-gray-500">
                     {member.role.split(" ").slice(0, 2).join(" ")}
                   </p>
                 </div>
@@ -207,10 +210,10 @@ export default function Team() {
             ))}
 
             {/* Custom Navigation Buttons */}
-            <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden lg:flex items-center justify-center p-2 rounded-full bg-black/5 hover:bg-black/10 cursor-pointer">
+            <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center p-2 rounded-full bg-black/5 hover:bg-black/10 cursor-pointer">
               <ChevronLeft size={24} className="text-gray-600" />
             </div>
-            <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden lg:flex items-center justify-center p-2 rounded-full bg-black/5 hover:bg-black/10 cursor-pointer">
+            <div className="swiper-button-next-custom absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center p-2 rounded-full bg-black/5 hover:bg-black/10 cursor-pointer">
               <ChevronRight size={24} className="text-gray-600" />
             </div>
           </Swiper>
