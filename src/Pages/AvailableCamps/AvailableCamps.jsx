@@ -135,7 +135,7 @@ const AvailableCamps = () => {
             onPageChange={handlePageClick}
             containerClassName="flex justify-center gap-2 mt-6"
             pageClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
-            activeClassName="bg-sky-300 text-white"
+            activeClassName="bg-sky-400 text-black"
             previousClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
             nextClassName="px-3 py-1 border rounded-lg bg-white shadow-sm hover:bg-sky-300"
             disabledClassName="opacity-50 cursor-not-allowed"

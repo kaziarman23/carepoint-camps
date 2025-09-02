@@ -9,9 +9,9 @@ import {
   HeartHandshake,
 } from "lucide-react";
 
-const SocialIcon = ({ href, children }) => (
+const SocialIcon = ({ children }) => (
   <a
-    href={href}
+    href="/contactUs"
     className="w-8 h-8 rounded-full bg-transparent text-white font-semibold flex items-center justify-center hover:bg-CPC-ocean hover:text-CPC-sky transition-colors duration-300"
     aria-label="Social media link"
   >
@@ -134,16 +134,16 @@ const Footer = () => {
           Copyright © Carepoint Camps | All Rights Reserved
         </p>
         <div className="flex space-x-3">
-          <SocialIcon href="#" className="bg-transparent">
+          <SocialIcon className="bg-transparent">
             <Facebook size={16} />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon>
             <Twitter size={16} />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon>
             <Instagram size={16} />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon>
             <Linkedin size={16} />
           </SocialIcon>
         </div>
