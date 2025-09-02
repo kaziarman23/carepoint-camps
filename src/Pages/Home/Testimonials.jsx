@@ -123,7 +123,7 @@ const Testimonials = () => {
 
   return (
     <section className="bg-sky-100 w-full min-h-screen">
-      <div className="w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row py-12 md:py-20 gap-8 md:gap-12">
+      <div className="w-11/12 mx-auto flex flex-col lg:flex-row py-12 md:py-20 gap-8 md:gap-12">
         {/* Left: Text */}
         <div className="w-full lg:w-1/2 p-2 space-y-4 text-left">
           <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight lg:text-left">

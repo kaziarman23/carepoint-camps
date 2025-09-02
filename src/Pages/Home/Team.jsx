@@ -97,7 +97,7 @@ export default function Team() {
 
   return (
     <div className="bg-sky-100 min-h-screen font-sans flex items-center justify-center px-4 sm:px-6 md:px-8 py-8">
-      <div className="w-11/12 mx-auto xl:w-4/5">
+      <div className="w-11/12 mx-auto">
         <main className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Text + Description */}
           <div className="text-center lg:text-left p-4 md:p-0 order-2 lg:order-1">
@@ -138,7 +138,7 @@ export default function Team() {
         </main>
 
         {/* Swiper Avatars */}
-        <div className="mt-10 sm:mt-14 lg:mt-16 xl:mt-5">
+        <div className="mt-10 sm:mt-14 lg:mt-16 xl:mt-3">
           <Swiper
             modules={[Navigation, Autoplay]}
             slidesPerView={3}

@@ -27,10 +27,10 @@ export default function Hero() {
 
         {/* Title Section */}
         <div className="text-center mb-12">
-          <h1 className="text-xl md:text-5xl font-extrabold text-black leading-tight sm:text-3xl xl:text-4xl">
+          <h1 className="text-xl md:text-5xl font-extrabold text-black leading-tight sm:text-3xl xl:text-6xl">
             Fueling company growth
           </h1>
-          <p className="font-extrabold mt-1 text-CPC-ocean  sm:text-3xl md:text-5xl xl:text-4xl">
+          <p className="font-extrabold mt-1 text-CPC-ocean  sm:text-3xl md:text-5xl xl:text-5xl">
             through mental well-being
           </p>
         </div>
