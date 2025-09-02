@@ -123,10 +123,10 @@ const Testimonials = () => {
 
   return (
     <section className="bg-sky-100 w-full min-h-screen">
-      <div className="w-11/12 lg:w-4/5 mx-auto flex flex-col md:flex-row py-12 md:py-20 gap-8 md:gap-12">
+      <div className="w-11/12 xl:w-4/5 mx-auto flex flex-col lg:flex-row py-12 md:py-20 gap-8 md:gap-12">
         {/* Left: Text */}
-        <div className="w-full md:w-1/2 p-2 space-y-4 text-left">
-          <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+        <div className="w-full lg:w-1/2 p-2 space-y-4 text-left">
+          <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight lg:text-left">
             Voices from Our{" "}
             <span className="text-CPC-ocean">Community</span>
           </h2>
@@ -146,13 +146,13 @@ const Testimonials = () => {
         </div>
 
         {/* Right: Testimonials */}
-        <div className="w-full md:w-1/2 relative">
+        <div className="w-full lg:w-1/2 relative">
           {/* Gradient overlays */}
           <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-sky-100 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-full h-16 sm:h-20 bg-gradient-to-t from-sky-100 to-transparent z-10 pointer-events-none"></div>
 
           <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-2"
             onMouseEnter={() => handleMouseEnter(swiperUpRef)}
             onMouseLeave={() => handleMouseLeave(swiperUpRef)}
           >
@@ -166,7 +166,7 @@ const Testimonials = () => {
               allowTouchMove={false}
               autoplay={{ disableOnInteraction: false }}
               modules={[Autoplay]}
-              className="h-[300px] sm:h-[500px] md:h-[600px]"
+              className="h-[300px] sm:h-[200px] md:h-[600px]"
               onSwiper={(swiper) => (swiperUpRef.current = swiper)}
             >
               {[...testimonials, ...testimonials].map((t, i) => (
@@ -192,7 +192,7 @@ const Testimonials = () => {
                 reverseDirection: true,
               }}
               modules={[Autoplay]}
-              className="h-[300px] sm:h-[500px] md:h-[600px] hidden md:block"
+              className="h-[300px] sm:h-[200px] md:h-[600px] hidden md:block"
               onSwiper={(swiper) => (swiperDownRef.current = swiper)}
             >
               {[...testimonials, ...testimonials].reverse().map((t, i) => (

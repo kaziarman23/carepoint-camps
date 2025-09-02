@@ -19,7 +19,7 @@ export default function Hero() {
           <div className="flex justify-center items-center gap-1 mb-6">
             {/* logo */}
             <HeartHandshake className="h-10 w-10 mr-2 text-white" />
-            <h1 className="text-2xl font-bold text-white xl:text-5xl">
+            <h1 className="text-2xl font-bold text-white sm:text-5xl">
               Carepoint Camp
             </h1>
           </div>
@@ -27,10 +27,10 @@ export default function Hero() {
 
         {/* Title Section */}
         <div className="text-center mb-12">
-          <h1 className="text-xl md:text-5xl font-extrabold text-black leading-tight xl:text-4xl">
+          <h1 className="text-xl md:text-5xl font-extrabold text-black leading-tight sm:text-3xl xl:text-4xl">
             Fueling company growth
           </h1>
-          <p className=" md:text-5xl font-extrabold mt-1 text-CPC-ocean xl:text-4xl">
+          <p className="font-extrabold mt-1 text-CPC-ocean  sm:text-3xl md:text-5xl xl:text-4xl">
             through mental well-being
           </p>
         </div>

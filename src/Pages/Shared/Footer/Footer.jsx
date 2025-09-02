@@ -51,7 +51,7 @@ const Footer = () => {
           </form>
         </div>
         {/* right side */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-left">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-2 text-left">
           {/* Menu */}
           <div className="space-y-4">
             <h3 className="font-extrabold text-white text-lg">Menu</h3>
@@ -110,9 +110,9 @@ const Footer = () => {
           <div className="space-y-4 col-span-2 sm:col-span-1">
             <h3 className="font-extrabold text-white text-lg">Contact</h3>
             <div className="space-y-3 text-white font-semibold">
-              <p className="flex items-center justify-start">
+              <p className="flex items-center justify-start sm:text-xs lg:text-base">
                 <Mail className="h-5 w-5 mr-3 text-white" />
-                CarepointCamp@proton.me
+                Carepoint@gmail.com
               </p>
               <p className="flex items-center justify-start">
                 <Phone className="h-5 w-5 mr-3 text-white" />

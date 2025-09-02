@@ -106,7 +106,7 @@ export default function Team() {
               <span className="ml-1">Management Team</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-3 leading-tight xl:text-5xl">
               <span className="text-black">{firstName} </span>
               <span className="text-CPC-ocean">{lastName}</span>
             </h1>
@@ -122,7 +122,7 @@ export default function Team() {
 
           {/* Image */}
           <div className="relative order-1 lg:order-2 flex justify-center">
-            <div className="w-[240px] h-[280px] sm:w-[300px] sm:h-[350px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="w-[240px] h-[280px] sm:w-[300px] sm:h-[350px] md:w-[380px] md:h-[450px] lg:w-[420px] lg:h-[500px] xl:w-[400px] xl:h-[400px] rounded-lg overflow-hidden shadow-2xl">
               <img
                 src={selectedMember.imageUrl}
                 alt={selectedMember.name}
@@ -138,7 +138,7 @@ export default function Team() {
         </main>
 
         {/* Swiper Avatars */}
-        <div className="mt-10 sm:mt-14 lg:mt-16">
+        <div className="mt-10 sm:mt-14 lg:mt-16 xl:mt-5">
           <Swiper
             modules={[Navigation, Autoplay]}
             slidesPerView={3}

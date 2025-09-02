@@ -69,10 +69,10 @@ export default function Service() {
     >
       <div className="w-11/12 mx-auto">
         {/* Heading */}
-        {/* text was in the center */}
         <div className="mb-12">
           <h2 className="text-center text-xl md:text-4xl font-bold text-black mb-4">
-            Comprehensive Services at Our Carepoint Camp
+            Comprehensive Services at Our{" "}
+            <span className="text-CPC-ocean xl:text-black">Carepoint Camp</span>
           </h2>
           <p className="text-left text-gray-700 mx-auto text-sm md:text-base">
             We are dedicated to providing quality healthcare services to the

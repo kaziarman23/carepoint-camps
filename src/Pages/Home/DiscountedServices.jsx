@@ -28,7 +28,7 @@ const DiscountedServices = () => {
 
   return (
     <section className="w-full min-h-screen bg-sky-100 py-16">
-      <div className="w-11/12 xl:w-4/5 mx-auto">
+      <div className="w-11/12 mx-auto">
         {/* Section Header */}
         <div className="mx-auto mb-12">
           <h2 className="text-center text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -42,7 +42,7 @@ const DiscountedServices = () => {
         </div>
 
         {/* Discount Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2 lg:gap-12 mx-auto">
           {services.map((service) => (
             <div
               key={service.id}
@@ -62,10 +62,10 @@ const DiscountedServices = () => {
         </div>
 
         {/* Best Care Section */}
-        <div className="mt-20 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
+        <div className="mt-20  mx-auto flex flex-col lg:flex-row items-center gap-10">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 space-y-4">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 text-center">
               Exceptional Care at{" "}
               <span className="text-CPC-ocean">Discounted Rates</span>
             </h2>

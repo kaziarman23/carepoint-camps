@@ -26,18 +26,18 @@ const Promotion = () => {
 
   return (
     <section className="w-full min-h-screen bg-sky-100 flex items-center font-sans py-12 md:py-16">
-      <div className="w-11/12 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Column: Text Content */}
         <div className="flex flex-col gap-6 text-left">
-          <h5 className="text-gray-600 font-bold text-lg md:text-xl">
+          <h5 className="text-gray-600 font-bold text-lg sm:hidden md:block md:text-xl">
             Carepoint Camps
           </h5>
-          <h1 className="text-xl md:text-4xl lg:text-5xl font-extrabold leading-snug text-brand-900 drop-shadow-sm">
-            Bringing{" "}
-            <span className="text-CPC-ocean">Quality Healthcare</span> <br />
+          <h1 className="text-xl sm:text-center  md:text-4xl lg:text-left lg:text-5xl font-extrabold leading-snug text-brand-900 drop-shadow-sm">
+            Bringing <span className="text-CPC-ocean">Quality Healthcare</span>{" "}
+            <br />
             to Your Community
           </h1>
-          <p className="text-gray-600 text-base md:text-lg max-w-xl mx-auto lg:mx-0">
+          <p className="text-gray-600 text-base md:text-left md:text-lg mx-auto lg:mx-0">
             Our medical camps provide free health check-ups, specialist
             consultations, and essential medicines to those in need. We are
             committed to making healthcare accessible for everyone.
@@ -56,11 +56,11 @@ const Promotion = () => {
               key={index}
               className="min-h-[220px] flex flex-col gap-3 bg-white/70 backdrop-blur-lg p-6 rounded-2xl shadow-xl transition duration-300 hover:scale-105"
             >
-              <h2 className="text-4xl md:text-5xl font-extrabold text-CPC-ocean">
+              <h2 className="text-4xl md:text-5xl lg:text-xl xl:text-5xl font-extrabold text-CPC-ocean">
                 {stat.value}
               </h2>
               <div className="relative">
-                <h3 className="text-xs md:text-sm font-semibold text-black mt-2 tracking-widest uppercase">
+                <h3 className="text-xs md:text-sm font-semibold text-black mt-2 tracking-widest uppercase lg:text-xs">
                   {stat.title}
                 </h3>
                 {/* Underline effect */}
